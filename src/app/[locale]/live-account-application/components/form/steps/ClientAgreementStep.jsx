@@ -23,21 +23,15 @@ export default function ClientAgreementStep({
           <div className="border-b border-[#E1E7F6] px-4 py-3 text-sm text-[#69729F]">
             {t("agreement.scrollHint", "Scroll inside the viewer to read all pages")}
           </div>
-          <div className="flex min-h-[280px] flex-col items-center justify-center gap-3 p-6 text-center">
-            <p className="text-sm font-medium text-[#000032]">
+          <div className="bg-white">
+            <p className="border-b border-[#E1E7F6] px-4 py-2 text-center text-sm font-medium text-[#000032]">
               {t("agreement.titleKhmer", "កិច្ចព្រមព្រៀងពាណិជ្ជកម្មឧបករណ៍ដេរីវេទីវ")}
             </p>
-            <p className="text-sm text-[#69729F]">
-              {t("agreement.reviewText", "Review the derivative trading client agreement before signing below.")}
-            </p>
-            <a
-              href={CLIENT_AGREEMENT_PDF_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-sm font-semibold text-[#293B93] underline hover:text-[#243575]"
-            >
-              {t("agreement.openPdf", "Open PDF in new tab")}
-            </a>
+            <iframe
+              title={t("agreement.titleKhmer", "កិច្ចព្រមព្រៀងពាណិជ្ជកម្មឧបករណ៍ដេរីវេទីវ")}
+              src={`${CLIENT_AGREEMENT_PDF_URL}#view=FitH&toolbar=1`}
+              className="block h-[min(520px,70vh)] w-full border-0"
+            />
           </div>
         </div>
       </FormSection>
