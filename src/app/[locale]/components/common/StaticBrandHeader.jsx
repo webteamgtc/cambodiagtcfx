@@ -146,15 +146,7 @@ function HeaderActions({
             <UserOutlineIcon />
             {registerLabel}
           </Link>
-          <Link
-            href={LOGIN_HREF}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex h-9 cursor-pointer select-none items-center gap-1.5 rounded-full border border-[#cfd1d7] bg-transparent px-2 text-[12px] hover:bg-secondary hover:text-white font-medium text-[#6b7280] sm:h-10 sm:gap-2 sm:px-3 sm:text-[14px]"
-          >
-            <AiOutlineLogin />
-            {loginLabel}
-          </Link>
+    
           <div
             className="relative"
             ref={isUae ? languagePanelRef : undefined}
@@ -756,15 +748,7 @@ export default function StaticBrandHeader() {
                 })}
 
                 <div className="border-b border-[#eceff4] py-1 last:border-b-0">
-                  <Link
-                    href={LOGIN_HREF}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex w-full items-center py-2 text-start text-[16px] font-semibold leading-snug tracking-[-0.01em] text-[#0a0a0a] hover:no-underline sm:text-[17px]"
-                    onClick={closeMobileMenu}
-                  >
-                    {loginLabel}
-                  </Link>
+           
                 </div>
               </nav>
             </div>
