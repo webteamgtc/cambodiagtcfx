@@ -1,14 +1,16 @@
 import FieldWrapper from "./FieldWrapper";
 import { getFieldError } from "./formUtils";
+import { useSercFormTranslation } from "../../i18n/useSercFormTranslation";
 
 export function useStepFieldErrors(errors, touched, showErrors) {
   return (name) => getFieldError(errors, name, showErrors, touched);
 }
 
 export function YesNoField({ label, name, value, onChange, error, required }) {
+  const { t } = useSercFormTranslation();
   const options = [
-    { value: "no", label: "No" },
-    { value: "yes", label: "Yes" },
+    { value: "no", label: t("common.no", "No") },
+    { value: "yes", label: t("common.yes", "Yes") },
   ];
 
   return (

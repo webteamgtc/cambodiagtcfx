@@ -1,0 +1,336 @@
+{
+  "en": {
+    "steps": {
+      "personalInformation": "Personal Information",
+      "questionnaire": "Questionnaire",
+      "identityInformation": "Identity Information",
+      "clientAgreement": "Client Agreement"
+    },
+    "pendingSubmission": "Pending submission",
+    "actions": {
+      "previous": "Previous",
+      "next": "Next",
+      "submit": "Submit",
+      "submitting": "Submitting..."
+    },
+    "errors": {
+      "fixFields": "Please fix the highlighted fields below before continuing."
+    },
+    "toast": {
+      "success": "Application submitted successfully!",
+      "failed": "Failed to submit application. Please try again."
+    },
+    "common": {
+      "yes": "Yes",
+      "no": "No",
+      "male": "Male",
+      "female": "Female",
+      "self": "Self",
+      "otherPerson": "Other person"
+    },
+    "sections": {
+      "clientInformation": "Client Information",
+      "employmentInformation": "Employment Information",
+      "educationalKnowledge": "Educational and Client Knowledge",
+      "authorizedOwnership": "Authorized Person & Ownership",
+      "attachedDocuments": "Attached Documents for Account Registration",
+      "thirdPartyVerification": "Third-Party Verification",
+      "clientAgreementDerivative": "Client's Agreement for Derivative Trading",
+      "clientSignature": "Client Signature"
+    },
+    "fields": {
+      "fullName": "Client Name (First and Last Name)",
+      "fullNameLatin": "In Latin",
+      "previousName": "Previous Name",
+      "dateOfBirth": "Date of Birth",
+      "nationality": "Nationality",
+      "sex": "Sex",
+      "idPassportNumber": "Identity Card / Passport Number",
+      "issuedBy": "Issued By",
+      "expirationDate": "Expiration Date",
+      "currentAddress": "Current Address",
+      "permanentAddress": "Permanent Address",
+      "phone": "Personal Contact Number",
+      "email": "Email",
+      "hasSpouse": "Do you have a spouse?",
+      "employmentStatus": "Employment Status",
+      "industry": "Industry",
+      "occupation": "Occupation / Job title",
+      "employerName": "Name of Employer / Business",
+      "workplaceAddress": "Workplace Address",
+      "workplaceContact": "Workplace Contact Number",
+      "workingPeriod": "Working Period",
+      "yearsWorkingExperience": "Years of Working Experience",
+      "educationalLevel": "Educational Level",
+      "derivativeKnowledge": "Client Knowledge Related to Derivatives",
+      "investmentObjectives": "Investment Objective",
+      "experienceOtherFinancialMarkets": "Experience in trading in other financial markets",
+      "qualifiedInvestor": "Is the client a qualified investor?",
+      "hasAuthorizedPerson": "An Authorized Person",
+      "authorizedPersonFullName": "Full Name",
+      "authorizedPersonFullNameLatin": "In Latin",
+      "authorizedPersonSex": "Sex",
+      "authorizedPersonAddress": "Current Address",
+      "authorizedPersonPhone": "Contact Number",
+      "authorizedPersonEmail": "Email",
+      "beneficialOwner": "Beneficial Owner",
+      "controllingPerson": "Controlling Person",
+      "isPoliticallyExposed": "Politically Exposed Person (PEP)",
+      "contactPreferences": "Preferred Contact Method",
+      "relationshipDerivativeBroker": "Does the client have any relationship with directors or employees of the derivative broker?",
+      "relationshipCentralCounterparty": "Does the client have any relationship with a director or employee of the central counterparty?",
+      "idCardCopy": "Copied of ID card",
+      "passportVisaCopy": "Copied of Passport or Visa",
+      "familyRecordBookCopy": "Copied of Family record book",
+      "otherDocumentCopy": "Others",
+      "clientSignature": "Sign using mouse/touch screen or type your full legal name",
+      "signatureFile": "Attach signature file (optional)",
+      "agreementAccepted": "I confirm that I have carefully read all of the above terms and conditions, including the risk awareness and disclosure statements. I guarantee that the information provided is true and valid, agree to sign a legally binding contract, and assume all corresponding legal responsibilities. I understand and agree that this electronic signature is equivalent to a handwritten signature."
+    },
+    "placeholders": {
+      "fullName": "Full name",
+      "fullNameLatin": "Full name in Latin",
+      "dateOfBirth": "Select date of birth",
+      "nationality": "Nationality",
+      "idPassportNumber": "ID / Passport number",
+      "issuedBy": "Issuing authority",
+      "expirationDate": "Select expiration date",
+      "currentAddress": "Current address",
+      "permanentAddress": "Permanent address",
+      "email": "Email",
+      "selectEmploymentStatus": "Please select Employment Status",
+      "industry": "Please enter Industry",
+      "occupation": "Please enter Occupation / Job title",
+      "employerName": "Please enter Name of Employer / Business",
+      "workplaceAddress": "Please enter Workplace address",
+      "workplaceContact": "Please enter contact number",
+      "workingPeriod": "e.g. 3 years",
+      "selectYearsExperience": "Please select Years of Working Experience",
+      "phone": "Phone number",
+      "emailAddress": "Email address",
+      "clientSignature": "Type your signature"
+    },
+    "identity": {
+      "chooseFile": "Choose file or drag here",
+      "fileTypes": "PDF, JPG, or PNG",
+      "verificationIntro": "Open the third-party verification page and complete identity verification. After completion, refresh this page to check the result.",
+      "startVerification": "Start Verification",
+      "verificationStarted": "Verification started — complete the external flow, then continue."
+    },
+    "agreement": {
+      "scrollHint": "Scroll inside the viewer to read all pages",
+      "titleKhmer": "កិច្ចព្រមព្រៀងពាណិជ្ជកម្មឧបករណ៍ដេរីវេទីវ",
+      "reviewText": "Review the derivative trading client agreement before signing below.",
+      "openPdf": "Open PDF in new tab",
+      "signaturePreview": "Signature preview",
+      "footerAddress": "Building No. 40, 8th floor, Street No. 289, Village 13, Sangkat Boeung Kak 1, Khan Toul Kork, Phnom Penh. Tel: 017 230 168 | Mobile: 0063 030 916 | Email: info@gtcfx.com.kh | Website: www.gtcfx.com.kh"
+    },
+    "options": {
+      "employmentStatus": {
+        "Employed": "Employed",
+        "Self-employed": "Self-employed",
+        "Retired": "Retired",
+        "Student": "Student",
+        "Unemployed": "Unemployed"
+      },
+      "yearsWorkingExperience": {
+        "Less than 1 year": "Less than 1 year",
+        "1 – 3 years": "1 – 3 years",
+        "3 – 5 years": "3 – 5 years",
+        "5 – 10 years": "5 – 10 years",
+        "More than 10 years": "More than 10 years"
+      },
+      "educationalLevel": {
+        "doctorate": "Doctorate",
+        "master": "Master",
+        "bachelor": "Bachelor",
+        "below-bachelor": "Below Bachelor"
+      },
+      "derivativeKnowledge": {
+        "training-course": "Client has been attending a training derivative course",
+        "work-experience": "Client had / currently have experiences working related to derivative product",
+        "trading-derivative": "Client has / currently trading derivative",
+        "no-experience": "Client has no experience on trading derivative"
+      },
+      "investmentObjectives": {
+        "short-term": "Short term investment",
+        "long-term": "Long term investment",
+        "other": "Other"
+      },
+      "contactPreferences": {
+        "phone": "Phone number",
+        "email": "Email",
+        "fax": "Fax",
+        "send-message": "Send Message",
+        "others": "Others"
+      }
+    }
+  },
+  "km": {
+    "steps": {
+      "personalInformation": "ព័ត៌មានផ្ទាល់ខ្លួន",
+      "questionnaire": "សំណួរ",
+      "identityInformation": "ព័ត៌មានអត្តសញ្ញាណ",
+      "clientAgreement": "កិច្ចព្រមព្រៀងអតិថិជន"
+    },
+    "pendingSubmission": "កំពុងរង់ចាំការដាក់ស្នើ",
+    "actions": {
+      "previous": "មុន",
+      "next": "បន្ទាប់",
+      "submit": "ដាក់ស្នើ",
+      "submitting": "កំពុងដាក់ស្នើ..."
+    },
+    "errors": {
+      "fixFields": "សូមកែប្រែចន្លោះដែលបានសម្គាល់ខាងក្រោមមុនពេលបន្ត។"
+    },
+    "toast": {
+      "success": "ដាក់ស្នើពាក្យសុំបានជោគជ័យ!",
+      "failed": "មិនអាចដាក់ស្នើពាក្យសុំបានទេ។ សូមព្យាយាមម្តងទៀត។"
+    },
+    "common": {
+      "yes": "បាទ/ចាស",
+      "no": "ទេ",
+      "male": "ប្រុស",
+      "female": "ស្រី",
+      "self": "ខ្លួនឯង",
+      "otherPerson": "បុគ្គលផ្សេង"
+    },
+    "sections": {
+      "clientInformation": "ព័ត៌មានអតិថិជន",
+      "employmentInformation": "ព័ត៌មានការងារ",
+      "educationalKnowledge": "កម្រិតអប់រំ និងចំណេះដឹងអតិថិជន",
+      "authorizedOwnership": "បុគ្គលអនុញ្ញាត និងកម្មសិទ្ធិ",
+      "attachedDocuments": "ឯកសារភ្ជាប់សម្រាប់ចុះឈ្មោះគណនី",
+      "thirdPartyVerification": "ការផ្ទៀងផ្ទាត់ភាគីទីបី",
+      "clientAgreementDerivative": "កិច្ចព្រមព្រៀងអតិថិជនសម្រាប់ជួញដូរដេរីវេទីវ",
+      "clientSignature": "ហត្ថលេខាអតិថិជន"
+    },
+    "fields": {
+      "fullName": "ឈ្មោះអតិថិជន (នាមខ្លួន និងនាមត្រកូល)",
+      "fullNameLatin": "ជាអក្សរឡាតាំង",
+      "previousName": "ឈ្មោះពីមុន",
+      "dateOfBirth": "ថ្ងៃខែឆ្នាំកំណើត",
+      "nationality": "សញ្ជាតិ",
+      "sex": "ភេទ",
+      "idPassportNumber": "លេខអត្តសញ្ញាណប័ណ្ណ / លិខិតឆ្លងដែន",
+      "issuedBy": "ចេញដោយ",
+      "expirationDate": "ថ្ងៃផុតកំណត់",
+      "currentAddress": "អាសយដ្ឋានបច្ចុប្បន្ន",
+      "permanentAddress": "អាសយដ្ឋានអចិទ្វi",
+      "phone": "លេខទំនាក់ទំនងផ្ទាល់ខ្លួន",
+      "email": "អ៊ីមែល",
+      "hasSpouse": "តើអ្នកមានប្តី/ប្រពន្ធឬទេ?",
+      "employmentStatus": "ស្ថានភាពការងារ",
+      "industry": "ឧស្សាហកម្ម",
+      "occupation": "មុខរបរ / តួនាទី",
+      "employerName": "ឈ្មោះនិយោជក / អាជីវកម្ម",
+      "workplaceAddress": "អាសយដ្ឋានកន្លែងធ្វើការ",
+      "workplaceContact": "លេខទំនាក់ទំនងកន្លែងធ្វើការ",
+      "workingPeriod": "រយៈពេលធ្វើការ",
+      "yearsWorkingExperience": "បទពិសោធន៍ការងារ (ឆ្នាំ)",
+      "educationalLevel": "កម្រិតអប់រំ",
+      "derivativeKnowledge": "ចំណេះដឹងអតិថិជនទាក់ទងនឹងដេរីវេទីវ",
+      "investmentObjectives": "គោលបំណងវិនិយោគ",
+      "experienceOtherFinancialMarkets": "បទពិសោធន៍ជួញដូរនៅទីផ្សារហិរញ្ញវត្ថុផ្សេងទៀត",
+      "qualifiedInvestor": "តើអតិថិជនជាវិនិយោគិន qualified ឬទេ?",
+      "hasAuthorizedPerson": "មានបុគ្គលអនុញ្ញាត",
+      "authorizedPersonFullName": "ឈ្មោះពេញ",
+      "authorizedPersonFullNameLatin": "ជាអក្សរឡាតាំង",
+      "authorizedPersonSex": "ភេទ",
+      "authorizedPersonAddress": "អាសយដ្ឋានបច្ចុប្បន្ន",
+      "authorizedPersonPhone": "លេខទំនាក់ទំនង",
+      "authorizedPersonEmail": "អ៊ីមែល",
+      "beneficialOwner": "ម្ចាស់ផលប្រយោជន៍",
+      "controllingPerson": "បុគ្គលគ្រប់គ្រង",
+      "isPoliticallyExposed": "បុគ្គលដែល暴露នយ polítique (PEP)",
+      "contactPreferences": "វិធីទំនាក់ទំនងដែលចូលចិត្ត",
+      "relationshipDerivativeBroker": "តើអតិថិជនមានទំនាក់ទំនងជាមួយ диреktor ឬបុគ្គលិករបស់ឈ្មួញដេរីវេទីវឬទេ?",
+      "relationshipCentralCounterparty": "តើអតិថិជនមានទំនាក់ទំនងជាមួយ диреktor ឬបុគ្គលិករបស់ភាគីកណ្តាលឬទេ?",
+      "idCardCopy": "ចម្លងអត្តសញ្ញាណប័ណ្ណ",
+      "passportVisaCopy": "ចម្លងលិខិតឆ្លងដែន ឬ Visa",
+      "familyRecordBookCopy": "ចម្លងសៀវភៅសំគាល់ семья",
+      "otherDocumentCopy": "ផ្សេងទៀត",
+      "clientSignature": "ចុះហត្ថលេខាដោយកណ្តាល/អេក្រង់ ឬវាយឈ្មោះពេញតាមច្បាប់",
+      "signatureFile": "ភ្ជាប់ឯកសារហត្ថលេខា (ស្រេចចិត្ត)",
+      "agreementAccepted": "ខ្ញុំ/យើងបញ្ជាក់ថាបានអានលក្ខខណ្ឌ និងការបង្ហាញហានិភ័យទាំងអស់យ៉ាងប្រុងប្រយ័ត្ន ធានាថាព័ត៌មានពិត និងយល់ព្រមចុះហត្ថលេខាកិច្ចសន្យាដែលមានផ្លូវច្បាប់ និងទទួលខុសត្រូវផ្លូវច្បាប់ទាំងអស់។ ហត្ថលេខាអេឡិចត្រូនិកមានតម្លៃដូចហត្ថលេខាដៃ។"
+    },
+    "placeholders": {
+      "fullName": "ឈ្មោះពេញ",
+      "fullNameLatin": "ឈ្មោះពេញជាអក្សរឡាតាំង",
+      "dateOfBirth": "ជ្រើសរើសថ្ងៃកំណើត",
+      "nationality": "សញ្ជាតិ",
+      "idPassportNumber": "លេខអត្តសញ្ញាណ / លិខិតឆ្លងដែន",
+      "issuedBy": "អាជ្ញាធរចេញ",
+      "expirationDate": "ជ្រើសរើសថ្ងៃផុតកំណត់",
+      "currentAddress": "អាសយដ្ឋានបច្ចុប្បន្ន",
+      "permanentAddress": "អាសយដ្ឋានអចិទ្វi",
+      "email": "អ៊ីមែល",
+      "selectEmploymentStatus": "សូមជ្រើសរើសស្ថានភាពការងារ",
+      "industry": "សូមបញ្ចូលឧស្សាហកម្ម",
+      "occupation": "សូមបញ្ចូលមុខរបរ / តួនាទី",
+      "employerName": "សូមបញ្ចូលឈ្មោះនិយោជក / អាជីវកម្ម",
+      "workplaceAddress": "សូមបញ្ចូលអាសយដ្ឋានកន្លែងធ្វើការ",
+      "workplaceContact": "សូមបញ្ចូលលេខទំនាក់ទំនង",
+      "workingPeriod": "ឧ. ៣ ឆ្នាំ",
+      "selectYearsExperience": "សូមជ្រើសរើសបទពិសោធន៍ការងារ",
+      "phone": "លេខទូរស័ព្ទ",
+      "emailAddress": "អាសយដ្ឋានអ៊ីមែល",
+      "clientSignature": "វាយហត្ថលេខា"
+    },
+    "identity": {
+      "chooseFile": "ជ្រើសរើសឯកសារ ឬទាញមកទីនេះ",
+      "fileTypes": "PDF, JPG, ឬ PNG",
+      "verificationIntro": "បើកទំព័រផ្ទៀងផ្ទាត់ភាគីទីបី និងបំពេញការផ្ទៀងផ្ទាត់អត្តសញ្ញាណ។ បន្ទាប់ពីបញ្ចប់ សូម refresh ទំព័រនេះ។",
+      "startVerification": "ចាប់ផ្តើមផ្ទៀងផ្ទាត់",
+      "verificationStarted": "បានចាប់ផ្តើមផ្ទៀងផ្ទាត់ — បញ្ចប់ដំណើរការខាងក្រៅ រួចបន្ត។"
+    },
+    "agreement": {
+      "scrollHint": "រំកិលក្នុង viewer ដើម្បីអានទំព័រទាំងអស់",
+      "titleKhmer": "កិច្ចព្រមព្រៀងពាណិជ្ជកម្មឧបករណ៍ដេរីវេទីវ",
+      "reviewText": "ពិនិត្យកិច្ចព្រមព្រៀងអតិថិជនជួញដូរដេរីវេទីវមុនពេលចុះហត្ថលេខាខាងក្រោម។",
+      "openPdf": "បើក PDF ក្នុងផ្ទាំងថ្មី",
+      "signaturePreview": "មើលហត្ថលេខាជាមុន",
+      "footerAddress": "អគារលេខ ៤០ ជាន់ទី ៨ ផ្លូវលេខ ២៨៩ ភូមិ ១៣ សង្កាត់បឹងកក ១ ខណ្ឌទួលគោក រាជធានីភ្នំពេញ។ ទូរស័ព្ទ៖ ០១៧ ២៣០ ១៦៨ | ទូរស័ព្ទដៃ៖ ០០៦៣ ០៣០ ៩១៦ | អ៊ីមែល៖ info@gtcfx.com.kh | គេហទំព័រ៖ www.gtcfx.com.kh"
+    },
+    "options": {
+      "employmentStatus": {
+        "Employed": "កំពុងធ្វើការ",
+        "Self-employed": "ធ្វើការដោយខ្លួនឯង",
+        "Retired": "ចូលនិវត្ត",
+        "Student": "និស្សិត",
+        "Unemployed": "គ្មានការងារ"
+      },
+      "yearsWorkingExperience": {
+        "Less than 1 year": "តិចជាង ១ ឆ្នាំ",
+        "1 – 3 years": "១ – ៣ ឆ្នាំ",
+        "3 – 5 years": "៣ – ៥ ឆ្នាំ",
+        "5 – 10 years": "៥ – ១០ ឆ្នាំ",
+        "More than 10 years": "លើស ១០ ឆ្នាំ"
+      },
+      "educationalLevel": {
+        "doctorate": "បណ្ឌិត",
+        "master": "អនុបណ្ឌិត",
+        "bachelor": "បរិញ្ញាបត្រ",
+        "below-bachelor": "ក្រោមបរិញ្ញាបត្រ"
+      },
+      "derivativeKnowledge": {
+        "training-course": "អតិថិជនបាន/កំពុងចូលរួមវគ្គបណ្តុះបណ្តាលដេរីវេទីវ",
+        "work-experience": "អតិថិជនមាន/កំពុងមានបទពិសោធន៍ការងារទាក់ទងផលិតផលដេរីវេទីវ",
+        "trading-derivative": "អតិថិជនមាន/កំពុងជួញដូរដេរីវេទីវ",
+        "no-experience": "អតិថិជនមិនមានបទពិសោធន៍ជួញដូរដេរីវេទីវ"
+      },
+      "investmentObjectives": {
+        "short-term": "វិនិយោគរយៈពេលខ្លី",
+        "long-term": "វិនិយោគរយៈពេលវែង",
+        "other": "ផ្សេងទៀត"
+      },
+      "contactPreferences": {
+        "phone": "លេខទូរស័ព្ទ",
+        "email": "អ៊ីមែល",
+        "fax": "ទូរសារ",
+        "send-message": "ផ្ញើសារ",
+        "others": "ផ្សេងទៀត"
+      }
+    }
+  }
+}

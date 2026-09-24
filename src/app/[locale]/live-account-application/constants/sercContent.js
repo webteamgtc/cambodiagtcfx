@@ -1,8 +1,8 @@
 export const FORM_STEPS = [
-  { id: "personal-information", label: "Personal Information" },
-  { id: "questionnaire", label: "Questionnaire" },
-  { id: "identity-information", label: "Identity Information" },
-  { id: "client-agreement", label: "Client Agreement" },
+  { id: "personal-information", labelKey: "personalInformation", fallback: "Personal Information" },
+  { id: "questionnaire", labelKey: "questionnaire", fallback: "Questionnaire" },
+  { id: "identity-information", labelKey: "identityInformation", fallback: "Identity Information" },
+  { id: "client-agreement", labelKey: "clientAgreement", fallback: "Client Agreement" },
 ];
 
 export const EMPLOYMENT_STATUS = [

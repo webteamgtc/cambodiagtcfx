@@ -3672,6 +3672,173 @@
         "website": "Website",
         "email": "Email"
       }
+    },
+    "sercForm": {
+      "steps": {
+        "personalInformation": "Personal Information",
+        "questionnaire": "Questionnaire",
+        "identityInformation": "Identity Information",
+        "clientAgreement": "Client Agreement"
+      },
+      "pendingSubmission": "Pending submission",
+      "actions": {
+        "previous": "Previous",
+        "next": "Next",
+        "submit": "Submit",
+        "submitting": "Submitting..."
+      },
+      "errors": {
+        "fixFields": "Please fix the highlighted fields below before continuing."
+      },
+      "toast": {
+        "success": "Application submitted successfully!",
+        "failed": "Failed to submit application. Please try again."
+      },
+      "common": {
+        "yes": "Yes",
+        "no": "No",
+        "male": "Male",
+        "female": "Female",
+        "self": "Self",
+        "otherPerson": "Other person"
+      },
+      "sections": {
+        "clientInformation": "Client Information",
+        "employmentInformation": "Employment Information",
+        "educationalKnowledge": "Educational and Client Knowledge",
+        "authorizedOwnership": "Authorized Person & Ownership",
+        "attachedDocuments": "Attached Documents for Account Registration",
+        "thirdPartyVerification": "Third-Party Verification",
+        "clientAgreementDerivative": "Client's Agreement for Derivative Trading",
+        "clientSignature": "Client Signature"
+      },
+      "fields": {
+        "fullName": "Client Name (First and Last Name)",
+        "fullNameLatin": "In Latin",
+        "previousName": "Previous Name",
+        "dateOfBirth": "Date of Birth",
+        "nationality": "Nationality",
+        "sex": "Sex",
+        "idPassportNumber": "Identity Card / Passport Number",
+        "issuedBy": "Issued By",
+        "expirationDate": "Expiration Date",
+        "currentAddress": "Current Address",
+        "permanentAddress": "Permanent Address",
+        "phone": "Personal Contact Number",
+        "email": "Email",
+        "hasSpouse": "Do you have a spouse?",
+        "employmentStatus": "Employment Status",
+        "industry": "Industry",
+        "occupation": "Occupation / Job title",
+        "employerName": "Name of Employer / Business",
+        "workplaceAddress": "Workplace Address",
+        "workplaceContact": "Workplace Contact Number",
+        "workingPeriod": "Working Period",
+        "yearsWorkingExperience": "Years of Working Experience",
+        "educationalLevel": "Educational Level",
+        "derivativeKnowledge": "Client Knowledge Related to Derivatives",
+        "investmentObjectives": "Investment Objective",
+        "experienceOtherFinancialMarkets": "Experience in trading in other financial markets",
+        "qualifiedInvestor": "Is the client a qualified investor?",
+        "hasAuthorizedPerson": "An Authorized Person",
+        "authorizedPersonFullName": "Full Name",
+        "authorizedPersonFullNameLatin": "In Latin",
+        "authorizedPersonSex": "Sex",
+        "authorizedPersonAddress": "Current Address",
+        "authorizedPersonPhone": "Contact Number",
+        "authorizedPersonEmail": "Email",
+        "beneficialOwner": "Beneficial Owner",
+        "controllingPerson": "Controlling Person",
+        "isPoliticallyExposed": "Politically Exposed Person (PEP)",
+        "contactPreferences": "Preferred Contact Method",
+        "relationshipDerivativeBroker": "Does the client have any relationship with directors or employees of the derivative broker?",
+        "relationshipCentralCounterparty": "Does the client have any relationship with a director or employee of the central counterparty?",
+        "idCardCopy": "Copied of ID card",
+        "passportVisaCopy": "Copied of Passport or Visa",
+        "familyRecordBookCopy": "Copied of Family record book",
+        "otherDocumentCopy": "Others",
+        "clientSignature": "Sign using mouse/touch screen or type your full legal name",
+        "signatureFile": "Attach signature file (optional)",
+        "agreementAccepted": "I confirm that I have carefully read all of the above terms and conditions, including the risk awareness and disclosure statements. I guarantee that the information provided is true and valid, agree to sign a legally binding contract, and assume all corresponding legal responsibilities. I understand and agree that this electronic signature is equivalent to a handwritten signature."
+      },
+      "placeholders": {
+        "fullName": "Full name",
+        "fullNameLatin": "Full name in Latin",
+        "dateOfBirth": "Select date of birth",
+        "nationality": "Nationality",
+        "idPassportNumber": "ID / Passport number",
+        "issuedBy": "Issuing authority",
+        "expirationDate": "Select expiration date",
+        "currentAddress": "Current address",
+        "permanentAddress": "Permanent address",
+        "email": "Email",
+        "selectEmploymentStatus": "Please select Employment Status",
+        "industry": "Please enter Industry",
+        "occupation": "Please enter Occupation / Job title",
+        "employerName": "Please enter Name of Employer / Business",
+        "workplaceAddress": "Please enter Workplace address",
+        "workplaceContact": "Please enter contact number",
+        "workingPeriod": "e.g. 3 years",
+        "selectYearsExperience": "Please select Years of Working Experience",
+        "phone": "Phone number",
+        "emailAddress": "Email address",
+        "clientSignature": "Type your signature"
+      },
+      "identity": {
+        "chooseFile": "Choose file or drag here",
+        "fileTypes": "PDF, JPG, or PNG",
+        "verificationIntro": "Open the third-party verification page and complete identity verification. After completion, refresh this page to check the result.",
+        "startVerification": "Start Verification",
+        "verificationStarted": "Verification started — complete the external flow, then continue."
+      },
+      "agreement": {
+        "scrollHint": "Scroll inside the viewer to read all pages",
+        "titleKhmer": "កិច្ចព្រមព្រៀងពាណិជ្ជកម្មឧបករណ៍ដេរីវេទីវ",
+        "reviewText": "Review the derivative trading client agreement before signing below.",
+        "openPdf": "Open PDF in new tab",
+        "signaturePreview": "Signature preview",
+        "footerAddress": "Building No. 40, 8th floor, Street No. 289, Village 13, Sangkat Boeung Kak 1, Khan Toul Kork, Phnom Penh. Tel: 017 230 168 | Mobile: 0063 030 916 | Email: info@gtcfx.com.kh | Website: www.gtcfx.com.kh"
+      },
+      "options": {
+        "employmentStatus": {
+          "Employed": "Employed",
+          "Self-employed": "Self-employed",
+          "Retired": "Retired",
+          "Student": "Student",
+          "Unemployed": "Unemployed"
+        },
+        "yearsWorkingExperience": {
+          "Less than 1 year": "Less than 1 year",
+          "1 – 3 years": "1 – 3 years",
+          "3 – 5 years": "3 – 5 years",
+          "5 – 10 years": "5 – 10 years",
+          "More than 10 years": "More than 10 years"
+        },
+        "educationalLevel": {
+          "doctorate": "Doctorate",
+          "master": "Master",
+          "bachelor": "Bachelor",
+          "below-bachelor": "Below Bachelor"
+        },
+        "derivativeKnowledge": {
+          "training-course": "Client has been attending a training derivative course",
+          "work-experience": "Client had / currently have experiences working related to derivative product",
+          "trading-derivative": "Client has / currently trading derivative",
+          "no-experience": "Client has no experience on trading derivative"
+        },
+        "investmentObjectives": {
+          "short-term": "Short term investment",
+          "long-term": "Long term investment",
+          "other": "Other"
+        },
+        "contactPreferences": {
+          "phone": "Phone number",
+          "email": "Email",
+          "fax": "Fax",
+          "send-message": "Send Message",
+          "others": "Others"
+        }
+      }
     }
   },
   "whyGtcGroupPage": {
