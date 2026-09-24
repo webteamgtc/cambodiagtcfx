@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@aws-sdk/client-s3": "^3.1139.0",
     "apexcharts": "^5.10.4",
     "axios": "^1.14.0",
     "clsx": "^2.1.1",

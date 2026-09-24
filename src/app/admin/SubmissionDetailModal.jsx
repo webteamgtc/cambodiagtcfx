@@ -6,14 +6,32 @@ import {
   DETAIL_SECTIONS,
   FIELD_LABELS,
   formatFieldValue,
+  isDocumentLinkValue,
 } from "./submissionDetailConfig";
 
 function DetailRow({ label, value }) {
   if (value === "—") return null;
+
+  let content = value;
+  if (isDocumentLinkValue(value)) {
+    const labelText = value.fileName || "View document";
+    content = (
+      <a
+        href={value.url}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="inline-flex items-center gap-2 font-medium text-[#293B93] underline hover:text-[#243575]"
+      >
+        {labelText}
+        <span className="text-xs font-normal text-[#69729F] no-underline">(open)</span>
+      </a>
+    );
+  }
+
   return (
     <div className="grid gap-1 border-b border-[#EEF2FF] py-3 sm:grid-cols-[minmax(0,220px)_1fr] sm:gap-4">
       <dt className="text-xs font-semibold uppercase tracking-wide text-[#69729F]">{label}</dt>
-      <dd className="text-sm text-[#000032] break-words">{value}</dd>
+      <dd className="text-sm text-[#000032] break-words">{content}</dd>
     </div>
   );
 }
@@ -76,7 +94,7 @@ export default function SubmissionDetailModal({ submission, onClose }) {
                 label: FIELD_LABELS[key] || key,
                 value: formatFieldValue(record[key]),
               }))
-              .filter((row) => row.value !== "—");
+              .filter((row) => row.value !== "—" && row.value != null);
 
             if (rows.length === 0) return null;
 

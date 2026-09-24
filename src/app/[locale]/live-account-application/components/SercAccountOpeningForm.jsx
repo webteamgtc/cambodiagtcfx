@@ -24,6 +24,7 @@ import PersonalInformationStep from "./form/steps/PersonalInformationStep";
 import QuestionnaireStep from "./form/steps/QuestionnaireStep";
 import IdentityInformationStep from "./form/steps/IdentityInformationStep";
 import ClientAgreementStep from "./form/steps/ClientAgreementStep";
+import { buildSubmitFormData } from "../utils/serializeFormSubmission";
 import { serializeFormSubmission } from "../utils/serializeFormSubmission";
 import { useSercFormTranslation } from "../i18n/useSercFormTranslation";
 import "./form/sercDatepicker.css";
@@ -162,15 +163,14 @@ export default function SercAccountOpeningForm() {
 
     try {
       const applicationReference = `CAMBODIA-${Date.now()}`;
-      const submissionData = serializeFormSubmission(values, {
+      const submissionFormData = buildSubmitFormData(values, {
         locale,
         applicationReference,
       });
 
       const response = await fetch("/api/cambodia-form/submit", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(submissionData),
+        body: submissionFormData,
       });
 
       const result = await response.json();

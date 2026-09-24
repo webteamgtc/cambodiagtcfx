@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import { insertCambodiaFormRow } from "@/lib/cambodiaFormDb";
+import { uploadCambodiaFormFile } from "@/lib/s3CambodiaForm";
 
 const FILE_FIELD_KEYS = [
   "idCardCopy",
@@ -11,7 +12,7 @@ const FILE_FIELD_KEYS = [
 
 function serializeFileField(value) {
   if (value == null) return null;
-  if (typeof value === "object" && value.fileName) return value;
+  if (typeof value === "object" && (value.fileName || value.url)) return value;
   return null;
 }
 
@@ -36,7 +37,8 @@ export function normalizeCambodiaFormPayload(body) {
 
   return {
     applicationReference:
-      applicationReference || `CAMBODIA-${Date.now()}-${Math.random().toString(36).slice(2, 8).toUpperCase()}`,
+      applicationReference ||
+      `CAMBODIA-${Date.now()}-${Math.random().toString(36).slice(2, 8).toUpperCase()}`,
     submittedAt: submittedAt || new Date().toISOString(),
     locale: locale || null,
     email: email?.trim?.() || email,
@@ -46,9 +48,32 @@ export function normalizeCambodiaFormPayload(body) {
   };
 }
 
+async function parseSubmitRequest(req) {
+  const contentType = req.headers.get("content-type") || "";
+
+  if (contentType.includes("multipart/form-data")) {
+    const formData = await req.formData();
+    const payloadRaw = formData.get("payload");
+    if (typeof payloadRaw !== "string") {
+      throw new Error("Missing form payload");
+    }
+    const body = JSON.parse(payloadRaw);
+    const files = {};
+    for (const key of FILE_FIELD_KEYS) {
+      const entry = formData.get(key);
+      if (entry && typeof entry === "object" && typeof entry.arrayBuffer === "function") {
+        files[key] = entry;
+      }
+    }
+    return { body, files };
+  }
+
+  return { body: await req.json(), files: {} };
+}
+
 export async function POST(req) {
   try {
-    const body = await req.json();
+    const { body, files } = await parseSubmitRequest(req);
     const normalized = normalizeCambodiaFormPayload(body);
 
     if (!normalized.email) {
@@ -56,6 +81,27 @@ export async function POST(req) {
     }
     if (!normalized.fullName) {
       return NextResponse.json({ success: false, error: "Full name is required" }, { status: 400 });
+    }
+
+    for (const key of FILE_FIELD_KEYS) {
+      const file = files[key];
+      if (!file) continue;
+      try {
+        normalized.formFields[key] = await uploadCambodiaFormFile({
+          applicationReference: normalized.applicationReference,
+          fieldKey: key,
+          file,
+        });
+      } catch (uploadError) {
+        console.error(`[cambodia-form/submit] upload failed for ${key}`, uploadError);
+        return NextResponse.json(
+          {
+            success: false,
+            error: uploadError.message || `Failed to upload ${key}`,
+          },
+          { status: 400 }
+        );
+      }
     }
 
     const formDataJson = JSON.stringify({
