@@ -3461,6 +3461,21 @@
       "eyebrow": "GLOBALLY MULTI-REG BROKER",
       "title": "Open Live Account"
     },
+    "comingSoon": {
+      "badge": "Coming Soon",
+      "title": "Live Account Application",
+      "headline": "We're putting the finishing touches on your onboarding experience.",
+      "description": "Online live account registration for Cambodia will be available here shortly. In the meantime, open a free demo account or speak with our team — we're here to help.",
+      "notify": "Launching soon for Cambodia",
+      "features": {
+        "secure": "Secure verification",
+        "fast": "Fast digital onboarding",
+        "support": "Khmer & English support"
+      },
+      "ctaDemo": "Try free demo",
+      "ctaContact": "Contact support",
+      "ctaHome": "Back to home"
+    },
     "accounts": {
       "standard": {
         "title": "Standard Account",

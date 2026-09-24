@@ -19,7 +19,7 @@ import { useLocationDetail } from "@/context/useLocationDetail";
 import { isUaeCountry } from "@/lib/geo/resolveCountryFromRequest";
 import { getBaseLanguage } from "@/i18n/regionalLocale";
 
-const REGISTER_HREF = "https://web.mygtc.app/user?redirect=%252Fdashboard";
+const REGISTER_HREF = "/live-account-application";
 const LOGIN_HREF = "https://web.mygtc.app/user?redirect=%252Fdashboard";
 
 function isExternalNavHref(href = "") {
@@ -125,8 +125,6 @@ function HeaderActions({
         <>
           <Link
             href={registerHref}
-            target="_blank"
-            rel="noopener noreferrer"
             className="inline-flex h-10 items-center justify-center rounded-full bg-[#293B93] px-3 text-[12px] font-medium text-white transition hover:bg-[#243575] hover:no-underline"
           >
             {registerLabel}
@@ -143,8 +141,6 @@ function HeaderActions({
         <>
           <Link
             href={registerHref}
-            target="_blank"
-            rel="noopener noreferrer"
             className="inline-flex h-9 cursor-pointer text-[#293B93] select-none items-center gap-1.5 rounded-full border border-[#cfd1d7] bg-white hover:bg-primary hover:text-white px-2 text-[12px] font-medium sm:h-10 sm:gap-2 sm:px-3 sm:text-[14px]"
           >
             <UserOutlineIcon />
