@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 160" fill="none" aria-hidden="true">
+  <line x1="0" y1="138" x2="480" y2="138" stroke="#D1D5DB" stroke-width="1.2"/>
+  <path d="M24 138V92H40V138" stroke="#C4C9D4" stroke-width="1.2"/>
+  <path d="M52 138V78H68V138" stroke="#C4C9D4" stroke-width="1.2"/>
+  <path d="M80 138V104H98V138" stroke="#C4C9D4" stroke-width="1.2"/>
+  <path d="M108 138V64H124V138" stroke="#C4C9D4" stroke-width="1.2"/>
+  <path d="M136 138V88H154V138" stroke="#C4C9D4" stroke-width="1.2"/>
+  <path d="M164 138V52H180V138" stroke="#C4C9D4" stroke-width="1.2"/>
+  <path d="M188 138V96H206V138" stroke="#C4C9D4" stroke-width="1.2"/>
+  <path d="M228 138 L244 28 L260 138 Z" stroke="#293B93" stroke-width="1.8" stroke-linejoin="round"/>
+  <path d="M236 138V72H240V138" stroke="#293B93" stroke-width="1.2"/>
+  <path d="M252 138V72H256V138" stroke="#293B93" stroke-width="1.2"/>
+  <path d="M272 138V84H290V138" stroke="#C4C9D4" stroke-width="1.2"/>
+  <path d="M300 138V58H318V138" stroke="#C4C9D4" stroke-width="1.2"/>
+  <path d="M328 138V100H346V138" stroke="#C4C9D4" stroke-width="1.2"/>
+  <path d="M356 138V74H374V138" stroke="#C4C9D4" stroke-width="1.2"/>
+  <path d="M384 138V108H402V138" stroke="#C4C9D4" stroke-width="1.2"/>
+  <path d="M412 138V66H430V138" stroke="#C4C9D4" stroke-width="1.2"/>
+  <path d="M440 138V90H456V138" stroke="#C4C9D4" stroke-width="1.2"/>
+</svg>

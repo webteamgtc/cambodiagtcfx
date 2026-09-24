@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 520" fill="none" aria-hidden="true">
+  <defs>
+    <linearGradient id="towerFade" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#B8BEC8" stop-opacity="0.95"/>
+      <stop offset="55%" stop-color="#C8CDD6" stop-opacity="0.55"/>
+      <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <g stroke="#B0B7C3" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M72 430 L72 180 L118 180 L118 430" />
+    <path d="M118 180 L118 120 L168 90 L168 430" />
+    <path d="M168 90 L248 55 L248 430" />
+    <path d="M248 55 L318 28 L388 55 L388 430" />
+    <path d="M388 55 L458 90 L458 430" />
+    <path d="M458 90 L508 120 L508 430" />
+    <path d="M508 120 L554 180 L554 430" />
+    <path d="M72 430 L554 430" />
+    <path d="M118 180 L168 90" />
+    <path d="M168 90 L248 55" />
+    <path d="M248 55 L318 28" />
+    <path d="M318 28 L388 55" />
+    <path d="M388 55 L458 90" />
+    <path d="M458 90 L508 120" />
+    <path d="M508 120 L554 180" />
+    <path d="M168 160 L458 160" />
+    <path d="M148 220 L478 220" />
+    <path d="M128 280 L498 280" />
+    <path d="M108 340 L518 340" />
+    <path d="M92 400 L534 400" />
+    <path d="M248 55 L248 430" />
+    <path d="M318 28 L318 430" />
+    <path d="M388 55 L388 430" />
+    <path d="M200 120 L200 430" opacity="0.55"/>
+    <path d="M280 95 L280 430" opacity="0.55"/>
+    <path d="M360 95 L360 430" opacity="0.55"/>
+    <path d="M440 120 L440 430" opacity="0.55"/>
+    <path d="M520 200 L520 430" opacity="0.35"/>
+  </g>
+  <text x="318" y="468" text-anchor="middle" fill="#9AA3B2" font-family="Arial, sans-serif" font-size="22" font-weight="600" letter-spacing="4">GTC TOWER</text>
+  <rect x="0" y="0" width="640" height="520" fill="url(#towerFade)" />
+</svg>
