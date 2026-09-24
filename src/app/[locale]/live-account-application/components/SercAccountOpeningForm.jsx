@@ -25,6 +25,8 @@ import QuestionnaireStep from "./form/steps/QuestionnaireStep";
 import IdentityInformationStep from "./form/steps/IdentityInformationStep";
 import ClientAgreementStep from "./form/steps/ClientAgreementStep";
 import { buildSubmitFormData } from "../utils/serializeFormSubmission";
+import { serializeFormSubmission } from "../utils/serializeFormSubmission";
+import { useSercFormTranslation } from "../i18n/useSercFormTranslation";
 import "./form/sercDatepicker.css";
 
 const STEP_COMPONENTS = [
@@ -61,6 +63,8 @@ export default function SercAccountOpeningForm() {
   const router = useRouter();
 
   const locale = useLocale();
+
+  const { t } = useSercFormTranslation();
 
   const [currentStep, setCurrentStep] = useState(0);
 
@@ -184,11 +188,11 @@ export default function SercAccountOpeningForm() {
         })
       );
 
-      toast.success("Application submitted successfully!");
+      toast.success(t("toast.success", "Application submitted successfully!"));
       router.push(localizedHref(locale, "/live-account-application/success"));
     } catch (error) {
       console.error(error);
-      toast.error("Failed to submit application. Please try again.");
+      toast.error(t("toast.failed", "Failed to submit application. Please try again."));
     } finally {
       setIsSubmitting(false);
     }
@@ -204,7 +208,7 @@ export default function SercAccountOpeningForm() {
 
   return (
 
-    <div className="mx-auto max-w-4xl">
+    <div className="mx-auto w-full max-w-6xl md:max-w-7xl">
 
       <style
 
@@ -322,19 +326,6 @@ export default function SercAccountOpeningForm() {
 
         />
 
-
-
-        <header className="mb-8 border-b border-[#EEF2FF] pb-6 text-center">
-
-          <h1 className="HeadingH4 font-semibold text-[#000032]">Profile</h1>
-          <p className="Text mx-auto mt-2 max-w-2xl text-[#69729F]">
-            GTCFX open account form — complete all four steps to submit your application.
-          </p>
-
-        </header>
-
-
-
         <StepIndicator currentStep={currentStep} />
 
 
@@ -349,7 +340,7 @@ export default function SercAccountOpeningForm() {
 
           >
 
-            Please fix the highlighted fields below before continuing.
+            {t("errors.fixFields", "Please fix the highlighted fields below before continuing.")}
 
           </div>
 
@@ -469,7 +460,7 @@ export default function SercAccountOpeningForm() {
 
                     >
 
-                      Previous
+                      {t("actions.previous", "Previous")}
 
                     </button>
 
@@ -493,7 +484,7 @@ export default function SercAccountOpeningForm() {
 
                     >
 
-                      Next
+                      {t("actions.next", "Next")}
 
                     </button>
 
@@ -509,7 +500,9 @@ export default function SercAccountOpeningForm() {
 
                     >
 
-                      {isSubmitting ? "Submitting..." : "Submit"}
+                      {isSubmitting
+                        ? t("actions.submitting", "Submitting...")
+                        : t("actions.submit", "Submit")}
 
                     </button>
 

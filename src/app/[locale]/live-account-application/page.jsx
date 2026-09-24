@@ -37,7 +37,7 @@ export default async function LiveAccountApplicationPage({ searchParams }) {
 
           <section className="pb-14 md:pb-16">
               <div className="container">
-                  <div className="mx-auto max-w-4xl pt-14">
+                  <div className="mx-auto max-w-6xl pt-10 md:max-w-7xl md:pt-14">
                       <Suspense fallback={<div>Loading...</div>}>
                           <SercAccountOpeningForm />
                       </Suspense>
