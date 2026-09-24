@@ -22,8 +22,8 @@ export default function MainHeader({ locale = "en", navigation = {} }) {
   const [mobileExpanded, setMobileExpanded] = useState(null);
   const [scrolled, setScrolled] = useState(false);
 
-  const navItems = getNavItems(navigation);
-  const megaMenuData = getMegaMenuData(navigation);
+  const navItems = getNavItems(navigation, locale);
+  const megaMenuData = getMegaMenuData(navigation, locale);
   const { displayKey: megaDisplayKey, motionOpen: megaMotionOpen } =
     useMegaMenuPanelMotion(activeMegaMenu);
   const loginText = translationTextByPath(

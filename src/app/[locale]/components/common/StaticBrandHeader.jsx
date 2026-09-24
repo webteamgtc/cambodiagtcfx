@@ -282,8 +282,11 @@ export default function StaticBrandHeader() {
       navigation
     ),
   };
-  const navItems = useMemo(() => getNavItems(navigation), [navigation]);
-  const megaMenuData = useMemo(() => getMegaMenuData(navigation), [navigation]);
+  const navItems = useMemo(() => getNavItems(navigation, locale), [navigation, locale]);
+  const megaMenuData = useMemo(
+    () => getMegaMenuData(navigation, locale),
+    [navigation, locale]
+  );
 
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [mobileLanguageOpen, setMobileLanguageOpen] = useState(false);

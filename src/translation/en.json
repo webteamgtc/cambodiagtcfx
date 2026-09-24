@@ -525,6 +525,22 @@
       "prime": "Company",
       "learn": "Learn"
     },
+    "topbar": {
+      "register": "Register",
+      "member": "Log In",
+      "rgister": "Partner With Us",
+      "riskWarning": "CFDs are highly speculative, leveraged instruments. Trading in CFDs carries a high degree of risk to your capital. Investors should ensure they possess adequate market knowledge or seek independent financial advice before executing trades.",
+      "riskWarningUS": "Trading CFDs involves significant risk and may result in the loss of your invested capital. You should carefully consider whether trading is appropriate for your financial circumstances and obtain independent financial advice where necessary. GTCFX services are not offered to residents of the United States or in jurisdictions where the distribution or use of such services is prohibited by applicable laws or regulations."
+    },
+    "a11y": {
+      "language": "Language",
+      "openMenu": "Open menu",
+      "closeMenu": "Close menu",
+      "primaryNav": "Primary navigation",
+      "mobileNav": "Mobile navigation",
+      "expandSubmenu": "Expand {label} submenu",
+      "collapseSubmenu": "Collapse {label} submenu"
+    },
     "megaMenu": {
       "learn": {
         "columns": {

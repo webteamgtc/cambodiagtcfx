@@ -2,6 +2,8 @@ import { translationText, translationTextByPath } from "@/i18n/tranlsationText";
 import { getDictionary } from "@/i18n/request";
 import { localizedHref } from "@/i18n/localizedHref";
 import { isCareerHref } from "@/config/featureFlags";
+import { CAMBODIA_SITE } from "@/config/cambodiaSite";
+import { getBaseLanguage } from "@/i18n/regionalLocale";
 
 /** Mega menu key → hub URL segment (e.g. `/company`) */
 export const MENU_HUB_PATHS = {
@@ -49,7 +51,12 @@ function filterMenuLinks(links = []) {
   return links.filter((link) => !isCareerHref(link.href));
 }
 
-export function getNavItems(navigation = {}) {
+function isNavKeyHiddenForLocale(key, locale) {
+  if (getBaseLanguage(locale) !== "km") return false;
+  return (CAMBODIA_SITE.navHiddenForKhmer || []).includes(key);
+}
+
+export function getNavItems(navigation = {}, locale = "en-intl") {
   return [
     {
       key: "prime",
@@ -71,17 +78,17 @@ export function getNavItems(navigation = {}) {
       key: "about",
       label: translationTextByPath("menu.about", defaultNavText.menu.about, navigation),
     },
-  ];
+  ].filter((item) => !isNavKeyHiddenForLocale(item.key, locale));
 }
 
-export function getMegaMenuData(navigation = {}) {
+export function getMegaMenuData(navigation = {}, locale = "en-intl") {
   const about = navigation?.about || {};
   const account = navigation?.account || {};
   const trading = navigation?.trading || {};
   const prime = navigation?.prime || {};
   const learn = navigation?.learn || {};
 
-  return {
+  const data = {
     /** Learn */
     learn: {
       title: pick(learn.lable, defaultNavText.menu.learn),
@@ -523,6 +530,15 @@ export function getMegaMenuData(navigation = {}) {
       },
     },
   };
+
+  if (getBaseLanguage(locale) === "km") {
+    const hidden = new Set(CAMBODIA_SITE.navHiddenForKhmer || []);
+    return Object.fromEntries(
+      Object.entries(data).filter(([key]) => !hidden.has(key))
+    );
+  }
+
+  return data;
 }
 
 export function getMenuHubSlug(menuKey) {
@@ -536,7 +552,7 @@ export function getMenuHubPath(menuKey, locale = "en") {
 }
 
 export function getMenuHubTabs(menuKey, locale = "en", navigation = {}) {
-  const mega = getMegaMenuData(navigation);
+  const mega = getMegaMenuData(navigation, locale);
   const section = mega[menuKey];
   if (!section) {
     return { title: "", links: [] };

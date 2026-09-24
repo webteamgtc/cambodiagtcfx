@@ -9,4 +9,6 @@ export const CAMBODIA_SITE = {
   khmerLocale: "km-intl",
   englishLocale: "en-intl",
   globalFallbackUrl: "https://www.gtcfx.com/en-intl/",
+  /** Main nav mega-menu keys hidden when the site is shown in Khmer. */
+  navHiddenForKhmer: ["learn"],
 };
