@@ -52,7 +52,7 @@ export const CONTACT_PREFERENCE_OPTIONS = [
   { value: "others", label: "Others" },
 ];
 
-export const CLIENT_AGREEMENT_PDF_URL = "/documents/client-agreement-derivative-trading.pdf";
+export const CLIENT_AGREEMENT_PDF_URL = "/client-agreement-derivative-trading.pdf";
 
 export const INITIAL_FORM_VALUES = {
   fullName: "",
