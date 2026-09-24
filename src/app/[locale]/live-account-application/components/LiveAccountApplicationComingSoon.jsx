@@ -5,6 +5,7 @@ import { useLocale, usePathTranslation } from "@/app/[locale]/LocaleProvider";
 import { localizedHref } from "@/i18n/localizedHref";
 import Button from "@/app/[locale]/components/common/Button";
 import LiveAccountApplicationContactBar from "./LiveAccountApplicationContactBar";
+import SercAccountOpeningForm from "./SercAccountOpeningForm";
 
 const FEATURE_KEYS = ["secure", "fast", "support"];
 
@@ -111,7 +112,8 @@ export default function LiveAccountApplicationComingSoon() {
       />
 
       <div className="container relative z-10">
-        <div className="mx-auto max-w-3xl text-center">
+        <SercAccountOpeningForm />
+        {/* <div className="mx-auto max-w-3xl text-center">
           <span className="inline-flex items-center gap-2 rounded-full border border-[#293B93]/20 bg-white/80 px-4 py-2 text-[11px] font-semibold uppercase tracking-[0.22em] text-[#293B93] shadow-sm backdrop-blur-sm">
             <span className="relative flex h-2 w-2">
               <span className="laa-pulse-ring absolute inline-flex h-full w-full rounded-full bg-[#293B93]" />
@@ -220,7 +222,7 @@ export default function LiveAccountApplicationComingSoon() {
             </div>
           </div>
 
-        </div>
+        </div> */}
       </div>
     </div>
   );

@@ -1,0 +1,109 @@
+.serc-datepicker-wrapper {
+  display: block;
+  width: 100%;
+}
+
+.serc-datepicker-popper {
+  z-index: 60 !important;
+}
+
+.serc-datepicker-popper[data-placement^="bottom"] {
+  padding-top: 6px;
+}
+
+.serc-datepicker {
+  font-family: inherit;
+  border: 1px solid #e1e7f6;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 16px 40px rgba(41, 59, 147, 0.16);
+}
+
+.serc-datepicker .react-datepicker__header {
+  background: #293b93;
+  border-bottom: none;
+  padding-top: 12px;
+}
+
+.serc-datepicker .react-datepicker__current-month,
+.serc-datepicker .react-datepicker__day-name {
+  color: #fff;
+  font-weight: 600;
+}
+
+.serc-datepicker .react-datepicker__day-name {
+  opacity: 0.85;
+  font-size: 0.7rem;
+}
+
+.serc-datepicker .react-datepicker__navigation-icon::before {
+  border-color: #fff;
+}
+
+.serc-datepicker .react-datepicker__navigation:hover *::before {
+  border-color: #dbeafe;
+}
+
+.serc-datepicker .react-datepicker__month-dropdown-container--select,
+.serc-datepicker .react-datepicker__year-dropdown-container--select {
+  margin: 0 4px 8px;
+}
+
+.serc-datepicker .react-datepicker__month-select,
+.serc-datepicker .react-datepicker__year-select {
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  background: rgba(255, 255, 255, 0.12);
+  color: #fff;
+  font-size: 0.8rem;
+  padding: 4px 8px;
+}
+
+.serc-datepicker .react-datepicker__month-select option,
+.serc-datepicker .react-datepicker__year-select option {
+  color: #000032;
+}
+
+.serc-datepicker .react-datepicker__month {
+  margin: 0.4rem;
+}
+
+.serc-datepicker .react-datepicker__day {
+  color: #000032;
+  border-radius: 8px;
+  line-height: 1.9rem;
+  width: 2rem;
+  margin: 0.1rem;
+}
+
+.serc-datepicker .react-datepicker__day:hover {
+  background: #eef2ff;
+  color: #293b93;
+}
+
+.serc-datepicker .react-datepicker__day--selected,
+.serc-datepicker .react-datepicker__day--keyboard-selected {
+  background: #293b93;
+  color: #fff;
+}
+
+.serc-datepicker .react-datepicker__day--selected:hover,
+.serc-datepicker .react-datepicker__day--keyboard-selected:hover {
+  background: #243575;
+  color: #fff;
+}
+
+.serc-datepicker .react-datepicker__day--disabled {
+  color: #c5cee8;
+}
+
+.serc-datepicker .react-datepicker__day--outside-month {
+  color: #8892b0;
+}
+
+.serc-datepicker .react-datepicker__today-button {
+  background: #f8f9fd;
+  border-top: 1px solid #eef2ff;
+  color: #293b93;
+  font-weight: 600;
+}

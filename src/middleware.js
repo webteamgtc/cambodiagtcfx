@@ -85,6 +85,7 @@ export async function middleware(request) {
   if (
     pathname.startsWith("/_next") ||
     pathname.startsWith("/api") ||
+    pathname.startsWith("/admin") ||
     pathname === "/favicon.ico" ||
     PUBLIC_FILE.test(pathname)
   ) {
