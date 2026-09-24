@@ -139,6 +139,9 @@ export function formatFieldValue(value) {
     return value.join(", ");
   }
   if (typeof value === "object") {
+    if (value.url) {
+      return value;
+    }
     if (value.fileName) {
       const kb = value.fileSize ? ` (${Math.round(value.fileSize / 1024)} KB)` : "";
       return `${value.fileName}${kb}`;
@@ -148,6 +151,10 @@ export function formatFieldValue(value) {
   if (value === "yes") return "Yes";
   if (value === "no") return "No";
   return String(value);
+}
+
+export function isDocumentLinkValue(value) {
+  return value && typeof value === "object" && typeof value.url === "string" && value.url.length > 0;
 }
 
 export function buildSubmissionDetailRecord(row) {
