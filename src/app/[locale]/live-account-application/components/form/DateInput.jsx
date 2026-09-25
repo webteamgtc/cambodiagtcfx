@@ -63,6 +63,7 @@ export default function DateInput({
   hasError = false,
   placeholder = "Select date",
   enableYearSelect = false,
+  yearDropdownItemNumber = 15,
   className = "",
 }) {
   const selected = parseFormDate(value);
@@ -95,6 +96,7 @@ export default function DateInput({
       showMonthDropdown={enableYearSelect}
       showYearDropdown={enableYearSelect}
       scrollableYearDropdown={enableYearSelect}
+      yearDropdownItemNumber={enableYearSelect ? yearDropdownItemNumber : undefined}
       dropdownMode="select"
       popperProps={{ strategy: "fixed" }}
       customInput={<DatePickerInput hasError={hasError} className={className} placeholder={placeholder} />}

@@ -2,10 +2,21 @@ import PhoneInput from "react-phone-number-input";
 import "react-phone-number-input/style.css";
 import FormSection from "../FormSection";
 import FieldWrapper, { TextInput, SelectInput, DateInput } from "../FieldWrapper";
-import { YesNoField, RadioOptions, useStepFieldErrors } from "../formFields";
+import { YesNoField, RadioOptions, CheckboxOptions, useStepFieldErrors } from "../formFields";
 import { hasFieldError } from "../formUtils";
-import { EMPLOYMENT_STATUS, YEARS_WORKING_EXPERIENCE } from "../../../constants/sercContent";
-import { useSercFormTranslation } from "../../../i18n/useSercFormTranslation";
+import PersonContactFields from "../PersonContactFields";
+import {
+  EMPLOYMENT_STATUS,
+  YEARS_WORKING_EXPERIENCE,
+  MONTHLY_INCOME_AFTER_TAX_RANGES,
+  OTHER_INCOME_SOURCE_OPTIONS,
+} from "../../../constants/sercContent";
+import { mapOptionLabels, useSercFormTranslation } from "../../../i18n/useSercFormTranslation";
+
+function toggleArrayValue(current, value) {
+  const list = current || [];
+  return list.includes(value) ? list.filter((item) => item !== value) : [...list, value];
+}
 
 export default function PersonalInformationStep({
   values,
@@ -19,6 +30,12 @@ export default function PersonalInformationStep({
 }) {
   const { field, placeholder, section, option, t } = useSercFormTranslation();
   const fieldError = useStepFieldErrors(errors, touched, showErrors);
+  const monthlyIncomeRangeOptions = mapOptionLabels(
+    MONTHLY_INCOME_AFTER_TAX_RANGES,
+    "monthlyIncomeAfterTax",
+    option
+  );
+  const otherIncomeOptions = mapOptionLabels(OTHER_INCOME_SOURCE_OPTIONS, "otherIncomeSources", option);
 
   const maxDateOfBirth = new Date(Date.now() - 18 * 365.25 * 24 * 60 * 60 * 1000)
     .toISOString()
@@ -60,6 +77,7 @@ export default function PersonalInformationStep({
           onChange={handleChange}
           error={fieldError("hasPreviousName")}
           required
+          noLabel={t("common.noNever", "No Never")}
         />
 
         {values.hasPreviousName === "yes" && (
@@ -137,6 +155,8 @@ export default function PersonalInformationStep({
               name="expirationDate"
               value={values.expirationDate}
               min={minExpirationDate}
+              enableYearSelect
+              yearDropdownItemNumber={30}
               placeholder={placeholder("expirationDate", "Select expiration date")}
               onChange={handleChange}
               onBlur={handleBlur}
@@ -190,6 +210,9 @@ export default function PersonalInformationStep({
           </FieldWrapper>
         </div>
 
+      </FormSection>
+
+      <FormSection icon="②" title={section("spouse", "Spouse")} required>
         <YesNoField
           label={field("hasSpouse", "Do you have a spouse?")}
           name="hasSpouse"
@@ -198,9 +221,70 @@ export default function PersonalInformationStep({
           error={fieldError("hasSpouse")}
           required
         />
+        {values.hasSpouse === "yes" ? (
+          <PersonContactFields
+            prefix="spouse"
+            values={values}
+            fieldError={fieldError}
+            handleChange={handleChange}
+            handleBlur={handleBlur}
+            field={field}
+            placeholder={placeholder}
+            sexOptions={sexOptions}
+          />
+        ) : null}
       </FormSection>
 
-      <FormSection icon="②" title={section("employmentInformation", "Employment Information")} required>
+      <FormSection icon="⑥" title={section("monthlyIncome", "Monthly Income")} required>
+        <YesNoField
+          name="hasMonthlyIncome"
+          value={values.hasMonthlyIncome}
+          onChange={handleChange}
+          error={fieldError("hasMonthlyIncome")}
+          required
+          hideLabel
+        />
+        {values.hasMonthlyIncome === "yes" ? (
+          <div className="space-y-4 rounded-lg border border-[#EEF2FF] bg-[#F8F9FD] p-4">
+            <RadioOptions
+              label={field("monthlyIncomeAfterTax", "Monthly income after Tax deduction ($)")}
+              name="monthlyIncomeAfterTax"
+              value={values.monthlyIncomeAfterTax}
+              required
+              vertical
+              error={fieldError("monthlyIncomeAfterTax")}
+              options={monthlyIncomeRangeOptions}
+              onChange={handleChange}
+            />
+            <CheckboxOptions
+              label={field("otherIncomeSources", "Source of other income (if any)")}
+              error={fieldError("otherIncomeSources")}
+              values={values.otherIncomeSources}
+              options={otherIncomeOptions}
+              onToggle={(value) =>
+                setFieldValue("otherIncomeSources", toggleArrayValue(values.otherIncomeSources, value))
+              }
+            />
+            {values.otherIncomeSources?.includes("others") ? (
+              <FieldWrapper
+                label={field("otherIncomeSourceDetails", "Please specify other income source")}
+                required
+                error={fieldError("otherIncomeSourceDetails")}
+              >
+                <TextInput
+                  name="otherIncomeSourceDetails"
+                  value={values.otherIncomeSourceDetails}
+                  onChange={handleChange}
+                  onBlur={handleBlur}
+                  placeholder={placeholder("otherIncomeSourceDetails", "Describe other income source")}
+                />
+              </FieldWrapper>
+            ) : null}
+          </div>
+        ) : null}
+      </FormSection>
+
+      <FormSection title={section("employmentFinancialInformation", "Employment & Financial Information")} required>
         <FieldWrapper label={field("employmentStatus", "Employment Status")} required error={fieldError("employmentStatus")}>
           <SelectInput
             name="employmentStatus"

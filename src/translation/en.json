@@ -3697,6 +3697,7 @@
       "common": {
         "yes": "Yes",
         "no": "No",
+        "noNever": "No Never",
         "male": "Male",
         "female": "Female",
         "self": "Self",
@@ -3704,8 +3705,19 @@
       },
       "sections": {
         "clientInformation": "Client Information",
+        "spouse": "Spouse",
+        "monthlyIncome": "Monthly Income",
         "employmentInformation": "Employment Information",
+        "employmentFinancialInformation": "Employment & Financial Information",
         "educationalKnowledge": "Educational and Client Knowledge",
+        "investmentGoals": "Investment Goals",
+        "investmentExperiences": "Investment Experiences",
+        "qualifiedInvestors": "Qualified Investors",
+        "relationship": "Relationship",
+        "moneyLaunderingRecord": "Money Laundering Record (Last 3 Years)",
+        "marginCallContact": "Method of Contact in Case of Margin Call",
+        "clientRelations": "Client Relations",
+        "emergencyContact": "Emergency Contact Person (Not a Client)",
         "authorizedOwnership": "Authorized Person & Ownership",
         "attachedDocuments": "Attached Documents for Account Registration",
         "thirdPartyVerification": "Third-Party Verification",
@@ -3727,6 +3739,20 @@
         "phone": "Personal Contact Number",
         "email": "Email",
         "hasSpouse": "Do you have a spouse?",
+        "hasMonthlyIncome": "Do you have a monthly income to declare?",
+        "monthlyIncomeAfterTax": "Monthly income after Tax deduction ($)",
+        "otherIncomeSources": "Source of other income (if any)",
+        "otherIncomeSourceDetails": "Please specify other income source",
+        "qualifiedInvestorIfYes": "If Yes, please specify:",
+        "authorizedPersonName": "Authorized person name",
+        "authorizedPersonRelationship": "Relationship to account owner",
+        "beneficialOwnerOtherDetails": "Beneficial owner (other person) details",
+        "controllingPersonOtherDetails": "Controlling person (other person) details",
+        "moneyLaunderingRecordLast3Years": "Any money laundering record or related regulatory action in the last 3 years?",
+        "moneyLaunderingRecordDetails": "Please provide details",
+        "relationshipDerivativeBrokerDetails": "Relationship details",
+        "relationshipCentralCounterpartyDetails": "Relationship details",
+        "investmentObjectiveOtherDetails": "Please specify other investment objective",
         "employmentStatus": "Employment Status",
         "industry": "Industry",
         "occupation": "Occupation / Job title",
@@ -3779,15 +3805,31 @@
         "workplaceAddress": "Please enter Workplace address",
         "workplaceContact": "Please enter contact number",
         "workingPeriod": "e.g. 3 years",
+        "otherIncomeSourceDetails": "Describe other income source",
+        "marketName": "Market Name",
+        "productType": "Product Type",
+        "country": "Country",
+        "year": "Year",
+        "authorizedPersonName": "Please specify name",
+        "authorizedPersonRelationship": "Relationship to account owner",
+        "directorEmployeeName": "Director or employee name",
+        "counterpartyName": "Central counterparty name",
+        "relationshipAs": "As (Relationship)",
+        "beneficialOwnerOtherDetails": "Full name and relationship to client",
+        "controllingPersonOtherDetails": "Full name and relationship to client",
+        "investmentObjectiveOther": "Describe your objective",
         "selectYearsExperience": "Please select Years of Working Experience",
         "phone": "Phone number",
         "emailAddress": "Email address",
-        "clientSignature": "Type your signature"
+        "clientSignature": "Type your signature",
+        "otherDocumentDescription": "Specify other documents"
       },
       "identity": {
         "chooseFile": "Choose file or drag here",
+        "uploadDocument": "Upload document",
         "fileTypes": "PDF, JPG, or PNG",
         "verificationIntro": "Open the third-party verification page and complete identity verification. After completion, refresh this page to check the result.",
+        "verificationIntroScan": "Open the third-party verification page and scan the code to verify. After completion, wait a moment and refresh the page to check the result.",
         "startVerification": "Start Verification",
         "verificationStarted": "Verification started — complete the external flow, then continue."
       },
@@ -3837,7 +3879,29 @@
           "fax": "Fax",
           "send-message": "Send Message",
           "others": "Others"
+        },
+        "monthlyIncomeAfterTax": {
+          "0-250": "0 – 250",
+          "251-500": "251 – 500",
+          "501-750": "501 – 750",
+          "751-1000": "751 – 1000",
+          "more-than-1000": "More than 1000"
+        },
+        "otherIncomeSources": {
+          "dividend-securities-bonds": "Dividend / Interest from securities / Bonds",
+          "dividends-company": "Dividends from the company itself",
+          "interest-bank": "Interest from bank",
+          "others": "Others"
+        },
+        "qualifiedInvestorCriteria": {
+          "net-assets-250k": "Client has total net assets less than $250,000",
+          "annual-income-20k": "Client has an annual income at least $20,000",
+          "cambodia-securities-25k": "Client has previously invested in securities sector in Cambodia for at least $25,000"
         }
+      },
+      "questionnaire": {
+        "market1": "MARKET 1",
+        "market2": "MARKET 2"
       }
     }
   },

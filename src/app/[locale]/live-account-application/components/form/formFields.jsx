@@ -6,15 +6,15 @@ export function useStepFieldErrors(errors, touched, showErrors) {
   return (name) => getFieldError(errors, name, showErrors, touched);
 }
 
-export function YesNoField({ label, name, value, onChange, error, required }) {
+export function YesNoField({ label, name, value, onChange, error, required, noLabel, hideLabel }) {
   const { t } = useSercFormTranslation();
   const options = [
-    { value: "no", label: t("common.no", "No") },
+    { value: "no", label: noLabel ?? t("common.no", "No") },
     { value: "yes", label: t("common.yes", "Yes") },
   ];
 
   return (
-    <FieldWrapper label={label} required={required} error={error}>
+    <FieldWrapper label={hideLabel ? undefined : label} required={required} error={error}>
       <div className="flex flex-wrap gap-4">
         {options.map((opt) => (
           <label key={opt.value} className="inline-flex cursor-pointer items-center gap-2 text-sm text-[#000032]">
@@ -34,10 +34,14 @@ export function YesNoField({ label, name, value, onChange, error, required }) {
   );
 }
 
-export function RadioOptions({ label, name, value, options, onChange, error, required }) {
+export function RadioOptions({ label, name, value, options, onChange, error, required, vertical }) {
+  const groupClass = vertical
+    ? "flex flex-col gap-2"
+    : "flex flex-col gap-2 sm:flex-row sm:flex-wrap sm:gap-4";
+
   return (
     <FieldWrapper label={label} required={required} error={error}>
-      <div className="flex flex-col gap-2 sm:flex-row sm:flex-wrap sm:gap-4">
+      <div className={groupClass}>
         {options.map((opt) => (
           <label key={opt.value} className="inline-flex cursor-pointer items-center gap-2 text-sm text-[#000032]">
             <input

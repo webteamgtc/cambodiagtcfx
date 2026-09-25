@@ -63,6 +63,21 @@ export function TextInput({ className = "", hasError = false, ...props }) {
 
 TextInput.displayName = "TextInput";
 
+export function TextArea({ className = "", hasError = false, rows = 4, ...props }) {
+  return (
+    <textarea
+      rows={rows}
+      aria-invalid={hasError}
+      className={`w-full rounded-lg border px-3 py-2.5 text-sm text-[#000032] outline-none transition focus:ring-1 ${
+        hasError ? errorInputClass : normalInputClass
+      } ${className}`}
+      {...props}
+    />
+  );
+}
+
+TextArea.displayName = "TextArea";
+
 export { DateInput };
 
 export function SelectInput({ children, className = "", hasError = false, ...props }) {
