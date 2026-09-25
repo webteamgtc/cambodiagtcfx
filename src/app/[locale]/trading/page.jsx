@@ -37,7 +37,7 @@ export default async function TradingHubPage({ params }) {
         <TradingHubSection locale={locale} links={links} />
         <TradingOpenAccountSection />
         <TradingFundAccountSection locale={locale} />
-        <TradingAccountTypesSection />
+        {/* <TradingAccountTypesSection /> */}
       </Suspense>
       <Suspense fallback={null}>
         <TradingPlatformsSection locale={locale} />
@@ -46,7 +46,6 @@ export default async function TradingHubPage({ params }) {
         {/* <TradingSwapFreeSection /> */}
       </Suspense>
       <Suspense fallback={null}>
-        <TradingAdvantagesSection />
         <TradingVpsPricingSection locale={locale} />
         <SupportCtaSection locale={locale} />
       </Suspense>

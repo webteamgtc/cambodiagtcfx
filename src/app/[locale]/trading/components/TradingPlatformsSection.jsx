@@ -13,7 +13,6 @@ const DOWNLOAD_APP_IMAGE = "/new-design/Trading/app.webp";
 const ROWS = [
   { id: "mt4-left", type: "platform", translationKey: "mt4", reverse: false },
   { id: "mt5-right", type: "platform", translationKey: "mt5", reverse: true },
-  { id: "download-app", type: "download", reverse: false },
 ];
 
 function PlatformVisual({ imageAlt }) {

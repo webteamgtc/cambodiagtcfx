@@ -33,8 +33,6 @@ const FOOTER_COLUMN_DEFS = [
         section: "quickNavigation",
         titleFallback: "Quick Navigation",
         links: [
-            { key: "menu1", href: "/trading/account-types", fallback: "Account Types" },
-            { key: "menu2", href: "/copy-trading", fallback: "Copy Trading" },
             { key: "menu3", href: "/trading/deposit", fallback: "Deposit & Withdraw" },
             { key: "menu4", href: "/markets", fallback: "Trading Instruments" },
             { key: "menu5", href: "/company/events-and-exhibitions", fallback: "Promotions" },
@@ -47,7 +45,6 @@ const FOOTER_COLUMN_DEFS = [
         links: [
             { key: "menu2", href: "/trading/mt4-platform", fallback: "MT4" },
             { key: "menu3", href: "/trading/mt5-platform", fallback: "MT5" },
-            { key: "menu1", href: "/trading/gtc-go-app", fallback: "GTC Go" },
         ],
     },
     {

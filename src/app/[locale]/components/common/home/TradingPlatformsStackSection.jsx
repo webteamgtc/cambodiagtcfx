@@ -179,17 +179,17 @@ export default function TrustPromiseSection() {
 
   const cards = useMemo(
     () => [
-      {
-        id: "go",
-        iconLetter: cfg?.cards?.go?.iconLetter ?? "G",
-        title: t("cards.go.title", "GTC Go App"),
-        description: t("cards.go.description", "Trade markets anytime, anywhere"),
-        visual: <VisualMobile imageAlt={t("cards.go.title", "GTC Go App")} />,
-        icon: "/new-design/go-app.webp",
-        btnText: t("cards.go.buttonText", "Download Our App"),
-        href: "/trading/gtc-go-app",
-        className: "h-10 w-10 object-contain",
-      },
+      // {
+      //   id: "go",
+      //   iconLetter: cfg?.cards?.go?.iconLetter ?? "G",
+      //   title: t("cards.go.title", "GTC Go App"),
+      //   description: t("cards.go.description", "Trade markets anytime, anywhere"),
+      //   visual: <VisualMobile imageAlt={t("cards.go.title", "GTC Go App")} />,
+      //   icon: "/new-design/go-app.webp",
+      //   btnText: t("cards.go.buttonText", "Download Our App"),
+      //   href: "/trading/gtc-go-app",
+      //   className: "h-10 w-10 object-contain",
+      // },
       {
         id: "mt5",
         iconLetter: cfg?.cards?.mt5?.iconLetter ?? "5",
