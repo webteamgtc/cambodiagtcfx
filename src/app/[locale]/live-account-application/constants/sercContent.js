@@ -54,11 +54,11 @@ export const CONTACT_PREFERENCE_OPTIONS = [
 
 /** Margin call contact: checkbox value → form field for detail input (null = no input). */
 export const MARGIN_CALL_CONTACT_FIELDS = [
-  { value: "phone", detailKey: "marginCallContactPhone", placeholder: "Phone number" },
-  { value: "email", detailKey: "marginCallContactEmail", placeholder: "Email address" },
-  { value: "fax", detailKey: "marginCallContactFax", placeholder: "Fax number" },
+  { value: "phone", detailKey: "marginCallContactPhone", placeholderKey: "marginCallContactPhone" },
+  { value: "email", detailKey: "marginCallContactEmail", placeholderKey: "marginCallContactEmail" },
+  { value: "fax", detailKey: "marginCallContactFax", placeholderKey: "marginCallContactFax" },
   { value: "send-message", detailKey: null },
-  { value: "others", detailKey: "marginCallContactOthers", placeholder: "Specify other methods" },
+  { value: "others", detailKey: "marginCallContactOthers", placeholderKey: "marginCallContactOthers" },
 ];
 
 export const QUALIFIED_INVESTOR_CRITERIA = [

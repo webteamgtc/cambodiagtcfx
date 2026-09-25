@@ -3822,7 +3822,11 @@
         "phone": "Phone number",
         "emailAddress": "Email address",
         "clientSignature": "Type your signature",
-        "otherDocumentDescription": "Specify other documents"
+        "otherDocumentDescription": "Specify other documents",
+        "marginCallContactPhone": "Phone number",
+        "marginCallContactEmail": "Email address",
+        "marginCallContactFax": "Fax number",
+        "marginCallContactOthers": "Specify other methods"
       },
       "identity": {
         "chooseFile": "Choose file or drag here",

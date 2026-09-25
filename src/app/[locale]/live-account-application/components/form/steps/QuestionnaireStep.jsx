@@ -75,7 +75,7 @@ function MarketExperienceBlock({ title, prefix, values, fieldError, handleChange
   );
 }
 
-function MarginCallContactGrid({ values, fieldError, setFieldValue, handleChange, handleBlur, option }) {
+function MarginCallContactGrid({ values, fieldError, setFieldValue, handleChange, handleBlur, option, placeholder }) {
   const prefs = values.contactPreferences || [];
 
   const toggleContact = (contactValue, detailKey) => {
@@ -88,7 +88,7 @@ function MarginCallContactGrid({ values, fieldError, setFieldValue, handleChange
 
   return (
     <div className="grid gap-6 sm:grid-cols-2">
-      {MARGIN_CALL_CONTACT_FIELDS.map(({ value, detailKey, placeholder: ph }) => {
+      {MARGIN_CALL_CONTACT_FIELDS.map(({ value, detailKey, placeholderKey }) => {
         const label = option("contactPreferences", value, value);
         const checked = prefs.includes(value);
         const showDetail = checked && detailKey;
@@ -111,7 +111,11 @@ function MarginCallContactGrid({ values, fieldError, setFieldValue, handleChange
                   value={values[detailKey] || ""}
                   onChange={handleChange}
                   onBlur={handleBlur}
-                  placeholder={ph}
+                  placeholder={
+                  placeholderKey
+                    ? placeholder(placeholderKey, placeholderKey)
+                    : undefined
+                }
                   aria-invalid={Boolean(fieldError(detailKey))}
                 />
                 {fieldError(detailKey) ? (
@@ -377,6 +381,7 @@ export default function QuestionnaireStep({
           handleChange={handleChange}
           handleBlur={handleBlur}
           option={option}
+          placeholder={placeholder}
         />
       </FormSection>
 

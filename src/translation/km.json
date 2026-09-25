@@ -3860,6 +3860,7 @@
       "common": {
         "yes": "បាទ/ចាស",
         "no": "ទេ",
+        "noNever": "មិនដែល",
         "male": "ប្រុស",
         "female": "ស្រី",
         "self": "ខ្លួនឯង",
@@ -3867,8 +3868,19 @@
       },
       "sections": {
         "clientInformation": "ព័ត៌មានអតិថិជន",
+        "spouse": "ប្តី/ប្រពន្ធ",
+        "monthlyIncome": "ប្រាក់ចំណូលប្រចាំខែ",
         "employmentInformation": "ព័ត៌មានការងារ",
+        "employmentFinancialInformation": "ព័ត៌មានការងារ និងហិរញ្ញវត្ថុ",
         "educationalKnowledge": "កម្រិតអប់រំ និងចំណេះដឹងអតិថិជន",
+        "investmentGoals": "គោលបំណងវិនិយោគ",
+        "investmentExperiences": "បទពិសោធន៍វិនិយោគ",
+        "qualifiedInvestors": "វិនិយោគិន qualified",
+        "relationship": "ទំនាក់ទំនង",
+        "moneyLaunderingRecord": "កំណត់ត្រាបោកបញ្ឆោតខ្នាធនុប្ប (៣ ឆ្នាំចុងក្រោយ)",
+        "marginCallContact": "វិធីទំនាក់ទំនងក្នុងករណី Margin Call",
+        "clientRelations": "ទំនាក់ទងអតិថិជន",
+        "emergencyContact": "បុគ្គលទំនាក់ទំនងបន្ទាន់ (មិនមែនអតិថិជន)",
         "authorizedOwnership": "បុគ្គលអនុញ្ញាត និងកម្មសិទ្ធិ",
         "attachedDocuments": "ឯកសារភ្ជាប់សម្រាប់ចុះឈ្មោះគណនី",
         "thirdPartyVerification": "ការផ្ទៀងផ្ទាត់ភាគីទីបី",
@@ -3890,6 +3902,16 @@
         "phone": "លេខទំនាក់ទំនងផ្ទាល់ខ្លួន",
         "email": "អ៊ីមែល",
         "hasSpouse": "តើអ្នកមានប្តី/ប្រពន្ធឬទេ?",
+        "hasMonthlyIncome": "តើអ្នកមានប្រាក់ចំណូលប្រចាំខែត្រូវប្រកាសឬទេ?",
+        "monthlyIncomeAfterTax": "ប្រាក់ចំណូលប្រចាំខែក្រោយពន្ធ ($)",
+        "otherIncomeSources": "ប្រភពប្រាក់ចំណូលផ្សេងទៀត (បើមាន)",
+        "otherIncomeSourceDetails": "សូមបញ្ជាក់ប្រភពប្រាក់ចំណូលផ្សេង",
+        "qualifiedInvestorIfYes": "ប្រសិនបើ បាទ/ចាស សូមបញ្ជាក់៖",
+        "authorizedPersonName": "ឈ្មោះបុគ្គលអនុញ្ញាត",
+        "authorizedPersonRelationship": "ទំនាក់ទំនងជាមួយម្ចាស់គណនី",
+        "moneyLaunderingRecordLast3Years": "តើមានកំណត់ត្រាបោកបញ្ឆោតខ្នាធនុប្ប ឬសកម្មភាពពាក់ព័ន្ធនឹងអ្នកត្រួតពិនិត្យក្នុងរយៈពេល ៣ ឆ្នាំចុងក្រោយឬទេ?",
+        "moneyLaunderingRecordDetails": "សូមផ្តល់ព័ត៌មានលម្អិត",
+        "investmentObjectiveOtherDetails": "សូមបញ្ជាក់គោលបំណងវិនិយោគផ្សេងទៀត",
         "employmentStatus": "ស្ថានភាពការងារ",
         "industry": "ឧស្សាហកម្ម",
         "occupation": "មុខរបរ / តួនាទី",
@@ -3902,7 +3924,7 @@
         "derivativeKnowledge": "ចំណេះដឹងអតិថិជនទាក់ទងនឹងដេរីវេទីវ",
         "investmentObjectives": "គោលបំណងវិនិយោគ",
         "experienceOtherFinancialMarkets": "បទពិសោធន៍ជួញដូរនៅទីផ្សារហិរញ្ញវត្ថុផ្សេងទៀត",
-        "qualifiedInvestor": "តើអតិថិជនជាវិនិយោគិន qualified ឬទេ?",
+        "qualifiedInvestor": "តើអ្នកគឺជាវិនិយោគិន qualified ឬទេ?",
         "hasAuthorizedPerson": "មានបុគ្គលអនុញ្ញាត",
         "authorizedPersonFullName": "ឈ្មោះពេញ",
         "authorizedPersonFullNameLatin": "ជាអក្សរឡាតាំង",
@@ -3914,7 +3936,7 @@
         "controllingPerson": "បុគ្គលគ្រប់គ្រង",
         "isPoliticallyExposed": "បុគ្គល (PEP)",
         "contactPreferences": "វិធីទំនាក់ទំនងដែលចូលចិត្ត",
-        "relationshipDerivativeBroker": "តើអតិថិជនមានទំនាក់ទំនងជាមួយអ្នកដឹកនាំ ឬបុគ្គលិករបស់ឈ្មួញដេរីវេទីវឬទេ?",
+        "relationshipDerivativeBroker": "តើអតិថិជនមានទំនាក់ទំនងជាមួយអ្នកដឹកនាំ ឬបុគ្គលិករបស់ឈ្មួញជើងសារទីឬទេ?",
         "relationshipCentralCounterparty": "តើអតិថិជនមានទំនាក់ទំនងជាមួយអ្នកដឹកនាំ ឬបុគ្គលិករបស់ភាគីកណ្តាលឬទេ?",
         "idCardCopy": "ចម្លងអត្តសញ្ញាណប័ណ្ណ",
         "passportVisaCopy": "ចម្លងលិខិតឆ្លងដែន ឬ Visa",
@@ -3945,12 +3967,30 @@
         "selectYearsExperience": "សូមជ្រើសរើសបទពិសោធន៍ការងារ",
         "phone": "លេខទូរស័ព្ទ",
         "emailAddress": "អាសយដ្ឋានអ៊ីមែល",
-        "clientSignature": "វាយហត្ថលេខា"
+        "clientSignature": "វាយហត្ថលេខា",
+        "otherDocumentDescription": "សូមបញ្ជាក់ឯកសារផ្សេងទៀត",
+        "otherIncomeSourceDetails": "ពណ៌នាប្រភពប្រាក់ចំណូលផ្សេង",
+        "marketName": "ឈ្មោះទីផ្សារ",
+        "productType": "ប្រភេទផលិតផល",
+        "country": "ប្រទេស",
+        "year": "ឆ្នាំ",
+        "authorizedPersonName": "សូមបញ្ជាក់ឈ្មោះ",
+        "authorizedPersonRelationship": "ទំនាក់ទំនងជាមួយម្ចាស់គណនី",
+        "directorEmployeeName": "ឈ្មោះអ្នកដឹកនាំ ឬបុគ្គលិក",
+        "counterpartyName": "ឈ្មោះភាគីកណ្តាល",
+        "relationshipAs": "ជា (ទំនាក់ទំនង)",
+        "investmentObjectiveOther": "ពណ៌នាគោលបំណងរបស់អ្នក",
+        "marginCallContactPhone": "លេខទូរស័ព្ទ",
+        "marginCallContactEmail": "អាសយដ្ឋានអ៊ីមែល",
+        "marginCallContactFax": "លេខទូរសារ",
+        "marginCallContactOthers": "សូមបញ្ជាក់វិធីផ្សេងទៀត"
       },
       "identity": {
         "chooseFile": "ជ្រើសរើសឯកសារ ឬទាញមកទីនេះ",
+        "uploadDocument": "ផ្ទុកឯកសារឡើង",
         "fileTypes": "PDF, JPG, ឬ PNG",
         "verificationIntro": "បើកទំព័រផ្ទៀងផ្ទាត់ភាគីទីបី និងបំពេញការផ្ទៀងផ្ទាត់អត្តសញ្ញាណ។ បន្ទាប់ពីបញ្ចប់ សូម refresh ទំព័រនេះ។",
+        "verificationIntroScan": "បើកទំព័រផ្ទៀងផ្ទាត់ភាគីទីបី និងស្កេនកូដដើម្បីផ្ទៀងផ្ទាត់។ បន្ទាប់ពីបញ្ចប់ សូមរង់ចាំបន្តិច រួច refresh ទំព័រដើម្បីពិនិត្យលទ្ធផល។",
         "startVerification": "ចាប់ផ្តើមផ្ទៀងផ្ទាត់",
         "verificationStarted": "បានចាប់ផ្តើមផ្ទៀងផ្ទាត់ — បញ្ចប់ដំណើរការខាងក្រៅ រួចបន្ត។"
       },
@@ -4000,7 +4040,29 @@
           "fax": "ទូរសារ",
           "send-message": "ផ្ញើសារ",
           "others": "ផ្សេងទៀត"
+        },
+        "monthlyIncomeAfterTax": {
+          "0-250": "០ – ២៥០",
+          "251-500": "២៥១ – ៥០០",
+          "501-750": "៥០១ – ៧៥០",
+          "751-1000": "៧៥១ – ១០០០",
+          "more-than-1000": "លើស ១០០០"
+        },
+        "otherIncomeSources": {
+          "dividend-securities-bonds": "ប្រាក់ភាគលាភ / ការប្រាក់ពីមូលបត្រ / ប័ណ្ណ",
+          "dividends-company": "ប្រាក់ភាគលាភពីក្រុមហ៊ុនផ្ទាល់",
+          "interest-bank": "ការប្រាក់ពីធនាគារ",
+          "others": "ផ្សេងទៀត"
+        },
+        "qualifiedInvestorCriteria": {
+          "net-assets-250k": "អតិថិជនមានទ្រព្យសក្តិសរុបតិចជាង $២៥០,០០០",
+          "annual-income-20k": "អតិថិជនមានប្រាក់ចំណូលប្រចាំឆ្នាំយ៉ាងតិច $២០,០០០",
+          "cambodia-securities-25k": "អតិថិជនធ្លាប់/កំពុងវិនិយោគក្នុងវិស័យមូលបត្រកម្ពុជាយ៉ាងតិច $២៥,០០០"
         }
+      },
+      "questionnaire": {
+        "market1": "ទីផ្សារ ១",
+        "market2": "ទីផ្សារ ២"
       }
     }
   },
