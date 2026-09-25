@@ -52,7 +52,54 @@ export const CONTACT_PREFERENCE_OPTIONS = [
   { value: "others", label: "Others" },
 ];
 
+/** Margin call contact: checkbox value → form field for detail input (null = no input). */
+export const MARGIN_CALL_CONTACT_FIELDS = [
+  { value: "phone", detailKey: "marginCallContactPhone", placeholder: "Phone number" },
+  { value: "email", detailKey: "marginCallContactEmail", placeholder: "Email address" },
+  { value: "fax", detailKey: "marginCallContactFax", placeholder: "Fax number" },
+  { value: "send-message", detailKey: null },
+  { value: "others", detailKey: "marginCallContactOthers", placeholder: "Specify other methods" },
+];
+
+export const QUALIFIED_INVESTOR_CRITERIA = [
+  {
+    value: "net-assets-250k",
+    label: "Client has total net assets less than $250,000",
+  },
+  {
+    value: "annual-income-20k",
+    label: "Client has an annual income at least $20,000",
+  },
+  {
+    value: "cambodia-securities-25k",
+    label: "Client has previously invested in securities sector in Cambodia for at least $25,000",
+  },
+];
+
+export const MONTHLY_INCOME_AFTER_TAX_RANGES = [
+  { value: "0-250", label: "0 – 250" },
+  { value: "251-500", label: "251 – 500" },
+  { value: "501-750", label: "501 – 750" },
+  { value: "751-1000", label: "751 – 1000" },
+  { value: "more-than-1000", label: "More than 1000" },
+];
+
+export const OTHER_INCOME_SOURCE_OPTIONS = [
+  { value: "dividend-securities-bonds", label: "Dividend / Interest from securities / Bonds" },
+  { value: "dividends-company", label: "Dividends from the company itself" },
+  { value: "interest-bank", label: "Interest from bank" },
+  { value: "others", label: "Others" },
+];
+
 export const CLIENT_AGREEMENT_PDF_URL = "/client-agreement-derivative-trading.pdf";
+
+/** Identity step: radio value → Formik file field key */
+export const ATTACHED_DOCUMENT_TYPES = [
+  { value: "id-card", fileKey: "idCardCopy", labelKey: "idCardCopy" },
+  { value: "passport-visa", fileKey: "passportVisaCopy", labelKey: "passportVisaCopy" },
+  { value: "family-record", fileKey: "familyRecordBookCopy", labelKey: "familyRecordBookCopy" },
+  { value: "others", fileKey: "otherDocumentCopy", labelKey: "otherDocumentCopy" },
+];
 
 export const INITIAL_FORM_VALUES = {
   fullName: "",
@@ -70,6 +117,16 @@ export const INITIAL_FORM_VALUES = {
   phone: "",
   email: "",
   hasSpouse: "",
+  spouseFullName: "",
+  spouseFullNameLatin: "",
+  spouseSex: "",
+  spouseAddress: "",
+  spousePhone: "",
+  spouseEmail: "",
+  hasMonthlyIncome: "",
+  monthlyIncomeAfterTax: "",
+  otherIncomeSources: [],
+  otherIncomeSourceDetails: "",
   employmentStatus: "",
   industry: "",
   occupation: "",
@@ -80,24 +137,48 @@ export const INITIAL_FORM_VALUES = {
   yearsWorkingExperience: "",
 
   educationalLevel: "",
-  derivativeKnowledge: [],
+  derivativeKnowledge: "",
   investmentObjectives: [],
   experienceOtherFinancialMarkets: "",
+  financialMarket1Name: "",
+  financialMarket1ProductType: "",
+  financialMarket1Country: "",
+  financialMarket1Year: "",
+  financialMarket2Name: "",
+  financialMarket2ProductType: "",
+  financialMarket2Country: "",
+  financialMarket2Year: "",
   qualifiedInvestor: "",
+  qualifiedInvestorCriteria: [],
   hasAuthorizedPerson: "",
-  authorizedPersonFullName: "",
-  authorizedPersonFullNameLatin: "",
-  authorizedPersonSex: "",
-  authorizedPersonAddress: "",
-  authorizedPersonPhone: "",
-  authorizedPersonEmail: "",
+  authorizedPersonName: "",
+  authorizedPersonRelationship: "",
   beneficialOwner: "",
   controllingPerson: "",
-  isPoliticallyExposed: "",
+  moneyLaunderingRecordLast3Years: "",
+  moneyLaunderingRecordDetails: "",
   contactPreferences: [],
+  marginCallContactPhone: "",
+  marginCallContactEmail: "",
+  marginCallContactFax: "",
+  marginCallContactOthers: "",
   relationshipDerivativeBroker: "",
+  derivativeBrokerEmployeeName: "",
+  derivativeBrokerRelationship: "",
   relationshipCentralCounterparty: "",
+  counterpartyEmployeeName: "",
+  counterpartyCompanyName: "",
+  counterpartyRelationship: "",
+  investmentObjectiveOtherDetails: "",
+  emergencyContactFullName: "",
+  emergencyContactFullNameLatin: "",
+  emergencyContactSex: "",
+  emergencyContactAddress: "",
+  emergencyContactPhone: "",
+  emergencyContactEmail: "",
 
+  attachedDocumentType: "",
+  otherDocumentDescription: "",
   idCardCopy: null,
   passportVisaCopy: null,
   familyRecordBookCopy: null,
