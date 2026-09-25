@@ -37,7 +37,6 @@ export default async function CompanyHubPage({ params }) {
         <CompanyAwardsSection locale={locale} />
       </Suspense>
       <Suspense fallback={null}>
-        <CompanyLeverageSection locale={locale} />
         <CompanyHelpCenterSection locale={locale} />
         <CompanyPartnerSection />
         <SupportCtaSection locale={locale} />
