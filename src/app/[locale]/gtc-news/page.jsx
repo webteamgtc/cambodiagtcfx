@@ -62,7 +62,6 @@ export default async function GtcNewsPage({ params }) {
         <MegaMenuHubTabs links={links} />
       </div> */}
       {/* <GtcNewsBrokerSection locale={locale} posts={brokerPosts} /> */}
-      <GtcNewsAppSection />
       <GtcNewsTrendsSection
         locale={locale}
         categories={visibleTrendCategories}

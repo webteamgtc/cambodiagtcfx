@@ -153,18 +153,18 @@ export function getMegaMenuData(navigation = {}, locale = "en-intl") {
           ],
         },
       ],
-      promo: {
-        variant: "featured",
-        heading: menuT("learn.promo.heading", "Traders' Insight", navigation),
-        description: menuT(
-          "learn.promo.description",
-          "Get daily market commentary and insights from industry leaders and IBKR analysts across global asset classes. Explore Insights",
-          navigation
-        ),
-        ctaLabel: menuT("learn.promo.ctaLabel", "Explore Insights", navigation),
-        href: "/knowledge-to-learn",
-        bgSrc: "/new-design/candle-bg.webp",
-      },
+      // promo: {
+      //   variant: "featured",
+      //   heading: menuT("learn.promo.heading", "Traders' Insight", navigation),
+      //   description: menuT(
+      //     "learn.promo.description",
+      //     "Get daily market commentary and insights from industry leaders and IBKR analysts across global asset classes. Explore Insights",
+      //     navigation
+      //   ),
+      //   ctaLabel: menuT("learn.promo.ctaLabel", "Explore Insights", navigation),
+      //   href: "/knowledge-to-learn",
+      //   bgSrc: "/new-design/candle-bg.webp",
+      // },
     },
 
     /** GTC News */
@@ -214,18 +214,18 @@ export function getMegaMenuData(navigation = {}, locale = "en-intl") {
           ],
         },
       ],
-      promo: {
-        variant: "featured",
-        heading: menuT("about.promo.heading", "Fund in Your Trading Currency", navigation),
-        description: menuT(
-          "about.promo.description",
-          "Deposit and trade in up to 29 currencies with flexible funding options.",
-          navigation
-        ),
-        ctaLabel: menuT("about.promo.ctaLabel", "Explore Insights", navigation),
-        href: "/gtc-news",
-        bgSrc: "/new-design/candle-bg.webp",
-      },
+      // promo: {
+      //   variant: "featured",
+      //   heading: menuT("about.promo.heading", "Fund in Your Trading Currency", navigation),
+      //   description: menuT(
+      //     "about.promo.description",
+      //     "Deposit and trade in up to 29 currencies with flexible funding options.",
+      //     navigation
+      //   ),
+      //   ctaLabel: menuT("about.promo.ctaLabel", "Explore Insights", navigation),
+      //   href: "/gtc-news",
+      //   bgSrc: "/new-design/candle-bg.webp",
+      // },
     },
 
     /** Markets */
@@ -298,20 +298,20 @@ export function getMegaMenuData(navigation = {}, locale = "en-intl") {
           ],
         },
       ],
-      promo: {
-        variant: "featured",
-        heading: menuT("account.promo.heading", "Register Now", navigation),
-        description: menuT(
-          "account.promo.description",
-          "Open a live account today and start trading with GTCFX. Get access to our award-winning trading platforms, market analysis, and educational resources.",
-          navigation
-        ),
-        ctaLabel: menuT("account.promo.ctaLabel", "Open Live Account", navigation),
-        href: "/live-account-application",
-        external: false,
-        bgSrc: "/new-design/line-chart-new.webp",
-        ctaFullWidth: true,
-      },
+      // promo: {
+      //   variant: "featured",
+      //   heading: menuT("account.promo.heading", "Register Now", navigation),
+      //   description: menuT(
+      //     "account.promo.description",
+      //     "Open a live account today and start trading with GTCFX. Get access to our award-winning trading platforms, market analysis, and educational resources.",
+      //     navigation
+      //   ),
+      //   ctaLabel: menuT("account.promo.ctaLabel", "Open Live Account", navigation),
+      //   href: "/live-account-application",
+      //   external: false,
+      //   bgSrc: "/new-design/line-chart-new.webp",
+      //   ctaFullWidth: true,
+      // },
     },
 
     /** Trading */
@@ -333,10 +333,10 @@ export function getMegaMenuData(navigation = {}, locale = "en-intl") {
               label: menuT("trading.columns.tradeWithGtcfx.fundYourAccount", "Fund Your Account", navigation),
               href: "/trading/deposit",
             },
-            {
-              label: menuT("trading.columns.tradeWithGtcfx.accountTypes", "Account Types", navigation),
-              href: "/trading/account-types",
-            },
+            // {
+            //   label: menuT("trading.columns.tradeWithGtcfx.accountTypes", "Account Types", navigation),
+            //   href: "/trading/account-types",
+            // },
             {
               label: menuT("trading.columns.tradeWithGtcfx.securityOfFund", "Security of Fund", navigation),
               href: "/trading/compensation-fund",
@@ -354,42 +354,35 @@ export function getMegaMenuData(navigation = {}, locale = "en-intl") {
               label: menuT("trading.columns.metaTrader.mt4", "MetaTrader 4", navigation),
               href: "/trading/mt4-platform",
             },
-            {
-              label: menuT("trading.columns.metaTrader.android", "MetaTrader Android", navigation),
-              href: "/trading/metatrader-for-andriod",
-            },
-            {
-              label: menuT("trading.columns.metaTrader.iphoneIpad", "MetaTrader iPhone/iPad", navigation),
-              href: "/trading/metatrader-for-ipad",
-            },
+          
           ],
         },
-        {
-          heading: menuT("trading.columns.gtcGo.heading", "GTCFX: GTC Go", navigation),
-          links: [
-            {
-              label: menuT("trading.columns.gtcGo.app", "GTC Go", navigation),
-              href: "/trading/gtc-go-app",
-            },
-             {
-              label: menuT("trading.columns.gtcGo.web", "GTC Go Web", navigation),
-              href: "https://web.mygtc.app/user",
-              external: true,
-            },
-            {
-              label: menuT("trading.columns.gtcGo.iphoneIpad", "GTC Go iPhone/iPad", navigation),
-              href: "/trading/gtc-go-app-ipad",
-            },
-            {
-              label: menuT("trading.columns.gtcGo.android", "GTC Go Android", navigation),
-              href: "/trading/gtc-go-app-andriod",
-            },
-            {
-              label: menuT("trading.columns.gtcGo.copyTrading", "Copy Trading", navigation),
-              href: "/trading/copy-trading",
-            },
-          ],
-        },
+        // {
+        //   heading: menuT("trading.columns.gtcGo.heading", "GTCFX: GTC Go", navigation),
+        //   links: [
+        //     {
+        //       label: menuT("trading.columns.gtcGo.app", "GTC Go", navigation),
+        //       href: "/trading/gtc-go-app",
+        //     },
+        //      {
+        //       label: menuT("trading.columns.gtcGo.web", "GTC Go Web", navigation),
+        //       href: "https://web.mygtc.app/user",
+        //       external: true,
+        //     },
+        //     {
+        //       label: menuT("trading.columns.gtcGo.iphoneIpad", "GTC Go iPhone/iPad", navigation),
+        //       href: "/trading/gtc-go-app-ipad",
+        //     },
+        //     {
+        //       label: menuT("trading.columns.gtcGo.android", "GTC Go Android", navigation),
+        //       href: "/trading/gtc-go-app-andriod",
+        //     },
+        //     {
+        //       label: menuT("trading.columns.gtcGo.copyTrading", "Copy Trading", navigation),
+        //       href: "/trading/copy-trading",
+        //     },
+        //   ],
+        // },
         {
           heading: menuT("trading.columns.ourProducts.heading", "Our Products", navigation),
           links: [
@@ -406,10 +399,10 @@ export function getMegaMenuData(navigation = {}, locale = "en-intl") {
         {
           heading: menuT("trading.columns.tradingAdvantages.heading", "Trading Advantages", navigation),
           links: [
-            {
-              label: menuT("trading.columns.tradingAdvantages.pammAccount", "PAMM Account", navigation),
-              href: "/trading/pamm-account",
-            },
+            // {
+            //   label: menuT("trading.columns.tradingAdvantages.pammAccount", "PAMM Account", navigation),
+            //   href: "/trading/pamm-account",
+            // },
             // {
             //   label: menuT("trading.columns.tradingAdvantages.mamAccount", "MAM Account", navigation),
             //   href: "/trading/mam-account",
@@ -421,26 +414,26 @@ export function getMegaMenuData(navigation = {}, locale = "en-intl") {
           ],
         },
       ],
-      promo: {
-        variant: "downloads",
-        heading: menuT("trading.promo.heading", "Platform Downloads", navigation),
-        downloads: [
-          {
-            label: menuT("trading.promo.downloads.mt4", "MetaTrader 4", navigation),
-            href: "/trading/mt4-platform",
-          },
-          {
-            label: menuT("trading.promo.downloads.mt5", "MetaTrader 5", navigation),
-            href: "/trading/mt5-platform",
-          },
-          {
-            label: menuT("trading.promo.downloads.gtcGo", "GTC Go App", navigation),
-            href: "/trading/gtc-go-app",
-          },
-        ],
-        qrSrc: "/home/qrcode.svg",
-        footerText: menuT("trading.promo.footerText", "Trade Smarter", navigation),
-      },
+      // promo: {
+      //   variant: "downloads",
+      //   heading: menuT("trading.promo.heading", "Platform Downloads", navigation),
+      //   downloads: [
+      //     {
+      //       label: menuT("trading.promo.downloads.mt4", "MetaTrader 4", navigation),
+      //       href: "/trading/mt4-platform",
+      //     },
+      //     {
+      //       label: menuT("trading.promo.downloads.mt5", "MetaTrader 5", navigation),
+      //       href: "/trading/mt5-platform",
+      //     },
+      //     {
+      //       label: menuT("trading.promo.downloads.gtcGo", "GTC Go App", navigation),
+      //       href: "/trading/gtc-go-app",
+      //     },
+      //   ],
+      //   qrSrc: "/home/qrcode.svg",
+      //   footerText: menuT("trading.promo.footerText", "Trade Smarter", navigation),
+      // },
     },
 
     /** Company */
@@ -516,18 +509,18 @@ export function getMegaMenuData(navigation = {}, locale = "en-intl") {
           ],
         },
       ],
-      promo: {
-        variant: "featured",
-        heading: menuT("prime.promo.heading", "Find Your Account", navigation),
-        description: menuT(
-          "prime.promo.description",
-          "Choose the right account for your needs",
-          navigation
-        ),
-        ctaLabel: menuT("prime.promo.ctaLabel", "See Account Guide", navigation),
-        href: "/trading/account-types",
-        bgSrc: "/new-design/candle-bg.webp",
-      },
+      // promo: {
+      //   variant: "featured",
+      //   heading: menuT("prime.promo.heading", "Find Your Account", navigation),
+      //   description: menuT(
+      //     "prime.promo.description",
+      //     "Choose the right account for your needs",
+      //     navigation
+      //   ),
+      //   ctaLabel: menuT("prime.promo.ctaLabel", "See Account Guide", navigation),
+      //   href: "/trading/account-types",
+      //   bgSrc: "/new-design/candle-bg.webp",
+      // },
     },
   };
 

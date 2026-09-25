@@ -433,12 +433,6 @@
       "title": "Find Your Ideal Trading Platform",
       "subtitle": "Explore a selection of powerful, award-winning platforms tailored to your preferences.",
       "cards": {
-        "go": {
-          "iconLetter": "G",
-          "title": "GTCFX: GTC Go - Trade & Invest",
-          "description": "Trade markets anytime, anywhere",
-          "buttonText": "Download Our App"
-        },
         "mt5": {
           "iconLetter": "5",
           "title": "MT5 Trading Platform",

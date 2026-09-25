@@ -60,10 +60,6 @@ export default async function HomePage({ params }) {
       </Suspense>
 
       <Suspense fallback={null}>
- 
-        <RevealOnScroll>
-          <ChooseTradingAccountSection />
-        </RevealOnScroll>
         <RevealOnScroll>
           <TradingFaqSection />
         </RevealOnScroll>
