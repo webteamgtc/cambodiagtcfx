@@ -33,7 +33,7 @@ export default async function KnowledgeHubPage({ params }) {
       <EducationalMaterialsSection locale={locale} />
       {/* <TradingEssentialsSection locale={locale} />
       <MarketGuidesSection locale={locale} /> */}
-            <GtcGoPromoSection />
+            {/* <GtcGoPromoSection /> */}
 
       <DemoTradingSection locale={locale} />
       <QandASection />
