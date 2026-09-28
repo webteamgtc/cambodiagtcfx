@@ -1,5 +1,3 @@
-import { GTC_GO_APP_DOWNLOAD_HREF } from "@/lib/gtcGoAppLinks";
-
 export const REGISTER_HREF =
   "/live-account-application";
 
@@ -31,17 +29,6 @@ const SHARED_DOWNLOADS = [
     href: "https://download.terminal.free/cdn/web/gtc.global.trade/mt5/gtcglobaltrade5setup.exe",
     cta: "MT5 Download",
     type: "download",
-  },
-  {
-    key: "gtc",
-    platform: "GTC Go App",
-    description:
-      "Trade on-the-go with intuitive mobile interface, real-time alerts, and biometric login.",
-    isNew: true,
-    type: "mobile",
-    iosHref: GTC_GO_APP_DOWNLOAD_HREF,
-    androidHref: GTC_GO_APP_DOWNLOAD_HREF,
-    footerNote: "Full sync with desktop accounts",
   },
 ];
 

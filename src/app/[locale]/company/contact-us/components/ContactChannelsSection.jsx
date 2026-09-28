@@ -1,43 +1,24 @@
 "use client";
 
-import { FiArrowRight, FiMessageSquare, FiMail, FiPhone } from "react-icons/fi";
-import { FaWhatsapp } from "react-icons/fa";
+import { FiArrowRight, FiMail, FiPhone } from "react-icons/fi";
 import MobilePeekCarousel from "@/app/[locale]/components/common/MobilePeekCarousel";
 import FadeInSection from "./FadeInSection";
 import { usePathTranslation } from "@/app/[locale]/LocaleProvider";
 
-const WHATSAPP_HREF = "https://wa.me/448000488461";
-
 const channels = [
-  {
-    icon: FiMessageSquare,
-    key: "liveChat",
-    href: WHATSAPP_HREF,
-    external: true,
-    iconBg: "bg-[#eef1fb]",
-    iconColor: "text-[#3347a8]",
-  },
   {
     icon: FiMail,
     key: "email",
-    href: "mailto:support@gtcfx.com",
+    href: "mailto:info@gtcfx.com.kh",
     iconBg: "bg-[#fdf4ea]",
     iconColor: "text-[#c7894f]",
   },
   {
     icon: FiPhone,
     key: "phone",
-    href: "tel:+971800667788",
+    href: "tel:+85523230168",
     iconBg: "bg-[#eafaf1]",
     iconColor: "text-[#2eab71]",
-  },
-  {
-    icon: FaWhatsapp,
-    key: "whatsapp",
-    href: WHATSAPP_HREF,
-    external: true,
-    iconBg: "bg-[#f3e8fd]",
-    iconColor: "text-[#8b4fd9]",
   },
 ];
 
@@ -114,7 +95,7 @@ export default function ContactChannelsSection() {
           </div>
 
           {/* Desktop Grid */}
-          <div className="mt-12 hidden grid-cols-1 gap-5 sm:grid sm:grid-cols-2 lg:grid-cols-4">
+          <div className="mt-12 hidden grid-cols-1 gap-5 sm:grid sm:grid-cols-2 sm:max-w-3xl sm:mx-auto">
             {channels.map((channel, index) => (
               <FadeInSection key={channel.key} delay={index * 0.1}>
                 <ChannelCard channel={channel} t={t} />

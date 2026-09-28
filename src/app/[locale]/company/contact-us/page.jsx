@@ -27,8 +27,7 @@ export default async function ContactUsPage({ params }) {
       <ContactHeroSection locale={locale} />
       <ContactFormSection locale={locale} />
       <ContactChannelsSection />
-      {/* <ContactFaqCategoriesSection /> */}
-      <ContactGlobalPresenceSection />
+    
       <SupportCtaSection locale={locale} />
     </>
   );

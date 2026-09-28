@@ -10,8 +10,6 @@ import { isCareerHref } from "@/config/featureFlags";
 import { buildFooterDisclaimers, getFooterNoticeTitle, shouldUseUaeFooter } from "@/lib/geo/footerNotice";
 import { useLocationDetail } from "@/context/useLocationDetail";
 import UaeFooterNotice from "./UaeFooterNotice";
-import { FaFacebookF, FaLinkedinIn, FaYoutube, FaInstagram, FaTelegramPlane, FaTiktok } from "react-icons/fa";
-import { FaXTwitter } from "react-icons/fa6";
 
 const FOOTER_COLUMN_DEFS = [
     {
@@ -169,15 +167,6 @@ export default function Footer2({ locale: localeProp = "en" }) {
         () => getFooterNoticeTitle(t, locale, countryCode),
         [t, locale, countryCode]
     );
- const socialLinks = [
-  { icon: FaFacebookF, href: "https://www.facebook.com/GTCFXGlobalTradeCapital", label: "Facebook" },
-  { icon: FaLinkedinIn, href: "https://linkedin.com/company/gtcfx-official", label: "LinkedIn" },
-  { icon: FaYoutube, href: "https://www.youtube.com/channel/UCnKWakjm1b9Bm63xgwNFXHA", label: "YouTube" },
-  { icon: FaInstagram, href: "https://www.instagram.com/gtcfxofficial/", label: "Instagram" },
-  { icon: FaTelegramPlane, href: "https://t.me/gtc_vip_signal", label: "Telegram" },
-  { icon: FaTiktok, href: "https://www.tiktok.com/@gtcgroup_official", label: "TikTok" },
-  { icon: FaXTwitter, href: "https://x.com/GTC_fx", label: "X" },
-];
 
     const copyrightText = t(
         useUaeFooter ? "footerCopyRightUae.copyRightText" : "footerCopyRight.copyRightText",
@@ -189,25 +178,10 @@ export default function Footer2({ locale: localeProp = "en" }) {
     return (
         <footer className="bg-white  text-black pt-10 md:pt-16">
             <div className="container">
-                <div className="flex flex-col items-center gap-5 border-b border-black/10 pb-5 md:items-start lg:flex-row lg:items-center lg:justify-between">
+                <div className="border-b border-black/10 pb-5">
                     <h2 className="HeadingH4 max-w-xl text-center font-semibold text-black md:text-start">
                         {t("footerHeading", "Global Markets. One Connection.")}
                     </h2>
-
-                    <div className="flex flex-wrap items-center md:gap-5 gap-7">
-                        {socialLinks.map((item, index) => (
-                            <Link
-                                key={index}
-                                href={item.href}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                aria-label={item.label}
-                                className="relative flex text-2xl items-center justify-center text-primary transition hover:text-secondary"
-                            >
-                              {item.icon && <item.icon size="22px" />}
-                            </Link>
-                        ))}
-                    </div>
                 </div>
 
                 <div className="grid grid-cols-2 gap-x-4 gap-y-8 border-b border-black/10 py-8 md:grid-cols-3 md:gap-x-6 lg:gap-x-8 xl:grid-cols-6">

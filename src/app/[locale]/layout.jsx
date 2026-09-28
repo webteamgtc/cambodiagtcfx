@@ -20,8 +20,6 @@ import { getRobotsMetadataForPath } from "@/lib/seo/noindexPaths";
 import AppQRWidget from "./components/common/AppQRWidget";
 import AppDownloadStickyBar from "./components/common/AppDownloadStickyBar";
 import InstallAppBanner from "@/app/[locale]/components/common/InstallAppBanner";
-import ConvrsChatScript from "@/app/[locale]/components/common/ConvrsChatScript";
-import ConvrsChatOffset from "@/app/[locale]/components/common/ConvrsChatOffset";
 import { GTM_CONTAINER_ID, LEGACY_THIRD_PARTY_SCRIPTS_ENABLED } from "@/lib/analytics/ga4";
 
 export async function generateStaticParams() {
@@ -74,9 +72,7 @@ export default async function LocaleLayout({ children, params }) {
         </noscript>
 
         <ConsentAwareScripts />
-        <ConvrsChatScript />
         <RegionalLocaleGuard />
-        <ConvrsChatOffset />
         <StaticBrandHeader />
         <main>
           <PageBackBar />

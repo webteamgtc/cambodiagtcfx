@@ -5997,31 +5997,19 @@
     "channels": {
       "eyebrow": "Contact Us",
       "title": "Choose Your Preferred Channel",
-      "description": "Multiple ways to reach our team — pick the one that suits you best and get the help you need instantly.",
+      "description": "Reach our Cambodia support team by email or phone.",
       "items": {
-        "liveChat": {
-          "title": "Live Chat",
-          "description": "Connect instantly with our support agents for real-time assistance.",
-          "meta": "+44 800 048 8461",
-          "cta": "Chat Now"
-        },
         "email": {
           "title": "Email Support",
-          "description": "Send us a detailed message and we'll respond within 24 hours.",
-          "meta": "support@gtcfx.com",
+          "description": "Send us a detailed message and we'll respond within one business day.",
+          "meta": "info@gtcfx.com.kh",
           "cta": "Send Email"
         },
         "phone": {
           "title": "Phone Support",
-          "description": "Speak directly with a specialist. Regional numbers available below.",
-          "meta": "+971 800 667788",
-          "cta": "View Numbers"
-        },
-        "whatsapp": {
-          "title": "WhatsApp & WeChat",
-          "description": "Reach us on your preferred messaging app for quick support.",
-          "meta": "+44 800 048 8461",
-          "cta": "Message Us"
+          "description": "Speak directly with our team during business hours.",
+          "meta": "023230168",
+          "cta": "Call Now"
         }
       }
     },

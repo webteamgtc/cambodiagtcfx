@@ -6,7 +6,6 @@ import MobilePeekCarousel from "@/app/[locale]/components/common/MobilePeekCarou
 import { usePathTranslation, useLocaleMessages } from "@/app/[locale]/LocaleProvider";
 import { readPath } from "@/i18n/tranlsationText";
 import clsx from "clsx";
-import { useStoreDownloadHref } from "@/lib/useStoreDownloadHref";
 
 function MtPlatformIcon() {
   return (
@@ -26,16 +25,6 @@ function Mt5PlatformIcon() {
   );
 }
 
-function MobileAppIcon() {
-  return (
-    <svg className=" h-10 w-10" xmlns="http://www.w3.org/2000/svg" width="46" height="46" viewBox="0 0 46 46" fill="none">
-      <path d="M21.5007 18.4699V23.2683H24.91C25.9431 23.2683 26.7008 23.0731 27.1714 22.6943C27.6421 22.2925 27.8831 21.6841 27.8831 20.8576C27.8831 19.9967 27.6421 19.3997 27.1599 19.0554C26.6893 18.6766 25.9431 18.4814 24.9215 18.4814H21.5007V18.4699ZM11.5711 18.9291L9.28676 25.1279H13.9014L11.64 18.9291H11.5711Z" fill="#293B93" />
-      <path d="M41.3253 11.4792H37.9504V4.5917C37.9504 2.05479 35.8956 5.3809e-08 33.3587 0H12.696C10.1591 0 8.10435 2.05479 8.10435 4.5917V11.4792H4.5917C2.05479 11.4792 5.3809e-08 13.534 0 16.0709V30.994C0 33.5309 2.05479 35.5857 4.5917 35.5857H8.10435V41.3253C8.10435 43.8622 10.1591 45.917 12.696 45.917H33.3587C35.8956 45.917 37.9504 43.8622 37.9504 41.3253V35.5857H41.3253C43.8622 35.5857 45.917 33.5309 45.917 30.994V16.0709C45.917 13.534 43.8622 11.4792 41.3253 11.4792ZM12.1221 6.00365C12.1221 4.79833 13.0634 3.82259 14.2343 3.82259H31.8205C32.9914 3.82259 33.9327 4.79832 33.9327 6.00365V11.4792H12.1221V6.00365ZM29.9723 20.8463C29.9723 23.6472 28.3308 25.0477 25.0477 25.0477H21.5006V30.3741H19.4114V16.6908H25.0822C28.3423 16.6908 29.9723 18.0798 29.9723 20.8463ZM7.36968 30.3741H5.1427L10.4117 16.6908H12.7879L18.0569 30.3741H15.8184L14.5327 26.85H8.64387L7.36968 30.3741ZM25.8972 43.6211H20.1576C19.5262 43.6211 19.0096 43.1046 19.0096 42.4732C19.0096 41.8419 19.5262 41.3253 20.1576 41.3253H25.8972C26.5285 41.3253 27.0451 41.8419 27.0451 42.4732C27.0451 43.1046 26.5285 43.6211 25.8972 43.6211ZM33.9327 37.9963C33.9327 39.2016 32.9914 40.1774 31.8205 40.1774H14.2343C13.0634 40.1774 12.1221 39.2016 12.1221 37.9963V35.5857H33.9327V37.9963ZM37.5486 25.0477H34.0015V30.3741H31.9123V16.6908H37.5831C40.8432 16.6908 42.4732 18.0798 42.4732 20.8463C42.4732 23.6472 40.8317 25.0477 37.5486 25.0477Z" fill="#293B93" />
-      <path d="M39.6494 19.0439C39.1788 18.6651 38.4326 18.4699 37.411 18.4699H34.0016V23.2683H37.411C38.4441 23.2683 39.2017 23.0731 39.6724 22.6943C40.143 22.2925 40.3841 21.6841 40.3841 20.8576C40.3841 19.9967 40.143 19.3883 39.6494 19.0439Z" fill="#293B93" />
-    </svg>
-  );
-}
-
 function DownloadIcon() {
   return (
     <svg className=" h-3 w-3 shrink-0" xmlns="http://www.w3.org/2000/svg" width="12" height="10" viewBox="0 0 12 10" fill="none">
@@ -44,25 +33,8 @@ function DownloadIcon() {
   );
 }
 
-function AppleIcon() {
-  return (
-    <svg className=" h-4 w-4 shrink-0" xmlns="http://www.w3.org/2000/svg" width="9" height="11" viewBox="0 0 9 11" fill="none">
-      <path d="M8.70703 7.83772C8.6936 7.87851 8.48362 8.6109 7.96772 9.36401C7.52119 10.0136 7.05946 10.6685 6.33023 10.68C5.61309 10.6926 5.38361 10.2521 4.56483 10.2521C3.74709 10.2521 3.49003 10.6685 2.81228 10.6926C2.11164 10.7213 1.57251 9.98301 1.1243 9.33655C0.208267 8.01225 -0.497054 5.58383 0.448901 3.95637C0.91431 3.1421 1.75086 2.6245 2.66184 2.61036C3.34835 2.59738 4.00151 3.07541 4.41848 3.07541C4.84684 3.07541 5.63698 2.49699 6.47055 2.58353C6.81955 2.5984 7.79578 2.72944 8.42475 3.64106C8.37527 3.67472 7.25668 4.33483 7.26914 5.67832C7.28596 7.30024 8.6919 7.8322 8.70703 7.83772ZM5.92507 1.71475C6.30096 1.25623 6.54796 0.62594 6.48298 0C5.94629 0.0210493 5.29238 0.356418 4.90374 0.812233C4.56012 1.2099 4.25725 1.85 4.34174 2.46867C4.93805 2.5049 5.55119 2.15639 5.92507 1.71475Z" fill="white" />
-    </svg>
-  );
-}
-
-function AndroidIcon() {
-  return (
-    <svg className=" h-4 w-4 shrink-0" xmlns="http://www.w3.org/2000/svg" width="14" height="9" viewBox="0 0 14 9" fill="none">
-      <path d="M10.6894 0.278307C10.7682 0.149211 10.8941 0.0559224 11.0406 0.0182802C11.187 -0.019362 11.3424 0.0016121 11.4736 0.076742C11.6049 0.151872 11.7016 0.27523 11.7433 0.420582C11.785 0.565934 11.7683 0.721813 11.6968 0.855067L10.6778 2.6376C11.6012 3.20419 12.3812 3.97646 12.957 4.89417C13.5328 5.81187 13.8887 6.85019 13.9971 7.92812C14.0052 8.00886 13.9963 8.09041 13.971 8.16749C13.9456 8.24458 13.9044 8.31551 13.85 8.37569C13.7955 8.43587 13.7291 8.48397 13.6549 8.51689C13.5808 8.54981 13.5005 8.56682 13.4194 8.56682H0.579671C0.498605 8.56668 0.418466 8.54957 0.344413 8.51659C0.270359 8.48361 0.204032 8.43549 0.149701 8.37533C0.0953708 8.31516 0.0542407 8.24429 0.0289589 8.16727C0.00367709 8.09024 -0.00519608 8.00878 0.00291058 7.92812C0.106243 6.8974 0.436132 5.90226 0.96897 5.01392C1.50181 4.12558 2.22442 3.366 3.08509 2.78954L1.97996 0.854099C1.91345 0.721377 1.90031 0.568222 1.94323 0.42611C1.98615 0.283997 2.08188 0.163722 2.21073 0.0900025C2.33959 0.0162827 2.49178 -0.00528207 2.63605 0.0297402C2.78031 0.0647625 2.90568 0.153711 2.98639 0.278307L4.0983 2.22342C5.00971 1.81059 5.99897 1.59776 6.99952 1.59924C7.93336 1.59924 8.82463 1.78311 9.64042 2.11407L10.6894 0.278307ZM4.09636 4.76078C3.83971 4.76078 3.59356 4.86274 3.41208 5.04422C3.2306 5.2257 3.12864 5.47184 3.12864 5.7285C3.12864 5.98515 3.2306 6.2313 3.41208 6.41278C3.59356 6.59426 3.83971 6.69622 4.09636 6.69622C4.35302 6.69622 4.59916 6.59426 4.78064 6.41278C4.96212 6.2313 5.06408 5.98515 5.06408 5.7285C5.06408 5.47184 4.96212 5.2257 4.78064 5.04422C4.59916 4.86274 4.35302 4.76078 4.09636 4.76078ZM9.90267 4.76078C9.64602 4.76078 9.39987 4.86274 9.21839 5.04422C9.03691 5.2257 8.93495 5.47184 8.93495 5.7285C8.93495 5.98515 9.03691 6.2313 9.21839 6.41278C9.39987 6.59426 9.64602 6.69622 9.90267 6.69622C10.1593 6.69622 10.4055 6.59426 10.587 6.41278C10.7684 6.2313 10.8704 5.98515 10.8704 5.7285C10.8704 5.47184 10.7684 5.2257 10.587 5.04422C10.4055 4.86274 10.1593 4.76078 9.90267 4.76078Z" fill="#293B93" />
-    </svg>
-  );
-}
-
 function PlatformIcon({ type }) {
   if (type === "mt5") return <Mt5PlatformIcon />;
-  if (type === "gtc") return <MobileAppIcon />;
   return <MtPlatformIcon />;
 }
 
@@ -81,7 +53,7 @@ function PlatformTags({ tags }) {
   );
 }
 
-function DownloadCard({ item, locale, t, ts, tags, isMobile }) {
+function DownloadCard({ item, locale, t, tags, isMobile }) {
   return (
     <article
       className={clsx(
@@ -115,68 +87,6 @@ function DownloadCard({ item, locale, t, ts, tags, isMobile }) {
   );
 }
 
-function MobileAppCard({ item, t, ts, tags, isMobile }) {
-  const iosHref = useStoreDownloadHref("apple");
-  const androidHref = useStoreDownloadHref("google");
-
-  return (
-    <article
-      className={clsx(
-        "interactive-card group cursor-pointer flex h-full flex-col rounded-[20px] border border-[#E8EDFA] bg-white p-6 text-left transition-colors duration-300 md:p-8",
-        isMobile ? "shadow-none" : "shadow-[0_8px_30px_rgba(41,59,147,0.06)]"
-      )}
-    >
-      <span className="inline-flex transition-colors group-hover:[&_path]:fill-white">
-        <PlatformIcon type={item.key} />
-      </span>
-
-      <div className="mt-6 flex flex-wrap items-center gap-2">
-        <h3 className="HeadingH5 font-semibold text-[#000032] transition-colors group-hover:text-white">
-          {t(`${item.key}.platform`)}
-        </h3>
-        {item.isNew ? (
-          <span className="inline-flex rounded-full bg-[#EEF2FC] px-2.5 py-0.5 text-[12px] font-semibold text-primary transition-colors group-hover:bg-white/15 group-hover:text-white">
-            {ts("newBadge")}
-          </span>
-        ) : null}
-      </div>
-
-      <p className="TextSmall mt-3 font-normal leading-[1.65] text-[#69729F] transition-colors group-hover:text-white/85">
-        {t(`${item.key}.description`)}
-      </p>
-
-      <div className="interactive-card__keep mt-auto pt-8">
-        <div className="flex flex-wrap gap-3">
-          <a
-            href={iosHref}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 rounded-[50px] bg-primary px-5 py-2 text-sm font-normal text-white transition hover:bg-[#1f2d75] hover:no-underline group-hover:bg-white group-hover:text-primary group-hover:[&_path]:fill-primary"
-          >
-            <AppleIcon />
-            {ts("ios")}
-          </a>
-          <a
-            href={androidHref}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 rounded-[50px] border border-primary bg-white px-5 py-2 text-sm font-normal text-primary transition hover:bg-[#F6F8FF] hover:no-underline group-hover:border-white group-hover:bg-transparent group-hover:text-white group-hover:[&_path]:fill-white"
-          >
-            <AndroidIcon />
-            {ts("android")}
-          </a>
-        </div>
-
-        {item.key === "gtc" ? (
-          <p className="mt-4 text-xs font-normal text-[#C9C9C9] transition-colors group-hover:text-white/70">
-            * {t(`${item.key}.footerNote`)}
-          </p>
-        ) : null}
-      </div>
-    </article>
-  );
-}
-
 export default function MarketDownloadSection({ data, locale = "en" }) {
   const messages = useLocaleMessages();
   const ts = usePathTranslation("marketsShared.downloadSection");
@@ -184,6 +94,8 @@ export default function MarketDownloadSection({ data, locale = "en" }) {
 
   const getTags = (key) =>
     readPath(`${data.i18nKey}.downloads.${key}.tags`, messages) ?? [];
+
+  const downloads = data.downloads.filter((item) => item.type !== "mobile");
 
   return (
     <section className="relative py-8 md:py-16">
@@ -197,34 +109,22 @@ export default function MarketDownloadSection({ data, locale = "en" }) {
               {ts("sub")}
             </p>
           </FadeInSection>
-          {/* Mobile carousel */}
           <div className="md:hidden mt-10 text-left">
             <MobilePeekCarousel
-              items={data.downloads}
-              renderItem={(item, index) => (
+              items={downloads}
+              renderItem={(item) => (
                 <div className="px-1 pb-2">
-                  {item.type === "mobile" ? (
-                    <MobileAppCard item={item} t={t} ts={ts} tags={getTags(item.key)} isMobile={true}/>
-                  ) : (
-                    <DownloadCard item={item} locale={locale} t={t} ts={ts} tags={getTags(item.key)} isMobile={true}/>
-                  )}
+                  <DownloadCard item={item} locale={locale} t={t} tags={getTags(item.key)} isMobile={true} />
                 </div>
               )}
             />
           </div>
-          {/* Desktop grid */}
-          <div className="hidden md:grid mt-10 gap-4 text-left md:grid-cols-3">
-            {data.downloads.map((item, index) =>
-              item.type === "mobile" ? (
-                <FadeInSection delay={index * 0.2}>
-                  <MobileAppCard key={item.key} item={item} t={t} ts={ts} tags={getTags(item.key)} isMobile={false}/>
-                </FadeInSection>
-              ) : (
-                <FadeInSection delay={index * 0.2}>
-                <DownloadCard key={item.key} item={item} locale={locale} t={t} ts={ts} tags={getTags(item.key)} isMobile={false}/>
-                </FadeInSection>
-              )
-            )}
+          <div className="hidden md:grid mt-10 gap-5 text-left md:grid-cols-2 md:max-w-4xl md:mx-auto">
+            {downloads.map((item, index) => (
+              <FadeInSection key={item.key} delay={index * 0.15}>
+                <DownloadCard item={item} locale={locale} t={t} tags={getTags(item.key)} isMobile={false} />
+              </FadeInSection>
+            ))}
           </div>
         </div>
       </div>
