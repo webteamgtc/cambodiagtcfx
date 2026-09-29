@@ -2,18 +2,17 @@ import './globals.css';
 import { headers } from 'next/headers';
 import { poppins } from '@/app/fonts/poppins';
 import PageJsonLd from '@/app/[locale]/components/common/PageJsonLd';
-import {
-  GoogleTagManagerPrimaryHead,
-  GoogleTagManagerPrimaryNoscript,
-} from '@/app/components/GoogleTagManagerPrimary';
 import { localeHreflang } from '@/i18n/config';
 import { resolveContentLocale } from '@/i18n/regionalLocale';
+import { SITE_NOINDEX_ROBOTS } from '@/lib/seo/noindexPaths';
+import { SEARCH_INDEXING_ENABLED } from '@/config/cambodiaSite';
 // Arabic (`ar`) uses Noto Kufi Arabic on the locale shell — see `src/app/fonts/notoKufiArabic.js` and `[locale]/layout.jsx`.
 
 export const metadata = {
   title: 'GTCFX | Trade Global Markets',
   description:
     'Trade Forex, Indices, Commodities, and more with GTCFX. Fast execution, secure platform, and global access.',
+  ...(!SEARCH_INDEXING_ENABLED ? { robots: SITE_NOINDEX_ROBOTS } : {}),
 };
 
 export default async function RootLayout({ children }) {
@@ -25,11 +24,9 @@ export default async function RootLayout({ children }) {
   return (
     <html lang={lang} className={poppins.variable} suppressHydrationWarning>
       <head>
-        <GoogleTagManagerPrimaryHead />
         <PageJsonLd />
       </head>
       <body className="font-sans bg-white text-dark antialiased">
-        <GoogleTagManagerPrimaryNoscript />
         {children}
       </body>
     </html>

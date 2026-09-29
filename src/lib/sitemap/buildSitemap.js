@@ -1,3 +1,4 @@
+import { SEARCH_INDEXING_ENABLED } from "@/config/cambodiaSite";
 import { SHOW_CAREERS } from "@/config/featureFlags";
 import { getCanonicalUrl } from "@/lib/canonicalUrl";
 import { ENGLISH_REGIONAL_LOCALE, KHMER_REGIONAL_LOCALE } from "@/i18n/regionalLocale";
@@ -109,6 +110,12 @@ function enUrl(cleanPath) {
 }
 
 export async function buildSitemapXml() {
+  if (!SEARCH_INDEXING_ENABLED) {
+    return `<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+</urlset>`;
+  }
+
   const seenLocs = new Set();
   const urlEntries = [];
 

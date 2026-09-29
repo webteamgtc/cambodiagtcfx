@@ -3,6 +3,7 @@ import enMessages from "@/translation/en.json";
 import { locales, localeHreflang, localeOpenGraph } from "@/i18n/config";
 import { ENGLISH_REGIONAL_LOCALE, DEFAULT_SITE_LOCALE } from "@/i18n/regionalLocale";
 import { getDictionary } from "@/i18n/request";
+import { getRobotsMetadataForPath } from "@/lib/seo/noindexPaths";
 
 const defaultMetaData = enMessages?.metaData || enMessages?.metadata || {};
 
@@ -72,6 +73,7 @@ export async function getPageMetadata({
   return {
     title,
     description,
+    robots: getRobotsMetadataForPath(cleanPath ? `/${cleanPath}` : "/"),
     alternates: {
       canonical,
       languages: {

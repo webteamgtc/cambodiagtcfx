@@ -4,6 +4,7 @@ import { useCallback, useEffect, useState } from "react";
 import axios from "axios";
 import { usePathTranslation } from "@/app/[locale]/LocaleProvider";
 import { useLocationDetail } from "@/context/useLocationDetail";
+import { THIRD_PARTY_TRACKING_ENABLED } from "@/config/cambodiaSite";
 import {
   hasConsentDecision,
   pushCookieConsentEvent,
@@ -16,10 +17,12 @@ export default function CookiesBanner() {
   const [show, setShow] = useState(false);
 
   useEffect(() => {
+    if (!THIRD_PARTY_TRACKING_ENABLED) return;
     setShow(!hasConsentDecision());
   }, []);
 
   const handleApiCall = useCallback(() => {
+    if (!THIRD_PARTY_TRACKING_ENABLED) return;
     const payload = { newUser: true, ...(countryData || {}) };
     axios
       .post("https://hooks.zapier.com/hooks/catch/16420445/37ltm4i/", JSON.stringify(payload))
@@ -37,7 +40,7 @@ export default function CookiesBanner() {
     handleApiCall();
   }, [handleApiCall]);
 
-  if (!show) return null;
+  if (!THIRD_PARTY_TRACKING_ENABLED || !show) return null;
 
   return (
     <div className="fixed bottom-0 z-50 w-full bg-[#f4f5f7] p-4 text-primary">

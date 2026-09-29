@@ -1,10 +1,10 @@
 /**
  * GA4 / GTM helpers for conversion events that can be imported into Google Ads.
  *
- * After these events appear in GA4 (Admin → Events → mark as Key events),
- * import them into Google Ads from the MCC (manager) account:
- * https://support.google.com/analytics/answer/10632359
+ * Disabled on the Cambodia regional site — see `THIRD_PARTY_TRACKING_ENABLED`.
  */
+
+import { THIRD_PARTY_TRACKING_ENABLED } from "@/config/cambodiaSite";
 
 export const GA4_MEASUREMENT_ID = "G-EGK1L0DGDX";
 export const GOOGLE_ADS_ID = "AW-18143283488";
@@ -12,8 +12,8 @@ export const GOOGLE_ADS_ID = "AW-18143283488";
 export const GTM_PRIMARY_CONTAINER_ID = "GTM-MPT7GX84";
 /** Legacy GTM container — kept in code but disabled when legacy scripts are off. */
 export const GTM_CONTAINER_ID = "GTM-PSWH9QF";
-/** Set false to hide legacy ThirdPartyScripts (gtag, old GTM, pixels) without deleting code. */
-export const LEGACY_THIRD_PARTY_SCRIPTS_ENABLED = false;
+/** Legacy ThirdPartyScripts (gtag, old GTM, pixels). Tied to Cambodia site flag. */
+export const LEGACY_THIRD_PARTY_SCRIPTS_ENABLED = THIRD_PARTY_TRACKING_ENABLED;
 /** Google Ads lead conversion (direct send_to). Update label in Google Ads if needed. */
 export const LIVE_ACCOUNT_ADS_CONVERSION = "AW-18143283488";
 
@@ -44,7 +44,7 @@ export function trackLiveAccountApplicationSuccess({
   country = "",
   hasPartnerCode = false,
 } = {}) {
-  if (!canTrack()) return;
+  if (!THIRD_PARTY_TRACKING_ENABLED || !canTrack()) return;
 
   try {
     sendLiveAccountEvents({ accountKey, country, hasPartnerCode });

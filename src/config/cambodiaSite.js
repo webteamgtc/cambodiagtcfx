@@ -11,4 +11,16 @@ export const CAMBODIA_SITE = {
   globalFallbackUrl: "https://www.gtcfx.com/en-intl/",
   /** Main nav mega-menu keys hidden when the site is shown in Khmer. */
   navHiddenForKhmer: ["learn"],
+  /**
+   * Cambodia regional site — no GA, GTM, Ads, pixels, or domain verification tags.
+   * (Duplicate of main gtcfx.com; single-country use only.)
+   */
+  thirdPartyTrackingEnabled: false,
+  /**
+   * Duplicate of global gtcfx.com — do not list this host in search (noindex, follow).
+   */
+  searchIndexingEnabled: false,
 };
+
+export const THIRD_PARTY_TRACKING_ENABLED = CAMBODIA_SITE.thirdPartyTrackingEnabled;
+export const SEARCH_INDEXING_ENABLED = CAMBODIA_SITE.searchIndexingEnabled;

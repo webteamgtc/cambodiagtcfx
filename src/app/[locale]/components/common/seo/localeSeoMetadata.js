@@ -1,4 +1,5 @@
 import { getPageMetadata } from "@/lib/metadata/getPageMetadata";
+import { THIRD_PARTY_TRACKING_ENABLED } from "@/config/cambodiaSite";
 
 const SITE_NAME = "GTCFX";
 const COPYRIGHT = "GTC Global SA (Pty) Ltd";
@@ -13,16 +14,20 @@ export async function getLocaleSeoMetadata(locale) {
     fallbackDescription: "Trading & Finance",
   });
 
+  const other = {
+    copyright: COPYRIGHT,
+    ...(THIRD_PARTY_TRACKING_ENABLED
+      ? { "facebook-domain-verification": FACEBOOK_DOMAIN_VERIFICATION }
+      : {}),
+  };
+
   return {
     ...base,
     applicationName: SITE_NAME,
     authors: [{ name: SITE_NAME }],
     creator: SITE_NAME,
     publisher: SITE_NAME,
-    other: {
-      copyright: COPYRIGHT,
-      "facebook-domain-verification": FACEBOOK_DOMAIN_VERIFICATION,
-    },
+    other,
   };
 }
 

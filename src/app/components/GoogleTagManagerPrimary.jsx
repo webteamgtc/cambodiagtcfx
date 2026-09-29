@@ -1,7 +1,10 @@
 import Script from "next/script";
+import { THIRD_PARTY_TRACKING_ENABLED } from "@/config/cambodiaSite";
 import { GTM_PRIMARY_CONTAINER_ID } from "@/lib/analytics/ga4";
 
 export function GoogleTagManagerPrimaryHead() {
+  if (!THIRD_PARTY_TRACKING_ENABLED) return null;
+
   return (
     <Script id="gtm-primary" strategy="beforeInteractive">
       {`
@@ -21,6 +24,8 @@ export function GoogleTagManagerPrimaryHead() {
 }
 
 export function GoogleTagManagerPrimaryNoscript() {
+  if (!THIRD_PARTY_TRACKING_ENABLED) return null;
+
   return (
     <noscript>
       <iframe

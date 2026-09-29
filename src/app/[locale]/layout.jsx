@@ -10,17 +10,11 @@ import StaticBrandHeader from "@/app/[locale]/components/common/StaticBrandHeade
 import PageBackBar from "@/app/[locale]/components/common/PageBackBar";
 import LocaleFooter from "./components/common/LocaleFooter";
 import { ToastContainer } from "react-toastify";
-import StickyContactBar from "./components/common/StickyContactBar";
-import ConsentAwareScripts from "./components/common/ConsentAwareScripts";
-import CookiesBanner from "./components/common/CookiesBanner";
 import UsCfdDisclaimerModal from "./components/common/UsCfdDisclaimerModal";
 import RegionalLocaleGuard from "./components/common/RegionalLocaleGuard";
 import { getLocaleSeoMetadata } from "./components/common/seo/localeSeoMetadata";
 import { getRobotsMetadataForPath } from "@/lib/seo/noindexPaths";
-import AppQRWidget from "./components/common/AppQRWidget";
-import AppDownloadStickyBar from "./components/common/AppDownloadStickyBar";
 import InstallAppBanner from "@/app/[locale]/components/common/InstallAppBanner";
-import { GTM_CONTAINER_ID, LEGACY_THIRD_PARTY_SCRIPTS_ENABLED } from "@/lib/analytics/ga4";
 
 export async function generateStaticParams() {
   return locales.map((locale) => ({ locale }));
@@ -60,18 +54,6 @@ export default async function LocaleLayout({ children, params }) {
             : `min-h-screen ${poppins.variable} font-sans`
         }
       >
-        <noscript>
-          {LEGACY_THIRD_PARTY_SCRIPTS_ENABLED ? (
-            <iframe
-              src={`https://www.googletagmanager.com/ns.html?id=${GTM_CONTAINER_ID}`}
-              height="0"
-              width="0"
-              style={{ display: "none", visibility: "hidden" }}
-            />
-          ) : null}
-        </noscript>
-
-        <ConsentAwareScripts />
         <RegionalLocaleGuard />
         <StaticBrandHeader />
         <main>
@@ -80,7 +62,6 @@ export default async function LocaleLayout({ children, params }) {
         </main>
         <LocaleFooter locale={locale} />
         <InstallAppBanner />
-        <CookiesBanner />
         <UsCfdDisclaimerModal />
         <ToastContainer autoClose={3000} />
       </div>

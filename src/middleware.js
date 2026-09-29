@@ -9,7 +9,7 @@ import {
   resolveCountryFromRequest,
   setGeoCountryCookie,
 } from "@/lib/geo/resolveCountryFromRequest";
-import { isNoindexLegacyPath } from "@/lib/seo/noindexPaths";
+import { isNoindexLegacyPath, getSiteRobotsResponseHeader } from "@/lib/seo/noindexPaths";
 import { getCanonicalRedirectPathname } from "@/lib/seo/canonicalRedirects";
 
 const PUBLIC_FILE = /\.(.*)$/;
@@ -74,6 +74,11 @@ function passThroughWithPathname(request, pathname, extraHeaders = {}) {
 
   for (const [key, value] of Object.entries(extraHeaders)) {
     response.headers.set(key, value);
+  }
+
+  const siteRobots = getSiteRobotsResponseHeader();
+  if (siteRobots && !response.headers.has("X-Robots-Tag")) {
+    response.headers.set("X-Robots-Tag", siteRobots);
   }
 
   return response;
