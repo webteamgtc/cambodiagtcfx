@@ -1,74 +1,34 @@
 import { NextResponse } from "next/server";
-import {
-  DEFAULT_SITE_LOCALE,
-  parsePathLocale,
-  sortLocalesLongestFirst,
-} from "@/i18n/regionalLocale";
-import { locales } from "@/i18n/config";
+import { DEFAULT_SITE_LOCALE } from "@/i18n/regionalLocale";
 import {
   resolveCountryFromRequest,
   setGeoCountryCookie,
 } from "@/lib/geo/resolveCountryFromRequest";
-import { isNoindexLegacyPath, getSiteRobotsResponseHeader } from "@/lib/seo/noindexPaths";
+import {
+  isNoindexLegacyPath,
+  getSiteRobotsResponseHeader,
+} from "@/lib/seo/noindexPaths";
 import { getCanonicalRedirectPathname } from "@/lib/seo/canonicalRedirects";
 
 const PUBLIC_FILE = /\.(.*)$/;
-const SORTED_LOCALES = sortLocalesLongestFirst(locales);
 
-function getLocaleFromPathname(pathname) {
-  return (
-    SORTED_LOCALES.find(
-      (locale) =>
-        pathname === `/${locale}` || pathname.startsWith(`/${locale}/`)
-    ) || null
-  );
-}
+function rewriteToLocaleApp(request, publicPathname, countryCode, extraHeaders = {}) {
+  const normalizedPublic =
+    publicPathname === "" || publicPathname === "/" ? "/" : publicPathname;
 
-function buildLocalizedPath(pathname, targetLocale, restPath = null) {
-  const resolvedRest =
-    restPath ??
-    (() => {
-      const currentLocale = getLocaleFromPathname(pathname);
-      if (currentLocale) {
-        return pathname.slice(`/${currentLocale}`.length) || "";
-      }
-      return pathname === "/" ? "" : pathname;
-    })();
+  const internalPath =
+    normalizedPublic === "/"
+      ? `/${DEFAULT_SITE_LOCALE}`
+      : `/${DEFAULT_SITE_LOCALE}${normalizedPublic}`;
 
-  if (resolvedRest === "" || resolvedRest === "/") {
-    return `/${targetLocale}`;
-  }
-
-  const normalizedRest = resolvedRest.startsWith("/")
-    ? resolvedRest
-    : `/${resolvedRest}`;
-
-  return `/${targetLocale}${normalizedRest}`;
-}
-
-function redirectToLocale(
-  request,
-  targetLocale,
-  restPath,
-  countryCode,
-  status = 307
-) {
-  const url = request.nextUrl.clone();
-  url.pathname = buildLocalizedPath(request.nextUrl.pathname, targetLocale, restPath);
-  const response = NextResponse.redirect(url, status);
-  if (countryCode) setGeoCountryCookie(response, countryCode);
-  return response;
-}
-
-function passThroughWithPathname(request, pathname, extraHeaders = {}) {
   const requestHeaders = new Headers(request.headers);
-  requestHeaders.set("x-pathname", pathname);
-  const pathLocale = getLocaleFromPathname(pathname);
-  if (pathLocale) {
-    requestHeaders.set("x-locale", pathLocale);
-  }
+  requestHeaders.set("x-pathname", normalizedPublic);
+  requestHeaders.set("x-locale", DEFAULT_SITE_LOCALE);
 
-  const response = NextResponse.next({
+  const url = request.nextUrl.clone();
+  url.pathname = internalPath;
+
+  const response = NextResponse.rewrite(url, {
     request: { headers: requestHeaders },
   });
 
@@ -81,6 +41,7 @@ function passThroughWithPathname(request, pathname, extraHeaders = {}) {
     response.headers.set("X-Robots-Tag", siteRobots);
   }
 
+  if (countryCode) setGeoCountryCookie(response, countryCode);
   return response;
 }
 
@@ -98,7 +59,8 @@ export async function middleware(request) {
   }
 
   if (isNoindexLegacyPath(pathname)) {
-    return passThroughWithPathname(request, pathname, {
+    const countryCode = await resolveCountryFromRequest(request);
+    return rewriteToLocaleApp(request, pathname, countryCode, {
       "X-Robots-Tag": "noindex",
     });
   }
@@ -114,29 +76,7 @@ export async function middleware(request) {
   }
 
   const countryCode = await resolveCountryFromRequest(request);
-  const parsed = parsePathLocale(pathname);
-
-  if (parsed.hadLocalePrefix) {
-    if (parsed.isLegacy || parsed.locale !== getLocaleFromPathname(pathname)) {
-      return redirectToLocale(
-        request,
-        parsed.locale,
-        parsed.restPath,
-        countryCode
-      );
-    }
-
-    const response = passThroughWithPathname(request, pathname);
-    if (countryCode) setGeoCountryCookie(response, countryCode);
-    return response;
-  }
-
-  return redirectToLocale(
-    request,
-    DEFAULT_SITE_LOCALE,
-    pathname === "/" ? "" : pathname,
-    countryCode
-  );
+  return rewriteToLocaleApp(request, pathname, countryCode);
 }
 
 export const config = {

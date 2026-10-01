@@ -1,7 +1,7 @@
 import { SEARCH_INDEXING_ENABLED } from "@/config/cambodiaSite";
 import { SHOW_CAREERS } from "@/config/featureFlags";
 import { getCanonicalUrl } from "@/lib/canonicalUrl";
-import { ENGLISH_REGIONAL_LOCALE, KHMER_REGIONAL_LOCALE } from "@/i18n/regionalLocale";
+import { KHMER_REGIONAL_LOCALE } from "@/i18n/regionalLocale";
 import { fetchAllBlogsForSitemap } from "@/lib/strapiBlogs";
 import { getAllMarketNewsArticleSlugs } from "@/app/[locale]/gtc-news/market-news/marketNewsArticleData";
 import { fetchInstrumentSitemapPaths } from "@/lib/sitemap/fetchInstrumentSitemapPaths";
@@ -105,8 +105,8 @@ function localeUrl(locale, cleanPath) {
   return cleanPath === "" ? `${url}/` : url;
 }
 
-function enUrl(cleanPath) {
-  return localeUrl(ENGLISH_REGIONAL_LOCALE, cleanPath);
+function siteUrl(cleanPath) {
+  return localeUrl(KHMER_REGIONAL_LOCALE, cleanPath);
 }
 
 export async function buildSitemapXml() {
@@ -126,8 +126,7 @@ export async function buildSitemapXml() {
   };
 
   for (const cleanPath of STATIC_PATHS) {
-    pushEntry(localeUrl(KHMER_REGIONAL_LOCALE, cleanPath), STATIC_LASTMOD);
-    pushEntry(enUrl(cleanPath), STATIC_LASTMOD);
+    pushEntry(siteUrl(cleanPath), STATIC_LASTMOD);
   }
 
   try {
@@ -139,7 +138,7 @@ export async function buildSitemapXml() {
 
     for (const { slug, lastmod } of posts) {
       if (!isValidSitemapSlug(slug)) continue;
-      pushEntry(enUrl(`blogs/${slug}`), lastmod || STATIC_LASTMOD);
+      pushEntry(siteUrl(`blogs/${slug}`), lastmod || STATIC_LASTMOD);
     }
   } catch (error) {
     console.error("[sitemap] blog fetch failed:", error);
@@ -147,13 +146,13 @@ export async function buildSitemapXml() {
 
   for (const slug of getAllMarketNewsArticleSlugs()) {
     if (!isValidSitemapSlug(slug)) continue;
-    pushEntry(enUrl(`gtc-news/market-news/${slug}`), STATIC_LASTMOD);
+    pushEntry(siteUrl(`gtc-news/market-news/${slug}`), STATIC_LASTMOD);
   }
 
   try {
     const instrumentPaths = await fetchInstrumentSitemapPaths();
     for (const cleanPath of instrumentPaths) {
-      pushEntry(enUrl(cleanPath), STATIC_LASTMOD);
+      pushEntry(siteUrl(cleanPath), STATIC_LASTMOD);
     }
   } catch (error) {
     console.error("[sitemap] instrument paths failed:", error);

@@ -3,6 +3,7 @@ import { useParams, useRouter } from "next/navigation";
 import { usePathname } from "next/navigation";
 import BlogCoverImage from "../common/BlogCoverImage";
 import { getBlogPostImageUrl } from "@/lib/strapiBlogs";
+import { localizedHref } from "@/i18n/localizedHref";
 export default function SingleBlogSection(props) {
     const { posts, uiText = {} } = props;
     const { locale } = useParams();
@@ -46,13 +47,10 @@ export default function SingleBlogSection(props) {
             blogAttrs?.slug || blogAttrs?.documentId || blog?.slug || slug;
         if (!blogSlug) return;
         if (pathname.endsWith("/company-news")) {
-            router.push(`/${locale}/company-news/${blogSlug}`);
+            router.push(localizedHref(locale, `/company-news/${blogSlug}`));
             return;
         }
-        router.push(
-            `/${blogCategorySlug}/${blogSlug}`,
-            { locale: locale }
-        );
+        router.push(localizedHref(locale, `/${blogCategorySlug}/${blogSlug}`));
     };
     return (
         <div className="space-y-20 lg:space-y-20">

@@ -132,7 +132,7 @@ const nextConfig = {
       // All other locales, preserving the locale prefix
       out.push({
         source: `/:locale(${LOCALE_GROUP})${from}`,
-        destination: `/:locale${to}`,
+        destination: to,
         permanent: true,
       });
     }

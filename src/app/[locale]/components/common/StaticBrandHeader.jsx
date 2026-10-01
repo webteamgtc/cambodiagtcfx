@@ -18,6 +18,9 @@ import { translationTextByPath } from "@/i18n/tranlsationText";
 import { useLocationDetail } from "@/context/useLocationDetail";
 import { isUaeCountry } from "@/lib/geo/resolveCountryFromRequest";
 import { getBaseLanguage } from "@/i18n/regionalLocale";
+import { CAMBODIA_SITE } from "@/config/cambodiaSite";
+
+const SHOW_LANGUAGE_SWITCHER = CAMBODIA_SITE.showLanguageSwitcher === true;
 
 const REGISTER_HREF = "/live-account-application";
 const LOGIN_HREF = "https://web.mygtc.app/user?redirect=%252Fdashboard";
@@ -122,13 +125,23 @@ function HeaderActions({
   return (
     <div className={`flex shrink-0 items-center gap-2 ${className ?? ""}`}>
       {isCompact ? (
-        <>
-          <Link
-            href={registerHref}
-            className="inline-flex h-10 items-center justify-center rounded-full bg-[#293B93] px-3 text-[12px] font-medium text-white transition hover:bg-[#243575] hover:no-underline"
-          >
-            {registerLabel}
-          </Link>
+        <Link
+          href={registerHref}
+          className="inline-flex h-10 items-center justify-center rounded-full bg-[#293B93] px-3 text-[12px] font-medium text-white transition hover:bg-[#243575] hover:no-underline"
+        >
+          {registerLabel}
+        </Link>
+      ) : (
+        <Link
+          href={registerHref}
+          className="inline-flex h-9 cursor-pointer text-[#293B93] select-none items-center gap-1.5 rounded-full border border-[#cfd1d7] bg-white hover:bg-primary hover:text-white px-2 text-[12px] font-medium sm:h-10 sm:gap-2 sm:px-3 sm:text-[14px]"
+        >
+          <UserOutlineIcon />
+          {registerLabel}
+        </Link>
+      )}
+      {SHOW_LANGUAGE_SWITCHER ? (
+        isCompact ? (
           <LanguageHeaderButton
             variant="compact"
             locale={locale}
@@ -136,17 +149,7 @@ function HeaderActions({
             ariaExpanded={languageMenuOpen}
             onClick={onLanguageClick}
           />
-        </>
-      ) : (
-        <>
-          <Link
-            href={registerHref}
-            className="inline-flex h-9 cursor-pointer text-[#293B93] select-none items-center gap-1.5 rounded-full border border-[#cfd1d7] bg-white hover:bg-primary hover:text-white px-2 text-[12px] font-medium sm:h-10 sm:gap-2 sm:px-3 sm:text-[14px]"
-          >
-            <UserOutlineIcon />
-            {registerLabel}
-          </Link>
-    
+        ) : (
           <div
             className="relative"
             ref={isUae ? languagePanelRef : undefined}
@@ -167,8 +170,8 @@ function HeaderActions({
               />
             )}
           </div>
-        </>
-      )}
+        )
+      ) : null}
     </div>
   );
 }
@@ -587,7 +590,7 @@ export default function StaticBrandHeader() {
         </div>
       </div>
 
-      {isLanguageMenuOpen && !isUae && (
+      {SHOW_LANGUAGE_SWITCHER && isLanguageMenuOpen && !isUae && (
         <div ref={languagePanelRef}>
           <LanguageDrawerPanel locale={locale} variant="desktop" onClose={closeMegaMenu} />
         </div>
@@ -606,7 +609,7 @@ export default function StaticBrandHeader() {
         />
       )}
 
-      {mobileLanguageOpen && (
+      {SHOW_LANGUAGE_SWITCHER && mobileLanguageOpen && (
         <div ref={mobileLanguagePanelRef}>
           <LanguageDrawerPanel
             locale={locale}

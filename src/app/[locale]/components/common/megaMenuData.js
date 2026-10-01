@@ -56,7 +56,7 @@ function isNavKeyHiddenForLocale(key, locale) {
   return (CAMBODIA_SITE.navHiddenForKhmer || []).includes(key);
 }
 
-export function getNavItems(navigation = {}, locale = "en-intl") {
+export function getNavItems(navigation = {}, locale = "km-intl") {
   return [
     {
       key: "prime",

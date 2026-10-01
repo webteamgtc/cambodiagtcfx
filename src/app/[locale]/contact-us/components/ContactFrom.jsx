@@ -324,7 +324,7 @@ const ContactForm = ({ locale = "en", messages = {} }) => {
           window.gtag_report_conversion();
         }
         formik.resetForm({ values: getBaseInitialValues() });
-        router.push(`/${locale}/thank-you`);
+        router.push(localizedHref(locale, "/thank-you"));
       } catch (error) {
         console.error(error);
         toast.error(error?.message || text("toastError"));

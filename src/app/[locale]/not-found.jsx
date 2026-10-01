@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useLocale, usePathTranslation } from "@/app/[locale]/LocaleProvider";
+import { localizedHref } from "@/i18n/localizedHref";
 
 /**
  * Local English defaults. `usePathTranslation` returns an empty string for
@@ -83,8 +84,8 @@ export default function NotFound() {
   const backHome = t("backHome", DEFAULTS.backHome) || DEFAULTS.backHome;
   const contactSupport = t("contactSupport", DEFAULTS.contactSupport) || DEFAULTS.contactSupport;
 
-  const homeHref = `/${locale}`;
-  const supportHref = `/${locale}/company/contact-us`;
+  const homeHref = localizedHref(locale, "/");
+  const supportHref = localizedHref(locale, "/company/contact-us");
 
   return (
     <section className="nf-root relative flex min-h-[calc(100vh-220px)] items-center justify-center overflow-hidden bg-gradient-to-b from-[#F8F9FC] via-[#F8F9FC] to-[#EAEEF8] px-6 py-20">

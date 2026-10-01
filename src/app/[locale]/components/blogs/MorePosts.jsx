@@ -3,6 +3,7 @@
 import { useParams, useRouter } from "next/navigation";
 import BlogCoverImage from "../common/BlogCoverImage";
 import { getBlogPostImageUrl } from "@/lib/strapiBlogs";
+import { localizedHref } from "@/i18n/localizedHref";
 
 const MorePosts = (props) => {
   const { recentData } = props;
@@ -16,7 +17,7 @@ const MorePosts = (props) => {
       "company-news";
     const postSlug = post?.attributes?.slug || post?.slug;
     if (!postSlug) return;
-    router.push(`/${locale}/${categorySlug}/${postSlug}`);
+    router.push(localizedHref(locale, `/${categorySlug}/${postSlug}`));
   };
 
   const formatPostDate = (value) => {

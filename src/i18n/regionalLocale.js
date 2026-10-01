@@ -1,19 +1,21 @@
-/** Cambodia site: Khmer (`km-intl`) default + English (`en-intl`) only. */
+/** Cambodia site: Khmer only (`km-intl` internally, no URL prefix). */
+
+import { CAMBODIA_SITE } from "@/config/cambodiaSite";
 
 /** Base language code used for translations / content bundles. */
 export const KHMER_LOCALE = "km";
-/** URL locale segment for Khmer pages. */
+/** Internal Next.js `[locale]` segment for Khmer pages. */
 export const KHMER_REGIONAL_LOCALE = "km-intl";
 
-export const SITE_ALLOWED_BASE_LANGUAGES = ["km", "en"];
+export const SITE_ALLOWED_BASE_LANGUAGES = [...CAMBODIA_SITE.allowedBaseLanguages];
 export const DEFAULT_SITE_LOCALE = KHMER_REGIONAL_LOCALE;
 export const ENGLISH_REGIONAL_LOCALE = "en-intl";
 
 export const REGION_CODES = ["intl"];
 export const DEFAULT_REGION_CODE = "intl";
-export const REGIONALIZED_BASE_LANGUAGES = ["en", "km"];
+export const REGIONALIZED_BASE_LANGUAGES = ["km"];
 export const NON_REGIONAL_LANGUAGES = [];
-export const REGIONAL_LOCALES = [KHMER_REGIONAL_LOCALE, ENGLISH_REGIONAL_LOCALE];
+export const REGIONAL_LOCALES = [KHMER_REGIONAL_LOCALE];
 
 /** @deprecated Cambodia site does not use UAE language rules. */
 export const UAE_ALLOWED_BASE_LANGUAGES = SITE_ALLOWED_BASE_LANGUAGES;
@@ -46,7 +48,6 @@ export function resolveZaLocaleFromIntl() {
 
 export function buildRegionalLocale(baseLanguage) {
   const base = String(baseLanguage || KHMER_LOCALE).toLowerCase();
-  if (base === "en") return ENGLISH_REGIONAL_LOCALE;
   if (base === "km") return KHMER_REGIONAL_LOCALE;
   return KHMER_REGIONAL_LOCALE;
 }
@@ -97,8 +98,8 @@ export function resolveContentLocale(locale) {
   return getBaseLanguage(locale);
 }
 
-export function localeUsesUrlPrefix(locale) {
-  return isRegionalLocale(locale);
+export function localeUsesUrlPrefix(_locale) {
+  return CAMBODIA_SITE.useLocaleUrlPrefix === true;
 }
 
 export function sortLocalesLongestFirst(localeList) {

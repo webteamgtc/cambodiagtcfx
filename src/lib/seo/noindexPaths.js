@@ -1,7 +1,7 @@
 import { SEARCH_INDEXING_ENABLED } from "@/config/cambodiaSite";
 
 /** Legacy removed URLs that should stay out of search indexes. */
-const NOINDEX_LEGACY_PATHS = new Set(["/fa", "/en-intl/fa"]);
+const NOINDEX_LEGACY_PATHS = new Set(["/fa", "/en-intl/fa", "/km-intl/fa"]);
 
 /** Default robots when the Cambodia site must not appear in search results. */
 export const SITE_NOINDEX_ROBOTS = { index: false, follow: true };

@@ -12,6 +12,7 @@ import useCountriesDetails from "@/context/useCountriesDetails";
 import { useLocationDetail } from "@/context/useLocationDetail";
 import { toast } from "react-toastify";
 import { localeDir } from "@/i18n/config";
+import { localizedHref } from "@/i18n/localizedHref";
 import { usePathTranslation } from "@/app/[locale]/LocaleProvider";
 import Button from "@/app/[locale]/components/common/Button";
 
@@ -207,7 +208,7 @@ const MainIBForm = () => {
         }
         
 
-        window.location.href = `/${locale}/thank-you`;
+        window.location.href = localizedHref(locale, "/thank-you");
       } catch (err) {
         const apiMsg =
           err?.response?.data?.message ||

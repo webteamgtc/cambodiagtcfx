@@ -12,6 +12,7 @@ import * as Yup from "yup";
 
 import { useLocationDetail } from "@/context/useLocationDetail";
 import { usePathTranslation } from "@/app/[locale]/LocaleProvider";
+import { localizedHref } from "@/i18n/localizedHref";
 
 const DeleteForm = () => {
     const params = useParams();
@@ -105,7 +106,7 @@ const DeleteForm = () => {
 
                 await axios.post("/api/delete-account", payload);
                 toast.success(t("toasts.submitted", "Your deletion request has been submitted."));
-                window.location.href = `/${locale}/thank-you`;
+                window.location.href = localizedHref(locale, "/thank-you");
             } catch (err) {
                 toast.error(err?.response?.data?.message || t("toasts.requestFailed", "Request failed"));
             } finally {

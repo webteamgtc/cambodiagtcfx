@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import { locales, localeDir } from "@/i18n/config";
+import { localeDir } from "@/i18n/config";
 import { resolveContentLocale } from "@/i18n/regionalLocale";
 
 /**
@@ -35,10 +35,8 @@ const MESSAGES = {
 };
 const DEFAULT_LOCALE = "km-intl";
 
-function detectLocaleFromPath(pathname) {
-  if (!pathname) return DEFAULT_LOCALE;
-  const seg = pathname.split("/").filter(Boolean)[0];
-  return seg && locales.includes(seg) ? seg : DEFAULT_LOCALE;
+function detectLocaleFromPath() {
+  return DEFAULT_LOCALE;
 }
 
 /* Lightweight inline-SVG illustration: a "lost" compass whose needle is
@@ -113,8 +111,8 @@ export default function NotFound() {
   const strings = MESSAGES[contentLocale] || MESSAGES[DEFAULT_LOCALE];
   const dir = localeDir[locale] || "ltr";
 
-  const homeHref = `/${locale}`;
-  const supportHref = `/${locale}/company/contact-us`;
+  const homeHref = "/";
+  const supportHref = "/company/contact-us";
 
   return (
     <section
