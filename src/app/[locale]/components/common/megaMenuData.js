@@ -81,7 +81,7 @@ export function getNavItems(navigation = {}, locale = "km-intl") {
   ].filter((item) => !isNavKeyHiddenForLocale(item.key, locale));
 }
 
-export function getMegaMenuData(navigation = {}, locale = "en-intl") {
+export function getMegaMenuData(navigation = {}, locale = "km-intl") {
   const about = navigation?.about || {};
   const account = navigation?.account || {};
   const trading = navigation?.trading || {};
