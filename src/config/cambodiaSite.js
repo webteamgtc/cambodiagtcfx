@@ -14,6 +14,8 @@ export const CAMBODIA_SITE = {
   /** When false, URLs are locale-less; middleware rewrites to `defaultLocale`. */
   useLocaleUrlPrefix: false,
   showLanguageSwitcher: false,
+  /** Footer: hide Legal / compliance link column (Cambodia site for now). */
+  hideFooterLegalColumn: true,
   /** Main nav mega-menu keys hidden when the site is shown in Khmer. */
   navHiddenForKhmer: ["learn"],
   /**

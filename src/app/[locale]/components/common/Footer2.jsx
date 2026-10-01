@@ -10,6 +10,7 @@ import { isCareerHref } from "@/config/featureFlags";
 import { buildFooterDisclaimers, getFooterNoticeTitle, shouldUseUaeFooter } from "@/lib/geo/footerNotice";
 import { useLocationDetail } from "@/context/useLocationDetail";
 import UaeFooterNotice from "./UaeFooterNotice";
+import { CAMBODIA_SITE } from "@/config/cambodiaSite";
 
 const FOOTER_COLUMN_DEFS = [
     {
@@ -94,7 +95,11 @@ function pickFooterText(columns, section, key, locale, fallback = "") {
 }
 
 function buildFooterColumns(columns, locale) {
-    return FOOTER_COLUMN_DEFS.map((def) => {
+    const defs = CAMBODIA_SITE.hideFooterLegalColumn
+        ? FOOTER_COLUMN_DEFS.filter((def) => def.id !== "legal")
+        : FOOTER_COLUMN_DEFS;
+
+    return defs.map((def) => {
         const linkSection = def.linkSection ?? def.section;
         const title = pickFooterText(columns, def.section, "label", locale, def.titleFallback);
         const links = def.links
@@ -175,6 +180,10 @@ export default function Footer2({ locale: localeProp = "en" }) {
             : "© COPYRIGHT {year} GTCFX - ALL RIGHTS RESERVED"
     )?.replace("{year}", String(year)) ?? "";
 
+    const footerNavGridClass = CAMBODIA_SITE.hideFooterLegalColumn
+        ? "grid w-full grid-cols-2 gap-x-4 gap-y-8 border-b border-black/10 py-8 sm:grid-cols-2 md:grid-cols-3 md:gap-x-6 lg:grid-cols-5 lg:gap-x-8"
+        : "grid w-full grid-cols-2 gap-x-4 gap-y-8 border-b border-black/10 py-8 md:grid-cols-3 md:gap-x-6 lg:gap-x-8 xl:grid-cols-6";
+
     return (
         <footer className="bg-white  text-black pt-10 md:pt-16">
             <div className="container">
@@ -184,7 +193,7 @@ export default function Footer2({ locale: localeProp = "en" }) {
                     </h2>
                 </div>
 
-                <div className="grid grid-cols-2 gap-x-4 gap-y-8 border-b border-black/10 py-8 md:grid-cols-3 md:gap-x-6 lg:gap-x-8 xl:grid-cols-6">
+                <div className={footerNavGridClass}>
                     {footerColumns.map((column) => (
                         <div key={column.id} className="min-w-0">
                             <h5
