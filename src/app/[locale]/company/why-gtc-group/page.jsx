@@ -5,8 +5,6 @@ import WhyGtcGroupCommitmentsSection from "./components/WhyGtcGroupCommitmentsSe
 import WhyGtcGroupBackgroundSection from "./components/WhyGtcGroupBackgroundSection";
 import WhyGtcGroupEdgeSection from "./components/WhyGtcGroupEdgeSection";
 import WhyGtcGroupRecognitionSection from "./components/WhyGtcGroupRecognitionSection";
-import WhyGtcGroupClientVoicesSection from "./components/WhyGtcGroupClientVoicesSection";
-import WhyGtcGroupTrustRecognitionSection from "./components/WhyGtcGroupTrustRecognitionSection";
 import WhyGtcGroupGetStartedSection from "./components/WhyGtcGroupGetStartedSection";
 import Image from "next/image";
 
@@ -46,7 +44,6 @@ export default async function WhyGtcGroupPage() {
         <WhyGtcGroupRecognitionSection />
 
         <WhyGtcGroupEdgeSection />
-        <WhyGtcGroupClientVoicesSection />
         {/* <WhyGtcGroupTrustRecognitionSection /> */}
       </div>
       <WhyGtcGroupGetStartedSection />
