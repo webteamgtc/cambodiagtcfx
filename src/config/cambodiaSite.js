@@ -16,8 +16,8 @@ export const CAMBODIA_SITE = {
   showLanguageSwitcher: false,
   /** Footer: hide Legal / compliance link column (Cambodia site for now). */
   hideFooterLegalColumn: true,
-  /** Main nav mega-menu keys hidden when the site is shown in Khmer. */
-  navHiddenForKhmer: ["learn"],
+  /** Main nav mega-menu keys hidden on the Cambodia (Khmer) site. */
+  navHiddenForKhmer: ["learn", "about"],
   /**
    * Cambodia regional site — no GA, GTM, Ads, pixels, or domain verification tags.
    * (Duplicate of main gtcfx.com; single-country use only.)
