@@ -25,9 +25,6 @@ const MENU_HUB_TAB_ICONS = Array.from(
 
 const LIVE_ACCOUNT_URL =
   "https://mygtcfx.com/getview?view=register&token=exhowww.z8owwwww";
-const PARTNERS_URL = "https://reg.gtcfx.com/uae/partners-campaign";
-const AFFILIATE_URL = "https://www.gtcaffiliates.com/";
-const GTC_PRIME_URL = "https://gtcprime.com/";
 
 const defaultNavText = {
   menu: {
@@ -489,22 +486,6 @@ export function getMegaMenuData(navigation = {}, locale = "km-intl") {
             {
               label: menuT("prime.columns.helpCenter.contactUs", "Contact Us", navigation),
               href: "/company/contact-us",
-            },
-          ],
-        },
-        {
-          heading: menuT("prime.columns.partnerWithUs.heading", "Partner with Us", navigation),
-          links: [
-            {
-              label: menuT("prime.columns.partnerWithUs.partnersProgram", "Partners Program", navigation),
-              href: PARTNERS_URL,
-              external: true,
-            },
-          
-            {
-              label: menuT("prime.columns.partnerWithUs.gtcPrime", "GTC Prime", navigation),
-              href: GTC_PRIME_URL,
-              external: true,
             },
           ],
         },

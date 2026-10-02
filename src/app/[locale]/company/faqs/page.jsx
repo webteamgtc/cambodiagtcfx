@@ -1,10 +1,7 @@
 import { getPageMetadata } from "@/lib/metadata/getPageMetadata";
 import FaqCategoriesSection from "./components/FaqCategoriesSection";
 import FaqHeroSection from "./components/FaqHeroSection";
-import FaqHumanSupportSection from "./components/FaqHumanSupportSection";
 import SupportCtaSection from "@/app/[locale]/components/common/SupportCtaSection";
-import FaqTopQuestionsSection from "./components/FaqTopQuestionsSection";
-import FaqVideoTutorialsSection from "./components/FaqVideoTutorialsSection";
 
 export async function generateMetadata({ params }) {
   const { locale } = await params;
@@ -27,8 +24,7 @@ export default async function FaqsPage({ params }) {
       <FaqHeroSection />
 
       <FaqCategoriesSection />
-      <FaqTopQuestionsSection locale={locale} />
-      <FaqHumanSupportSection locale={locale} />
+     
       <SupportCtaSection locale={locale} />
     </>
   );
