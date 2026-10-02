@@ -29,7 +29,8 @@ const LEGACY_REDIRECTS = [
   ["/contact-us", "/company/contact-us"],
   ["/awards", "/company/awards"],
   ["/dynamic-leverage", "/company/dynamic-leverage"],
-  ["/events-and-exhibitions", "/company/events-and-exhibitions"],
+  ["/events-and-exhibitions", "/company/about-us"],
+  ["/company/events-and-exhibitions", "/company/about-us"],
   ["/faqs", "/company/faqs"],
 
   // Trading (flat -> /trading/*)

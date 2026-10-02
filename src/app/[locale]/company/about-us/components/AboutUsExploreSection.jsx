@@ -64,21 +64,6 @@ function CareerIcon({ className }) {
   );
 }
 
-function EventsIcon({ className }) {
-  return (
-    <svg className={className} xmlns="http://www.w3.org/2000/svg" width="166" height="159" viewBox="0 0 166 159" fill="none">
-      <line opacity="0.7" y1="145.068" x2="166" y2="145.068" stroke="#293B93" />
-      <path d="M139.382 119.957H27.4658L83.4238 7.92871L139.382 119.957Z" stroke="#293B93" />
-      <path opacity="0.4" d="M122.435 119.743H44.418L83.4258 40.292L122.435 119.743Z" stroke="#293B93" />
-      <rect opacity="0.7" x="61.793" y="119.68" width="42.4154" height="28.7949" stroke="#293B93" />
-      <rect opacity="0.4" x="66.8984" y="119.68" width="32.2" height="28.7949" stroke="#293B93" />
-      <circle cx="30.6473" cy="145.569" r="3.40513" fill="#293B93" />
-      <circle cx="136.206" cy="145.569" r="3.40513" fill="#293B93" />
-      <circle cx="83.4272" cy="7.66154" r="7.66154" fill="#293B93" />
-    </svg>
-  );
-}
-
 function ExploreCard({ label, title, description, href, icon: Icon, learnMore }) {
   return (
     <article className="interactive-card group flex h-full min-w-0 flex-col overflow-hidden rounded-[10px] border border-[#E1E7F6] bg-white transition-shadow duration-200">
@@ -152,17 +137,6 @@ export default function AboutUsExploreSection() {
       ),
       href: localizedHref(locale, "/company/careers"),
       icon: CareerIcon,
-    },
-    {
-      key: "events",
-      label: t("cards.events.label", "03 EVENTS"),
-      title: t("cards.events.title", "Events & Exhibitions"),
-      description: t(
-        "cards.events.description",
-        "View the global exhibitions and events that GTCFX participates in."
-      ),
-      href: localizedHref(locale, "/company/events-and-exhibitions"),
-      icon: EventsIcon,
     },
   ].filter((card) => SHOW_CAREERS || card.key !== "career");
 

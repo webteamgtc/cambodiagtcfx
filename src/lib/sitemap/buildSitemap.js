@@ -21,7 +21,6 @@ const STATIC_PATHS = [
   "company/global-presence",
   "company/regulations",
   "company/awards",
-  "company/events-and-exhibitions",
   "company/forex-expo-dubai-webinar",
   "company/contact-us",
   "company/faqs",

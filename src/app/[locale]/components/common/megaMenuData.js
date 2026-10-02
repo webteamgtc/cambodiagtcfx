@@ -201,10 +201,6 @@ export function getMegaMenuData(navigation = {}, locale = "km-intl") {
               href: "/gtc-news/company-news",
             },
             {
-              label: menuT("about.columns.companyUpdates.events", "Events", navigation),
-              href: "/company/events-and-exhibitions",
-            },
-            {
               label: menuT("about.columns.companyUpdates.awardsMedia", "Awards & Media", navigation),
               href: "/company/awards",
             },
@@ -455,10 +451,6 @@ export function getMegaMenuData(navigation = {}, locale = "km-intl") {
             {
               label: menuT("prime.columns.aboutGtcfx.careerOpportunities", "Career Opportunities", navigation),
               href: "/company/careers",
-            },
-            {
-              label: menuT("prime.columns.aboutGtcfx.eventsExhibitions", "Events & Exhibitions", navigation),
-              href: "/company/events-and-exhibitions",
             },
           ]),
         },

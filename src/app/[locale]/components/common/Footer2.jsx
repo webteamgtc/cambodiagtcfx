@@ -34,7 +34,6 @@ const FOOTER_COLUMN_DEFS = [
         links: [
             { key: "menu3", href: "/trading/deposit", fallback: "Deposit & Withdraw" },
             { key: "menu4", href: "/markets", fallback: "Trading Instruments" },
-            { key: "menu5", href: "/company/events-and-exhibitions", fallback: "Promotions" },
         ],
     },
     {
@@ -55,7 +54,6 @@ const FOOTER_COLUMN_DEFS = [
             { key: "menu2", href: "/company/why-gtc-group", fallback: "Why GTCFX" },
             { key: "menu3", href: "/company/regulations", fallback: "Global Regulation" },
             { key: "menu4", href: "/company/careers", fallback: "Careers" },
-            { key: "menu5", href: "/company/events-and-exhibitions", fallback: "Events" },
         ],
     },
     {
