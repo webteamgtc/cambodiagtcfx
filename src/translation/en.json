@@ -5070,6 +5070,7 @@
   },
   "supportCtaSection": {
     "label": "Still Need Assistance?",
+    "title": "Didn't find what you were looking for?",
     "description": "Submit an enquiry or contact our support team using one of the channels above. Our team can assist with account, platform, payment and general service-related matters. GTCFX provides general and administrative support only through this page. Nothing communicated through our support channels constitutes investment, legal or tax advice.",
     "submitTicket": "Open Live Account",
     "openFreeDemoAccount": "Open Free Demo Account"
