@@ -24,7 +24,6 @@ export default async function FaqsPage({ params }) {
       <FaqHeroSection />
 
       <FaqCategoriesSection />
-     
       <SupportCtaSection locale={locale} />
     </>
   );
