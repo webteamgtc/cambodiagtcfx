@@ -8,6 +8,7 @@ import { AU, GB, KM, MU, VU, ZA } from "country-flag-icons/react/3x2";
 import { feature } from "topojson-client";
 import worldTopo from "world-atlas/countries-110m.json";
 import "leaflet/dist/leaflet.css";
+import { withoutUkMapKey } from "@/lib/company/regulatoryUkFilter";
 
 /** World country polygons (land) derived from world-atlas topojson. */
 const WORLD_FEATURES = feature(worldTopo, worldTopo.objects.countries);
@@ -70,7 +71,7 @@ const LAND_STYLE = {
 };
 
 /** Real geographic coordinates [lat, lng] for each regulated office. */
-const locations = [
+const locations = withoutUkMapKey([
   {
     key: "london",
     code: "FCA",
@@ -119,7 +120,7 @@ const locations = [
     line: "M 0 0 L -52 4",
     cardClass: "right-full top-1/2 mr-2.5 -translate-y-1/2",
   },
-];
+]);
 
 /** Bounds that tightly enclose every regulated office. */
 const LOCATION_BOUNDS = L.latLngBounds(locations.map((loc) => loc.position));

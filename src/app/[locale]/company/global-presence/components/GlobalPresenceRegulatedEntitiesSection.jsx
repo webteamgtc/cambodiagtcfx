@@ -8,6 +8,7 @@ import SectionEyebrow from "@/app/[locale]/components/common/SectionEyebrow";
 import Button from "@/app/[locale]/components/common/Button";
 import { useLocale, usePathTranslation } from "../../../LocaleProvider";
 import { localizedHref } from "@/i18n/localizedHref";
+import { withoutUkEntityKey } from "@/lib/company/regulatoryUkFilter";
 
 const FLAG_ICONS = {
   za: ZA,
@@ -17,7 +18,7 @@ const FLAG_ICONS = {
   mu: MU,
 };
 
-const ENTITIES = [
+const ENTITIES = withoutUkEntityKey([
   {
     key: "southAfrica",
     flagCode: "za",
@@ -91,34 +92,6 @@ const ENTITIES = [
     ],
   },
   {
-    key: "unitedKingdom",
-    flagCode: "gb",
-    nameKey: "entities.unitedKingdom.name",
-    locationKey: "entities.unitedKingdom.location",
-    footerKey: "entities.unitedKingdom.footer",
-    tierKey: "entities.unitedKingdom.tier",
-    details: [
-      {
-        key: "authority",
-        labelKey: "detailLabels.authority",
-        valueKey: "entities.unitedKingdom.authority",
-        icon: BuildingIcon,
-      },
-      {
-        key: "licenseType",
-        labelKey: "detailLabels.licenseType",
-        valueKey: "entities.unitedKingdom.licenseType",
-        icon: DocumentIcon,
-      },
-      {
-        key: "frnLicenseNo",
-        labelKey: "detailLabels.frnLicenseNo",
-        valueKey: "entities.unitedKingdom.frnLicenseNo",
-        icon: DocumentIcon,
-      },
-    ],
-  },
-  {
     key: "australia",
     flagCode: "au",
     nameKey: "entities.australia.name",
@@ -185,7 +158,7 @@ const ENTITIES = [
       },
     ],
   },
-];
+]);
 
 function CarouselArrow({ direction, onClick, disabled }) {
   return (

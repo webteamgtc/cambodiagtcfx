@@ -4,6 +4,7 @@ import FadeInSection from "./FadeInSection";
 import MobilePeekCarousel from "@/app/[locale]/components/common/MobilePeekCarousel";
 import { FiArrowUpRight, FiCheckCircle } from "react-icons/fi";
 import { usePathTranslation } from "@/app/[locale]/LocaleProvider";
+import { withoutUkEntityKey } from "@/lib/company/regulatoryUkFilter";
 import { AU, GB, KM, MU, VU, ZA } from "country-flag-icons/react/3x2";
 
 const ENTITY_VERIFY_LINKS = {
@@ -16,7 +17,7 @@ const ENTITY_VERIFY_LINKS = {
     "https://anjouanoffshorefinanceauthority.org/register/gtc-global-trading-ltd/",
 };
 
-const entities = [
+const entities = withoutUkEntityKey([
 
   {
     id: "ZA-01",
@@ -60,20 +61,6 @@ const entities = [
     ],
   },
   {
-    id: "UK-03",
-    entityKey: "unitedKingdom",
-    flag: "gb",
-    verifyKey: "fca",
-    verifyLink: ENTITY_VERIFY_LINKS.unitedKingdom,
-    tier: true,
-    affiliateNote: true,
-    details: [
-      { labelKey: "regulator", field: "regulator" },
-      { labelKey: "licenseType", field: "licenseType" },
-      { labelKey: "frnLicenseNo", field: "frnLicenseNo" },
-    ],
-  },
-  {
     id: "AU-04",
     entityKey: "australia",
     flag: "au",
@@ -99,7 +86,7 @@ const entities = [
       { labelKey: "companyNo", field: "companyNo" },
     ],
   },
-];
+], (item) => item.entityKey);
 
 const FLAG_ICONS = {
   km: KM,

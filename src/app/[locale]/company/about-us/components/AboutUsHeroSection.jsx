@@ -5,6 +5,7 @@ import Button from "@/app/[locale]/components/common/Button";
 import SectionEyebrow from "@/app/[locale]/components/common/SectionEyebrow";
 import { usePathTranslation } from "../../../LocaleProvider";
 import { localizedHref } from "@/i18n/localizedHref";
+import { isUkRegulationHidden } from "@/lib/company/regulatoryUkFilter";
 
 const REGISTER_HREF =
   "/live-account-application";
@@ -16,7 +17,7 @@ const CITY_PILLS = [
   { key: "dubai", className: "left-[58%] top-[38%]" },
   { key: "hongKong", className: "left-[14%] top-[52%]" },
   { key: "sydney", className: "left-[62%] top-[68%]" },
-];
+].filter((pill) => !(isUkRegulationHidden() && pill.key === "london"));
 
 const TICKER_CARDS = [
   {

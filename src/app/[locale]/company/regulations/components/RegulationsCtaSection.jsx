@@ -5,18 +5,20 @@ import { FiClock } from "react-icons/fi";
 import { useLocale, usePathTranslation } from "@/app/[locale]/LocaleProvider";
 import Button from "@/app/[locale]/components/common/Button";
 import { localizedHref } from "@/i18n/localizedHref";
+import { withoutUkLicenseFooterLines } from "@/lib/company/regulatoryUkFilter";
+
 const steps = [
   { step: "01", key: "register" },
   { step: "02", key: "verify" },
   { step: "03", key: "trade" },
 ];
 
-const licenseFooter = [
+const licenseFooter = withoutUkLicenseFooterLines([
   "FSCA · FSP 51545",
   "VFSC · 40354",
   "FCA UK · 744501",
   "FSC · GB22200292",
-];
+]);
 
 export default function RegulationsCtaSection() {
   const t = usePathTranslation("regulationsPage.cta");

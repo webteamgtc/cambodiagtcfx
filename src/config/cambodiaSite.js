@@ -18,6 +18,8 @@ export const CAMBODIA_SITE = {
   hideFooterLegalColumn: true,
   /** Main nav mega-menu keys hidden on the Cambodia (Khmer) site. */
   navHiddenForKhmer: ["learn", "about"],
+  /** Hide UK / FCA (Global Markets Group) from company regulation UI. */
+  hideUkRegulation: true,
   /**
    * Cambodia regional site — no GA, GTM, Ads, pixels, or domain verification tags.
    * (Duplicate of main gtcfx.com; single-country use only.)

@@ -4,14 +4,15 @@ import SectionEyebrow from "@/app/[locale]/components/common/SectionEyebrow";
 import Button from "@/app/[locale]/components/common/Button";
 import { useLocale, usePathTranslation } from "../../../LocaleProvider";
 import { localizedHref } from "@/i18n/localizedHref";
+import { withoutUkRegulatorKey } from "@/lib/company/regulatoryUkFilter";
 
-const REGULATORS = [
+const REGULATORS = withoutUkRegulatorKey([
   { key: "fsca", code: "FSCA", region: "S. AFRICA", codeKey: "regulators.fsca.code", regionKey: "regulators.fsca.region" },
   { key: "vfsc", code: "VFSC", region: "VANUATU", codeKey: "regulators.vfsc.code", regionKey: "regulators.vfsc.region" },
   { key: "fca", code: "FCA", region: "UK", codeKey: "regulators.fca.code", regionKey: "regulators.fca.region" },
   { key: "asic", code: "ASIC", region: "AUSTRALIA", codeKey: "regulators.asic.code", regionKey: "regulators.asic.region" },
   { key: "fsc", code: "FSC", region: "MAURITIUS", codeKey: "regulators.fsc.code", regionKey: "regulators.fsc.region" },
-];
+]);
 
 function RegulatorCell({ item, t }) {
   return (
@@ -64,7 +65,11 @@ export default function AboutUsRegulationMissionSection() {
           </div>
 
           <div className="mt-10 overflow-hidden rounded-sm border border-[#E1E7F6] lg:mt-12">
-            <div className="grid grid-cols-2 gap-px bg-[#E5EAF4] sm:grid-cols-3 lg:grid-cols-5">
+            <div
+              className={`grid grid-cols-2 gap-px bg-[#E5EAF4] sm:grid-cols-3 ${
+                REGULATORS.length >= 5 ? "lg:grid-cols-5" : "lg:grid-cols-4"
+              }`}
+            >
               {REGULATORS.map((item) => (
                 <RegulatorCell key={item.key} item={item} t={t} />
               ))}

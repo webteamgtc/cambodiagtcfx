@@ -6,12 +6,13 @@ import MobilePeekCarousel from "@/app/[locale]/components/common/MobilePeekCarou
 import FadeInSection from "./FadeInSection";
 import Button from "@/app/[locale]/components/common/Button";
 import { usePathTranslation } from "@/app/[locale]/LocaleProvider";
+import { withoutUkMapKey } from "@/lib/company/regulatoryUkFilter";
 
-const offices = [
+const offices = withoutUkMapKey([
   { key: "dubai", addressCount: 3, flag: "/flags/ae.svg", image: "/dubai.webp" },
   { key: "london", addressCount: 3, flag: "/flags/gb.svg", image: "/london.webp" },
   { key: "limassol", addressCount: 3, flag: "/flags/CY.svg", image: "/cyprus.webp" },
-];
+]);
 
 function OfficeCard({ office, t }) {
   const city = t(`offices.${office.key}.city`);

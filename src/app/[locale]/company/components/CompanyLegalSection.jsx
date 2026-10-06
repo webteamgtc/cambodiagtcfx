@@ -5,6 +5,7 @@ import { AU, GB, MU, VU, ZA } from "country-flag-icons/react/3x2";
 import { useLocaleMessages, usePathTranslation } from "../../LocaleProvider";
 import { localizedHref } from "@/i18n/localizedHref";
 import Button from "@/app/[locale]/components/common/Button";
+import { withoutUkAffiliateEntries } from "@/lib/company/regulatoryUkFilter";
 
 const AFFILIATE_KEYS = ["two", "three", "four", "five", "six", "seven"];
 
@@ -158,7 +159,7 @@ export default function CompanyLegalSection({ locale = "en" }) {
   const affiliates = useMemo(() => {
     const source = messages?.regulationPage?.affiliates ?? {};
 
-    return AFFILIATE_KEYS.map((key) => {
+    const affiliateList = AFFILIATE_KEYS.map((key) => {
       const entry = source[key] ?? {};
 
       return {
@@ -168,6 +169,8 @@ export default function CompanyLegalSection({ locale = "en" }) {
         website: parseWebsite(entry.website),
       };
     }).filter((item) => item.country && item.description);
+
+    return withoutUkAffiliateEntries(affiliateList);
   }, [messages]);
 
   if (!affiliates.length) return null;
