@@ -37,8 +37,7 @@ function FieldError({ message, dark }) {
 
 const VpsHostingForm = ({ variant = "default" }) => {
   const isDark = variant === "dark";
-  const translationText = usePathTranslation("primeTech.vpsHosting.hero.vpsForm");
-  const applyFormT = usePathTranslation("vpsHostingPage.apply.form");
+  const formT = usePathTranslation("vpsHostingPage.apply.form");
   const [loading, setLoading] = useState(false);
   const searchParams = useSearchParams();
   const campaign = searchParams.get("utm_source");
@@ -66,24 +65,27 @@ const VpsHostingForm = ({ variant = "default" }) => {
       terms: false,
     },
     validationSchema: Yup.object({
-      first_name: Yup.string().min(2, translationText("error.minLimit")).required(translationText("error.firstName")),
-      last_name: Yup.string().min(2, translationText("error.minLimit")).required(translationText("error.lastName")),
-      platform: Yup.string().required(translationText("error.platform")),
+      first_name: Yup.string()
+        .min(2, formT("errors.minLimit", "At least 2 characters"))
+        .required(formT("errors.firstName", "First name is required")),
+      last_name: Yup.string()
+        .min(2, formT("errors.minLimit", "At least 2 characters"))
+        .required(formT("errors.lastName", "Last name is required")),
+      platform: Yup.string().required(formT("errors.platform", "Please select a platform")),
       account_no: Yup.string()
-        .min(6, "minimum 6 numbers")
-        .max(9, "maximum 9 numbers")
-        .required(translationText("error.account_no")),
-      package: Yup.string().required(
-        translationText("error.package") ||
-          applyFormT("errors.package", "Please select a VPS plan")
-      ),
-      email: Yup.string().email(translationText("error.invalidEmail")).required(translationText("error.email")),
-      country: Yup.string().required(translationText("error.country")),
+        .min(6, formT("errors.accountMin", "Minimum 6 numbers"))
+        .max(9, formT("errors.accountMax", "Maximum 9 numbers"))
+        .required(formT("errors.accountNo", "Account number is required")),
+      package: Yup.string().required(formT("errors.package", "Please select a VPS plan")),
+      email: Yup.string()
+        .email(formT("errors.invalidEmail", "Invalid email address"))
+        .required(formT("errors.email", "Email is required")),
+      country: Yup.string().required(formT("errors.country", "Country is required")),
     }),
     validate: (values) => {
       const errors = {};
       if (!values.phone) {
-        errors.phone = translationText("error.phone");
+        errors.phone = formT("errors.phone", "Phone number is required");
       }
       return errors;
     },
@@ -115,11 +117,7 @@ const VpsHostingForm = ({ variant = "default" }) => {
         console.log(error);
       } finally {
         setLoading(false);
-        toast(
-          isDark
-            ? applyFormT("toastSubmitted", "Application submitted successfully")
-            : translationText("toastSubmitted")
-        );
+        toast(formT("toastSubmitted", "Application submitted successfully"));
         formik.resetForm();
       }
     },
@@ -170,9 +168,7 @@ const VpsHostingForm = ({ variant = "default" }) => {
     );
   };
 
-  const formTitle = isDark
-    ? applyFormT("title", "VPS Application Form")
-    : translationText("formTitle");
+  const formTitle = formT("title", "VPS Application Form");
 
   return (
     <section className={clsx("w-full", isDark ? "max-w-none" : "mx-auto max-w-xl")}>
@@ -208,12 +204,12 @@ const VpsHostingForm = ({ variant = "default" }) => {
 
           <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
             <div>
-              <FieldLabel dark={isDark}>{translationText("firstName")}</FieldLabel>
+              <FieldLabel dark={isDark}>{formT("firstName", "First Name")}</FieldLabel>
               <input
                 type="text"
                 name="first_name"
                 id="first_name"
-                placeholder={translationText("firstName")}
+                placeholder={formT("firstName", "First Name")}
                 className={inputClass("first_name")}
                 onChange={formik.handleChange}
                 onBlur={formik.handleBlur}
@@ -222,12 +218,12 @@ const VpsHostingForm = ({ variant = "default" }) => {
               <FieldError message={fieldError("first_name")} dark={isDark} />
             </div>
             <div>
-              <FieldLabel dark={isDark}>{translationText("lastName")}</FieldLabel>
+              <FieldLabel dark={isDark}>{formT("lastName", "Last Name")}</FieldLabel>
               <input
                 type="text"
                 name="last_name"
                 id="last_name"
-                placeholder={translationText("lastName")}
+                placeholder={formT("lastName", "Last Name")}
                 className={inputClass("last_name")}
                 onChange={formik.handleChange}
                 onBlur={formik.handleBlur}
@@ -238,7 +234,7 @@ const VpsHostingForm = ({ variant = "default" }) => {
           </div>
 
           <div>
-            <FieldLabel dark={isDark}>{translationText("platform")}</FieldLabel>
+            <FieldLabel dark={isDark}>{formT("platform", "Trading Platform")}</FieldLabel>
             <select
               className={clsx(inputClass("platform"), isDark && "appearance-none")}
               name="platform"
@@ -247,7 +243,7 @@ const VpsHostingForm = ({ variant = "default" }) => {
               onBlur={formik.handleBlur}
             >
               <option value="" className={isDark ? "bg-[#0A1240] text-white" : undefined}>
-                {translationText("selectPlaceholder")}
+                {formT("selectPlaceholder", "Please select")}
               </option>
               {platforms.map((platform) => (
                 <option
@@ -263,12 +259,12 @@ const VpsHostingForm = ({ variant = "default" }) => {
           </div>
 
           <div>
-            <FieldLabel dark={isDark}>{translationText("account")}</FieldLabel>
+            <FieldLabel dark={isDark}>{formT("accountNo", "Account Number")}</FieldLabel>
             <input
               type="number"
               name="account_no"
               id="account_no"
-              placeholder={translationText("account_no")}
+              placeholder={formT("accountNoPlaceholder", "GTCFX account id")}
               className={inputClass("account_no")}
               onChange={formik.handleChange}
               onBlur={formik.handleBlur}
@@ -278,7 +274,7 @@ const VpsHostingForm = ({ variant = "default" }) => {
           </div>
 
           <div>
-            <FieldLabel dark={isDark}>{translationText("package")}</FieldLabel>
+            <FieldLabel dark={isDark}>{formT("plan", "Select VPS Plan")}</FieldLabel>
             <select
               className={clsx(inputClass("package"), isDark && "appearance-none")}
               name="package"
@@ -287,7 +283,7 @@ const VpsHostingForm = ({ variant = "default" }) => {
               onBlur={formik.handleBlur}
             >
               <option value="" className={isDark ? "bg-[#0A1240] text-white" : undefined}>
-                {translationText("selectPlaceholder")}
+                {formT("planPlaceholder", "Choose your plan")}
               </option>
               {packages.map((el) => (
                 <option
@@ -304,13 +300,13 @@ const VpsHostingForm = ({ variant = "default" }) => {
 
           <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
             <div>
-              <FieldLabel dark={isDark}>{translationText("email")}</FieldLabel>
+              <FieldLabel dark={isDark}>{formT("email", "Email Address")}</FieldLabel>
               <input
                 id="email"
                 name="email"
                 type="email"
                 autoComplete="email"
-                placeholder={translationText("email")}
+                placeholder={formT("emailPlaceholder", "your@mail.com")}
                 className={inputClass("email")}
                 onChange={formik.handleChange}
                 onBlur={formik.handleBlur}
@@ -320,7 +316,7 @@ const VpsHostingForm = ({ variant = "default" }) => {
             </div>
 
             <div className={isDark ? "vps-hosting-phone-field" : undefined}>
-              <FieldLabel dark={isDark}>{translationText("phone")}</FieldLabel>
+              <FieldLabel dark={isDark}>{formT("phone", "Phone Number")}</FieldLabel>
               <PhoneInput
                 international
                 key={locationReady ? phoneDefaultCountry : "geo-pending"}
@@ -336,7 +332,7 @@ const VpsHostingForm = ({ variant = "default" }) => {
           </div>
 
           <div>
-            <FieldLabel dark={isDark}>{translationText("country")}</FieldLabel>
+            <FieldLabel dark={isDark}>{formT("country", "Country")}</FieldLabel>
             <select
               className={clsx(inputClass("country"), isDark && "appearance-none")}
               name="country"
@@ -345,7 +341,7 @@ const VpsHostingForm = ({ variant = "default" }) => {
               onBlur={formik.handleBlur}
             >
               <option value="" className={isDark ? "bg-[#0A1240] text-white" : undefined}>
-                {translationText("selectPlaceholder")}
+                {formT("selectPlaceholder", "Please select")}
               </option>
               {countryList.map((country) => (
                 <option
@@ -370,11 +366,7 @@ const VpsHostingForm = ({ variant = "default" }) => {
                 : "rounded-xl bg-primary hover:opacity-95"
             )}
           >
-            {loading
-              ? translationText("sending")
-              : isDark
-                ? applyFormT("submit", "Submit Application")
-                : translationText("submit")}
+            {loading ? formT("submitting", "Submitting...") : formT("submit", "Submit Application")}
             {isDark && !loading ? <span aria-hidden>→</span> : null}
           </button>
         </form>

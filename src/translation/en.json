@@ -8328,6 +8328,11 @@
       "sub": "Join thousands of EA traders who run their strategies on GTCFX VPS. Fill in your details and we'll have your server ready within minutes.",
       "form": {
         "title": "VPS Application Form",
+        "firstName": "First Name",
+        "lastName": "Last Name",
+        "platform": "Trading Platform",
+        "country": "Country",
+        "selectPlaceholder": "Please select",
         "fullName": "Full Name",
         "fullNamePlaceholder": "Your full name",
         "accountNo": "Account Number",
@@ -8348,6 +8353,9 @@
         },
         "errors": {
           "minLimit": "At least 2 characters",
+          "firstName": "First name is required",
+          "lastName": "Last name is required",
+          "platform": "Please select a platform",
           "fullName": "Full name is required",
           "accountNo": "Account number is required",
           "accountMin": "Minimum 6 numbers",
@@ -8355,7 +8363,8 @@
           "package": "Please select a VPS plan",
           "email": "Email is required",
           "invalidEmail": "Invalid email address",
-          "phone": "Phone number is required"
+          "phone": "Phone number is required",
+          "country": "Country is required"
         }
       }
     }
