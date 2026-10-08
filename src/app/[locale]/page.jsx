@@ -20,6 +20,7 @@ import TradingPlatformsStackSection from "./components/common/home/TradingPlatfo
 import MarketTicker from "./components/common/home/MarketTicker";
 import MarketsCoverflow from "./components/common/home/MarketsCoverflow";
 import TradingFaqSection from "./components/common/home/TradingFaqSection";
+import AboutUsGetStartedSection from "./company/about-us/components/AboutUsGetStartedSection";
 export async function generateMetadata({ params }) {
   const { locale } = await params;
   return getPageMetadata({
@@ -64,7 +65,7 @@ export default async function HomePage({ params }) {
           <TradingFaqSection />
         </RevealOnScroll>
         <RevealOnScroll>
-          <HomeRegisterSection />
+          <AboutUsGetStartedSection />
         </RevealOnScroll>
       </Suspense>
     </>

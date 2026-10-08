@@ -78,7 +78,7 @@ export default function TradingFaqSection() {
   };
 
   return (
-    <section className="overflow-hidden bg-[linear-gradient(180deg,#F8F9FC_0%,#FFFFFF_100%)] pt-12 sm:pt-16">
+    <section className="overflow-hidden bg-[linear-gradient(180deg,#F8F9FC_60%,#FFFFFF_100%)] py-12 sm:py-16 mb-10 sm:mb-16">
       <div className="mx-auto max-w-[1280px] px-5 sm:px-8">
         <div className="grid gap-10 lg:grid-cols-12 lg:gap-16">
           <div className="pb-12 lg:col-span-5 lg:pb-0">
