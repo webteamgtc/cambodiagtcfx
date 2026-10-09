@@ -12,7 +12,7 @@ export const PAGE_TYPES = {
   shares: ["Stock"],
   commodities: ["Energy", "Metals"],
   "future-cfds": ["Future"],
-  "crypto-cfds": ["Crypto"],
+  // "crypto-cfds": ["Crypto"],
 };
 
 function getTypeName(item) {

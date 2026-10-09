@@ -61,7 +61,7 @@ export default function OpenLiveAccountPaymentsSection() {
           <p className="Text mx-auto mt-5 max-w-2xl font-normal leading-[1.7] text-[#666]">
             {t(
               "description",
-              "Fund your account in the way that works for you — credit card, bank wire, e-wallet, or crypto."
+              "Fund your account in the way that works for you — credit card, bank wire, e-wallet."
             )}
           </p>
         </div>

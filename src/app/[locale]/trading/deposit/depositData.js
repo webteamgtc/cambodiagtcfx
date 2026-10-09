@@ -16,12 +16,12 @@ export const QUICK_DEPOSIT_METHODS = [
     subtitle: "Instant · Min $50",
     icon: "card",
   },
-  {
-    key: "crypto",
-    name: "USDT Crypto",
-    subtitle: "Instant · Min $50",
-    icon: "crypto",
-  },
+  // {
+  //   key: "crypto",
+  //   name: "USDT Crypto",
+  //   subtitle: "Instant · Min $50",
+  //   icon: "crypto",
+  // },
   {
     key: "mobile",
     name: "Apple / Google Pay",
@@ -71,15 +71,15 @@ export const PAYMENT_METHODS = [
     fundsReceived: "1–3 days",
     cost: "free",
   },
-  {
-    key: "crypto",
-    name: "Cryptocurrency",
-    subtitle: "USDT (TRC20)",
-    icon: "crypto",
-    lowest: "$0",
-    fundsReceived: "immediate",
-    cost: "free",
-  },
+  // {
+  //   key: "crypto",
+  //   name: "Cryptocurrency",
+  //   subtitle: "USDT (TRC20)",
+  //   icon: "crypto",
+  //   lowest: "$0",
+  //   fundsReceived: "immediate",
+  //   cost: "free",
+  // },
   {
     key: "applePay",
     name: "Apple Pay",

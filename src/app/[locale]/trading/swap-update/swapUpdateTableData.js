@@ -3,14 +3,12 @@ import rawSwapTable from "./swapUpdateTableData.json";
 export const SWAP_TABLE_TABS = [
   { key: "forex", label: "Forex" },
   { key: "metal", label: "Metal" },
-  { key: "crypto", label: "Crypto" },
   { key: "indices", label: "Indices" },
 ];
 
 const CATEGORY_KEY_MAP = {
   forex: "Forex",
   metal: "Metal",
-  crypto: "Crypto",
   indices: "Indices",
 };
 

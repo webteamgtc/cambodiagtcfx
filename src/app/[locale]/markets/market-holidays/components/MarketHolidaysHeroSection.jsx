@@ -28,13 +28,6 @@ const TICKER_CARDS = [
     change: "-124 (-0.32%)",
     positive: false,
   },
-  {
-    symbol: "BTCUSD",
-    category: "Crypto",
-    price: "67,450",
-    change: "+1,230 (+1.86%)",
-    positive: true,
-  },
 ];
 
 const STATS = [

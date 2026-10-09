@@ -204,18 +204,18 @@ export default function TrustPromiseSection() {
         href: "/trading/mt5-platform",
         className: "h-14 w-32 object-contain",
       },
-      {
-        id: "web",
-        iconLetter: cfg?.cards?.web?.iconLetter ?? "W",
-        title: t("cards.web.title", "WebTrader"),
-        description: t("cards.web.description", "Log in from any browser and trade with no software install."),
-        visual: <VisualWeb imageAlt={t("cards.web.title", "WebTrader")} />,
-        icon: "/home/mt4-platform.webp",
-        btnText: t("cards.web.buttonText", "Download MT4 Platform"),
-        href: "/trading/mt4-platform",
-        className: "h-14 w-32 object-contain",
+      // {
+      //   id: "web",
+      //   iconLetter: cfg?.cards?.web?.iconLetter ?? "W",
+      //   title: t("cards.web.title", "WebTrader"),
+      //   description: t("cards.web.description", "Log in from any browser and trade with no software install."),
+      //   visual: <VisualWeb imageAlt={t("cards.web.title", "WebTrader")} />,
+      //   icon: "/home/mt4-platform.webp",
+      //   btnText: t("cards.web.buttonText", "Download MT4 Platform"),
+      //   href: "/trading/mt4-platform",
+      //   className: "h-14 w-32 object-contain",
 
-      },
+      // },
     ],
     [cfg, t]
   );

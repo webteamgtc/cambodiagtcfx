@@ -675,116 +675,6 @@
       "swap short": -2.05
     }
   ],
-  "Crypto": [
-    {
-      "symbol": "ADAUSDT",
-      "swap type": "in percentage terms, using current price",
-      "swap long": -27,
-      "swap short": -16.5
-    },
-    {
-      "symbol": "ATOMUSDT",
-      "swap type": "in percentage terms, using current price",
-      "swap long": -24,
-      "swap short": -13.5
-    },
-    {
-      "symbol": "BATUSDT",
-      "swap type": "in percentage terms, using current price",
-      "swap long": -24,
-      "swap short": -13.5
-    },
-    {
-      "symbol": "BCHUSDT",
-      "swap type": "in percentage terms, using current price",
-      "swap long": -27,
-      "swap short": -16.5
-    },
-    {
-      "symbol": "BTCUSDT",
-      "swap type": "in percentage terms, using current price",
-      "swap long": -8.625,
-      "swap short": -3.75
-    },
-    {
-      "symbol": "DASHUSDT",
-      "swap type": "in percentage terms, using current price",
-      "swap long": -27,
-      "swap short": -16.5
-    },
-    {
-      "symbol": "DOGEUSDT",
-      "swap type": "in percentage terms, using current price",
-      "swap long": -27,
-      "swap short": -16.5
-    },
-    {
-      "symbol": "EOSUSDT",
-      "swap type": "in percentage terms, using current price",
-      "swap long": -27,
-      "swap short": -16.5
-    },
-    {
-      "symbol": "ETHUSDT",
-      "swap type": "in percentage terms, using current price",
-      "swap long": -34.5,
-      "swap short": -19
-    },
-    {
-      "symbol": "FILUSDT",
-      "swap type": "in percentage terms, using current price",
-      "swap long": -24,
-      "swap short": -13.5
-    },
-    {
-      "symbol": "LTCUSDT",
-      "swap type": "in percentage terms, using current price",
-      "swap long": -27,
-      "swap short": -16.5
-    },
-    {
-      "symbol": "TRUMPUSDT",
-      "swap type": "in percentage terms, using current price",
-      "swap long": -34.5,
-      "swap short": -19
-    },
-    {
-      "symbol": "TRXUSDT",
-      "swap type": "in percentage terms, using current price",
-      "swap long": -27,
-      "swap short": -16.5
-    },
-    {
-      "symbol": "USDSUDT",
-      "swap type": "in money, using margin currency",
-      "swap long": -8,
-      "swap short": -4
-    },
-    {
-      "symbol": "XLMUSDT",
-      "swap type": "in percentage terms, using current price",
-      "swap long": -27,
-      "swap short": -16.5
-    },
-    {
-      "symbol": "XMRUSDT",
-      "swap type": "in percentage terms, using current price",
-      "swap long": -24,
-      "swap short": -13.5
-    },
-    {
-      "symbol": "XRPUSDT",
-      "swap type": "in percentage terms, using current price",
-      "swap long": -24,
-      "swap short": -13.5
-    },
-    {
-      "symbol": "ZECUSDT",
-      "swap type": "in percentage terms, using current price",
-      "swap long": -24,
-      "swap short": -13.5
-    }
-  ],
   "Indices": [
     {
       "symbol": "CUCUSD",
@@ -880,12 +770,6 @@
       "symbol": "AUD_Basket",
       "swap type": "in points",
       "swap long": -18.93,
-      "swap short": -16
-    },
-    {
-      "symbol": "Crypto_Basket",
-      "swap type": "in percentage terms, using current prices",
-      "swap long": -27.62,
       "swap short": -16
     },
     {

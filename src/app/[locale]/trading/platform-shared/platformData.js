@@ -93,12 +93,12 @@ export const MT4 = {
       num: "04",
       tag: "Multi-Asset Markets",
       heading: "Trade the entire market on one screen.",
-      sub: "Forex, indices, commodities, crypto, shares — over 200 instruments live in a single MT4 terminal. Switch between asset classes without ever leaving the platform.",
+      sub: "Forex, indices, commodities, shares — over 200 instruments live in a single MT4 terminal. Switch between asset classes without ever leaving the platform.",
       bullets: [
         { bold: "FX Majors, Minors & Exotics", rest: "— 60+ currency pairs with deep liquidity." },
         { bold: "Global Indices", rest: "— S&P 500, NASDAQ, DAX, Nikkei and more." },
         { bold: "Commodities", rest: "— gold, silver, oil, natural gas." },
-        { bold: "Shares", rest: "— BTC, ETH, plus single-stock CFDs." },
+        { bold: "Shares", rest: "— plus single-stock CFDs." },
       ],
       imgSrc: "/trading/mt4.webp",
       imgAlt: "Multi-asset market watch on MT4",
@@ -276,7 +276,7 @@ export const MT5 = {
         { bold: "FX Majors, Minors & Exotics", rest: "— 60+ currency pairs with deep liquidity." },
         { bold: "Global Indices & Stocks", rest: "— S&P 500, NASDAQ, DAX and individual equities." },
         { bold: "Commodities", rest: "— gold, silver, oil, natural gas." },
-        { bold: "Crypto & Futures", rest: "— BTC, ETH, plus futures instruments." },
+        { bold: "Futures", rest: "— plus futures instruments." },
       ],
     },
     {

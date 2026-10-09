@@ -61,16 +61,6 @@ export const TRADING_HOURS_SAMPLE_DATA = {
       Fri: { pricing: "01:00 - 23:59", trading: "01:01 - 23:59" },
     },
   ],
-  Crypto: [
-    {
-      category: "Crypto",
-      Mon: { pricing: "00:00 - 24:00", trading: "00:01 - 24:00" },
-      Tue: { pricing: "00:00 - 24:00", trading: "00:01 - 24:00" },
-      Wed: { pricing: "00:00 - 24:00", trading: "00:01 - 24:00" },
-      Thu: { pricing: "00:00 - 24:00", trading: "00:01 - 24:00" },
-      Fri: { pricing: "00:00 - 24:00", trading: "00:01 - 24:00" },
-    },
-  ],
   "Cash Indices": [
     {
       category: "AUS200c",
@@ -185,7 +175,6 @@ const TAB_TO_CATEGORY = {
   fx: "FX",
   goldSilver: "Gold & Silver",
   crudeOil: "Crude Oil",
-  crypto: "Crypto",
   cashIndices: "Cash Indices",
   stocks: "Stocks",
 };

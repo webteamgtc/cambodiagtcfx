@@ -138,11 +138,11 @@ export const INSTRUMENT_CATEGORIES = {
       title: "Shares & CFDs",
       examples: "Selected single-stock CFDs",
     },
-    {
-      key: "crypto-alt",
-      title: "Alt Cryptocurrencies",
-      examples: "Selected altcoin pairs",
-    },
+    // {
+    //   key: "crypto-alt",
+    //   title: "Alt Cryptocurrencies",
+    //   examples: "Selected altcoin pairs",
+    // },
     {
       key: "other",
       title: "Other Instruments",

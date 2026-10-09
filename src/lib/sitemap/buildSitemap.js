@@ -48,7 +48,7 @@ const STATIC_PATHS = [
   "markets/commodities",
   "markets/energy",
   "markets/metals",
-  "markets/crypto-cfds",
+  // "markets/crypto-cfds",
   "markets/shares",
   "markets/future-cfds",
   "markets/economic-calendar",

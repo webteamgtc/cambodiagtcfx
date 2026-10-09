@@ -49,7 +49,7 @@ const STAT_ITEMS = [
     subtitleKey: "stats.instruments.subtitle",
     value: "7+",
     title: "Trading Markets",
-    subtitle: "Forex, Metals, Indices, Shares, Crypto & more",
+    subtitle: "Forex, Metals, Indices, Shares and more",
     icon: InstrumentsIcon,
   },
 ];

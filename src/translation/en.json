@@ -120,10 +120,6 @@
       "title": "Commodity CFD Trading | Gold, Oil & More | GTCFX",
       "des": "Trade commodity CFDs including gold, oil, and more. Diversify your trading strategy with competitive spreads and fast execution."
     },
-    "cryptoCfds": {
-      "title": "Crypto CFD Trading | Bitcoin & Ethereum CFDs | GTCFX",
-      "des": "Trade Bitcoin, Ethereum, and other popular cryptocurrency CFDs with GTCFX. Get competitive spreads, 24/7 market access, and powerful platforms."
-    },
     "futureCfds": {
       "title": "Futures CFD Trading Online | GTCFX",
       "des": "Trade futures CFDs on S&P 500, Nasdaq 100, and more with GTCFX, featuring competitive spreads, fast execution, and no physical delivery. Start trading today!"
@@ -250,7 +246,7 @@
     },
     "marketNews": {
       "title": "Market News | Breaking Headlines & Analysis | GTCFX",
-      "des": "Stay ahead with GTCFX market news — breaking headlines, economic calendar updates, analysis, and trading insights across forex, indices, commodities, and crypto."
+      "des": "Stay ahead with GTCFX market news — breaking headlines, economic calendar updates, analysis, and trading insights across forex, indices, commodities."
     },
     "marketHolidays": {
       "title": "Market Holidays | Trading Hours & Schedule | GTCFX",
@@ -438,12 +434,6 @@
           "title": "MT5 Trading Platform",
           "description": "Advanced tools for modern trading",
           "buttonText": "Download MT5 Platform"
-        },
-        "web": {
-          "iconLetter": "4",
-          "title": "MT4 Trading Platform",
-          "description": "A trusted and classic trading platform",
-          "buttonText": "Download MT4 Platform"
         }
       }
     },
@@ -597,7 +587,6 @@
             "indices": "Indices CFDs",
             "metals": "Metals CFDs",
             "sharesEquityCfds": "Shares/Equity CFDs",
-            "cryptoCfds": "Crypto CFDs",
             "futureCfds": "Future CFDs"
           },
           "recommendations": {
@@ -791,13 +780,11 @@
         "fxMinors": "FX Minors",
         "energy": "Energy",
         "metals": "Metals",
-        "index": "Index",
-        "crypto": "Crypto"
-      },
+        "index": "Index"
+            },
       "categories": {
         "popular": "Popular",
         "forex": "Forex",
-        "crypto": "Crypto CFDs",
         "metals": "Metals",
         "indices": "Indices",
         "futures": "Futures",
@@ -848,12 +835,6 @@
           "cardTitle": "Shares & Equity\nCFDs Trading",
           "title": "Trade Shares & Equity CFDs",
           "description": "Access global equity opportunities with flexible market."
-        },
-        "crypto-cfds": {
-          "label": "Crypto CFDs",
-          "cardTitle": "Crypto CFDs\nTrading",
-          "title": "Explore Crypto CFDs",
-          "description": "Trade selected cryptocurrency CFDs through one secure."
         },
         "future-cfds": {
           "label": "Future CFDs",
@@ -1052,7 +1033,7 @@
         },
         "markets": {
           "question": "Which markets can I trade with GTCFX?",
-          "answer": "Depending on your account type and region, you may access Forex, Metals, Energy, Indices, Commodities, Shares, Crypto CFDs and Futures CFDs."
+          "answer": "Depending on your account type and region, you may access Forex, Metals, Energy, Indices, Commodities, Shares and Futures CFDs."
         },
         "leverage": {
           "question": "What is leverage in trading?",
@@ -1070,7 +1051,7 @@
     },
     "registerSection": {
       "title": "Trade the World's markets.",
-      "subtitle": "Open a live account and access 7+ trading markets including Forex, Metals, Indices, Shares, Crypto & more — from a broker trusted globally.",
+      "subtitle": "Open a live account and access 7+ trading markets including Forex, Metals, Indices, Shares and more — from a broker trusted globally.",
       "formTitle": "Register Now"
     },
     "registerForm": {
@@ -1580,8 +1561,7 @@
         "menu3": "Indices CFDs",
         "menu4": "Metals CFDs",
         "menu5": "Shares/Equity CFDs",
-        "menu6": "Crypto CFDs",
-        "menu7": "Future CFDs"
+        "menu6": "Future CFDs"
       },
       "quickNavigation": {
         "label": "Quick Navigation",
@@ -1850,8 +1830,8 @@
       },
       "markets": {
         "label": "Markets",
-        "standard": "Access to 7+ trading markets including Forex, Metals, Indices, Shares, Crypto & more",
-        "ecn": "Access to 7+ trading markets including Forex, Metals, Indices, Shares, Crypto & more"
+        "standard": "Access to 7+ trading markets including Forex, Metals, Indices, Shares, Commodities & more",
+        "ecn": "Access to 7+ trading markets including Forex, Metals, Indices, Shares, Commodities & more"
       },
       "tradingRestrictions": {
         "label": "Trading Restrictions",
@@ -2127,7 +2107,7 @@
         "preciousMetals": "Selected precious metals (e.g., XAUUSD, XAGUSD)",
         "minorsExotics": "Selected minors & exotics",
         "indicesEnergies": "Selected indices & energies",
-        "cryptocurrencies": "Selected cryptocurrencies"
+        "commodities": "Selected commodities"
       },
       "note": "For the live list, please refer to the Contract Specifications section in your trading platform.",
       "nonSwapFree": {
@@ -2140,10 +2120,6 @@
         "commodities": {
           "title": "Commodities & Energies",
           "items": "CUCUSD,NGCUSD,XPDUSD,XPTUSD"
-        },
-        "crypto": {
-          "title": "Cryptocurrencies (USDT Format)",
-          "items": "ADAUSDT,ATMUSDT,BATUSDT,BCHUSDT,DOGUSDT,DSHUSDT,LTCUSDT,TRUMPUSDT,TRXUSDT,XLMUSDT,XMRUSDT,XRPUSDT,ZECUSDT"
         }
       }
     },
@@ -2506,7 +2482,6 @@
       "swap-free-terms-and-conditions": "Swap-Free Terms & Conditions",
       "website-disclaimer": "Website Disclaimer",
       "commodities": "Commodities",
-      "crypto-cfds": "Crypto CFDs",
       "economic-calendar": "Economic Calendar",
       "energy": "Energy",
       "forex": "Forex",
@@ -3930,7 +3905,7 @@
         "instruments": {
           "value": "7+",
           "title": "Trading Markets",
-          "subtitle": "Forex, Metals, Indices, Shares, Crypto & more"
+          "subtitle": "Forex, Metals, Indices, Shares, Commodities & more"
         }
       }
     },
@@ -4011,7 +3986,7 @@
           "footer": "2023 - 2024"
         },
         "fintechSummit": {
-          "title": "Fintech & Crypto Summit",
+          "title": "Fintech & Commodities Summit",
           "description": "Strategic sponsor at Dubai's flagship fintech summit — showcasing our commitment to emerging financial technologies and innovation.",
           "footer": "2024"
         },
@@ -4701,14 +4676,14 @@
           "thumbAlt": "Money Expo Mumbai event photo"
         },
         "fintechSummit": {
-          "tag": "Fintech & Crypto Summit",
+          "tag": "Fintech & Commodities Summit",
           "title": "Innovation Meets Regulation",
           "location": "Dubai, UAE",
           "date": "October 2024",
           "attendees": "2,800+ Attendees",
           "description": "At Dubai's flagship fintech summit, GTC highlighted how emerging technologies and disciplined risk frameworks can coexist — leading discussions on digital assets, platform innovation, and institutional-grade execution.",
-          "mainAlt": "GTC team at Fintech and Crypto Summit Dubai with branded exhibition space",
-          "thumbAlt": "Fintech and Crypto Summit event photo"
+          "mainAlt": "GTC team at Fintech and Commodities Summit Dubai with branded exhibition space",
+          "thumbAlt": "Fintech and Commodities Summit event photo"
         }
       },
       "emptyYear": "No archived events for this year yet.",
@@ -5561,7 +5536,6 @@
         "forex": "Forex",
         "indices": "Indices",
         "metals": "Metals",
-        "crypto": "Crypto",
         "calculator": "Calculator",
         "stocks": "Stocks"
       },
@@ -5578,7 +5552,7 @@
         },
         "instruments": {
           "label": "Trading Markets",
-          "description": "Forex, Metals, Indices, Shares, Crypto & more."
+          "description": "Forex, Metals, Indices, Shares, Commodities & more."
         },
         "entities": {
           "label": "Licences",
@@ -6210,7 +6184,7 @@
     "payments": {
       "eyebrow": "Funding",
       "title": "10+ payment methods. Instant deposits.",
-      "description": "Fund your account in the way that works for you — credit card, bank wire, e-wallet, or crypto.",
+      "description": "Fund your account in the way that works for you — credit card, bank wire, e-wallet.",
       "ariaLabel": "Accepted payment methods",
       "footerNote": "GTCFX charges zero deposit fees on most payment channels"
     },
@@ -6461,7 +6435,7 @@
         },
         "tools": {
           "title": "7+ Trading Markets",
-          "description": "Forex, Metals, Indices, Shares, Crypto & more — explore every market from one terminal."
+          "description": "Forex, Metals, Indices, Shares, Commodities & more — explore every market from one terminal."
         }
       }
     },
@@ -6656,7 +6630,7 @@
             "0 Commission Charges",
             "Secure, instant and fast execution",
             "Direct access to top tier banks",
-            "Access to 7+ trading markets including Forex, Metals, Indices, Shares, Crypto & more",
+            "Access to 7+ trading markets including Forex, Metals, Indices, Shares, Commodities & more",
             "No dealing desk intervention",
             "Negative balance protection",
             "No trading restrictions",
@@ -6679,7 +6653,7 @@
             "Commission $5/standard lot",
             "Secure, instant and fast execution",
             "Direct access to top tier banks",
-            "Access to 7+ trading markets including Forex, Metals, Indices, Shares, Crypto & more",
+            "Access to 7+ trading markets including Forex, Metals, Indices, Shares, Commodities & more",
             "No dealing desk intervention",
             "Negative balance protection",
             "No trading restrictions",
@@ -6705,7 +6679,7 @@
             "Commission $3/standard lot",
             "Secure, instant and fast execution",
             "Direct access to top tier banks",
-            "Access to 7+ trading markets including Forex, Metals, Indices, Shares, Crypto & more",
+            "Access to 7+ trading markets including Forex, Metals, Indices, Shares, Commodities & more",
             "No dealing desk intervention",
             "Negative balance protection",
             "No trading restrictions",
@@ -7050,7 +7024,7 @@
         {
           "tag": "Multi-Asset Markets",
           "heading": "Trade the entire market on one screen.",
-          "sub": "Forex, indices, commodities, crypto, shares — over 200 instruments live in a single MT4 terminal. Switch between asset classes without ever leaving the platform.",
+          "sub": "Forex, indices, commodities, shares — over 200 instruments live in a single MT4 terminal. Switch between asset classes without ever leaving the platform.",
           "imgAlt": "Multi-asset market watch on MT4",
           "bullets": [
             {
@@ -7067,7 +7041,7 @@
             },
             {
               "bold": "Shares",
-              "rest": "— BTC, ETH, plus single-stock CFDs."
+              "rest": "— plus single-stock CFDs."
             }
           ]
         },
@@ -7338,8 +7312,8 @@
               "rest": "— gold, silver, oil, natural gas."
             },
             {
-              "bold": "Crypto & Futures",
-              "rest": "— BTC, ETH, plus futures instruments."
+              "bold": "Commodities & Futures",
+              "rest": "— plus futures instruments."
             }
           ]
         },
@@ -7534,11 +7508,11 @@
     },
     "featureCards": {
       "intro": {
-        "description": "Forex, Metals, Indices, Shares, Crypto & more — 7+ trading markets accessible from a single, unified watchlist. Real-time quotes, instant fills, professional order types."
+        "description": "Forex, Metals, Indices, Shares, Commodities & more — 7+ trading markets accessible from a single, unified watchlist. Real-time quotes, instant fills, professional order types."
       },
       "left": {
         "title": "One app. Every asset class.",
-        "description": "Forex, Metals, Indices, Shares, Crypto & more — 7+ trading markets accessible from a single, unified watchlist. Real-time quotes, instant fills, professional order types.",
+        "description": "Forex, Metals, Indices, Shares, Commodities & more — 7+ trading markets accessible from a single, unified watchlist. Real-time quotes, instant fills, professional order types.",
         "alt": "Trader using GTC Go on mobile"
       },
       "right": {
@@ -7610,7 +7584,7 @@
               "label": "Energy & Metals"
             },
             {
-              "label": "Shares / Crypto / Futures CFDs"
+              "label": "Shares / Futures CFDs"
             }
           ]
         },
@@ -7768,11 +7742,10 @@
     "spreads": {
       "eyebrow": "Swap Table",
       "heading": "Daily Swap Rates Across All Markets",
-      "sub": "Overnight swap rates for Forex, Metal, Crypto, and Indices. Searchable by symbol.",
+      "sub": "Overnight swap rates for Forex, Metal, Commodities, and Indices. Searchable by symbol.",
       "tabs": {
         "forex": "Forex",
         "metal": "Metal",
-        "crypto": "Crypto",
         "indices": "Indices"
       },
       "searchPlaceholder": "Search symbol...",
@@ -7793,8 +7766,7 @@
       "tabs": {
         "forex": "Forex",
         "indices": "Indices",
-        "commodities": "Commodities",
-        "crypto": "Crypto"
+        "commodities": "Commodities"
       },
       "searchPlaceholder": "Search symbol...",
       "searchAria": "Search symbol",
@@ -7945,10 +7917,6 @@
           "shares": {
             "title": "Shares & CFDs",
             "examples": "Selected single-stock CFDs"
-          },
-          "crypto-alt": {
-            "title": "Alt Cryptocurrencies",
-            "examples": "Selected altcoin pairs"
           },
           "other": {
             "title": "Other Instruments",
@@ -8457,7 +8425,7 @@
         "FX",
         "Gold",
         "Index",
-        "Crypto"
+        "Commodities"
       ],
       "stats": [
         "Currency Pairs",
@@ -8482,7 +8450,6 @@
         "fx": "FX",
         "goldSilver": "Gold & Silver",
         "crudeOil": "Crude Oil",
-        "crypto": "Crypto",
         "cashIndices": "Cash Indices",
         "stocks": "Stocks"
       },
@@ -8526,10 +8493,6 @@
         "crudeOil": [
           "WTI",
           "Brent"
-        ],
-        "crypto": [
-          "BTC/USD",
-          "ETH/USD"
         ],
         "cashIndices": [
           "US30",
@@ -8626,11 +8589,6 @@
           "title": "Cash Indices",
           "hours": "Varies by exchange",
           "status": "Most Open"
-        },
-        {
-          "title": "Cryptocurrencies",
-          "hours": "24/7 — Always Open",
-          "status": "Always Open"
         },
         {
           "title": "US & EU Shares",
@@ -8804,7 +8762,6 @@
       ],
       "commoditiesTitle": "Commodities & Indices",
       "commoditiesDesc": "Diversify beyond currencies with precious metals, energy products, and global stock indices.",
-      "cryptoTitle": "Cryptocurrency Trading",
       "viewLink": "view →",
       "cards": {
         "stockMarket": {
@@ -8819,9 +8776,7 @@
         "commodities": {
           "title": "Commodities"
         },
-        "cryptocurrency": {
-          "title": "Cryptocurrency"
-        },
+        
         "bondDerivatives": {
           "title": "Bond & Derivatives"
         }
@@ -8844,7 +8799,7 @@
         },
         "tradingInstrument": {
           "title": "Trading Instrument",
-          "description": "Access to 7+ trading markets including Forex, Metals, Indices, Shares, Crypto & more across"
+          "description": "Access to 7+ trading markets including Forex, Metals, Indices, Shares, Commodities & more across"
         },
         "ultraFastExecution": {
           "title": "Ultra-fast Execution",
@@ -9013,7 +8968,7 @@
     "cta": {
       "headingPrefix": "Trade the World's",
       "headingAccent": "markets.",
-      "sub": "Open a live account and access 7+ trading markets including Forex, Metals, Indices, Shares, Crypto & more — from a broker trusted globally.",
+      "sub": "Open a live account and access 7+ trading markets including Forex, Metals, Indices, Shares, Commodities & more — from a broker trusted globally.",
       "openLiveAccount": "Open Live Account",
       "tryDemoFirst": "Try Demo Account First",
       "disclaimer": "CFD trading involves significant risk of loss. Please trade responsibly.",
@@ -10504,209 +10459,7 @@
       "footerLink": "View all metal symbols →"
     }
   },
-  "cryptoCfdsMarketPage": {
-    "hero": {
-      "badge": "MARKET",
-      "titlePrefix": "Trade",
-      "titleAccent": "BTCUSD",
-      "titleSuffix": "with Precision",
-      "sub": "Access leading cryptocurrency CFDs with competitive spreads, 24/7 market access, and institutional-grade execution — no wallet required.",
-      "stats": [
-        {
-          "label": "Min Spread (pips)",
-          "value": "0.0"
-        },
-        {
-          "label": "Max Leverage",
-          "value": "1:2000"
-        },
-        {
-          "label": "Execution Speed",
-          "value": "<10ms"
-        },
-        {
-          "label": "Live Support",
-          "value": "24/7"
-        }
-      ],
-      "widget": {
-        "symbol": "BTCUSD",
-        "minSpreadNote": "Min Spread: 15.70 pts · 1 BTC per lot"
-      }
-    },
-    "trending": {
-      "badge": "Hot topic",
-      "title": "Crypto Markets Trending Now",
-      "sub": "Whether you trade currencies, energy, global indices, precious metals or broad commodities — GTCFX gives you direct, competitive access to them all.",
-      "items": [
-        {
-          "key": "btc",
-          "name": "Bitcoin",
-          "code": "BTC",
-          "footerText": "Volume: 1.2M"
-        },
-        {
-          "key": "eth",
-          "name": "Ethereum",
-          "code": "ETH",
-          "footerText": "Global demand"
-        },
-        {
-          "key": "xrp",
-          "name": "Ripple",
-          "code": "XRP",
-          "footerText": "Volume: 980K"
-        },
-        {
-          "key": "ltc",
-          "name": "Litecoin",
-          "code": "LTC",
-          "footerText": "24h active"
-        },
-        {
-          "key": "ada",
-          "name": "Cardano",
-          "code": "ADA",
-          "footerText": "Volume: 640K"
-        },
-        {
-          "key": "sol",
-          "name": "Solana",
-          "code": "SOL",
-          "footerText": "High momentum"
-        },
-        {
-          "key": "doge",
-          "name": "Dogecoin",
-          "code": "DOGE",
-          "footerText": "24h active"
-        },
-        {
-          "key": "bnb",
-          "name": "BNB",
-          "code": "BNB",
-          "footerText": "Volume: 720K"
-        }
-      ],
-      "footerStats": [
-        "200k+ active traders worldwide",
-        "$15B+ monthly trading volume",
-        "24/7 dedicated support: 0.5s response"
-      ],
-      "footerCta": "Start trading"
-    },
-    "overview": {
-      "eyebrow": "MARKET OVERVIEW",
-      "title": "All markets at a glance",
-      "sub": "Compare spreads, leverage, and trading hours across GTCFX market categories.",
-      "rows": [
-        {
-          "key": "forex",
-          "market": "Forex"
-        },
-        {
-          "key": "energy",
-          "market": "Energy"
-        },
-        {
-          "key": "indices",
-          "market": "Indices"
-        },
-        {
-          "key": "metals",
-          "market": "Metals"
-        },
-        {
-          "key": "commodities",
-          "market": "Commodities"
-        }
-      ]
-    },
-    "why": {
-      "title": "Why trade BTCUSD with GTCFX?",
-      "sub": "A platform built for serious traders — fast, regulated, and cost-efficient.",
-      "features": {
-        "execution": {
-          "title": "Ultra-fast execution",
-          "description": "NDD, no dealing desk, zero manual intervention",
-          "badge": "< 10 ms"
-        },
-        "spreads": {
-          "title": "Tight spreads",
-          "description": "ECN accounts from 0.0 pips with raw pricing",
-          "badge": "From 0.0"
-        },
-        "regulated": {
-          "title": "Multi-regulated",
-          "description": "Licensed by 7 financial authorities worldwide",
-          "badge": "7 licences"
-        },
-        "support": {
-          "title": "24/7 support",
-          "description": "English and Khmer client service",
-          "badge": "AR EN ZH"
-        },
-        "platform": {
-          "title": "Multi-platform",
-          "description": "MT4, MT5 & GTCFX Go App",
-          "badge": "MT4-MT5-App"
-        }
-      },
-      "stats": [
-        {
-          "label": "Global clients",
-          "value": "985,000+"
-        },
-        {
-          "label": "14+ years of trust",
-          "value": "Est. 2012"
-        }
-      ],
-      "trustLinks": [
-        "SCA regulated",
-        "FCA authorised",
-        "ASIC licensed",
-        "Segregated client funds"
-      ]
-    },
-    "promo": {
-      "text": "Trade leading cryptocurrency CFDs around the clock — speculate on price moves without a wallet. Go long or short with transparent pricing and flexible leverage.",
-      "highlights": [
-        "BTC spread from 15.70",
-        "Leverage up to 1:2000",
-        "24/7 market access"
-      ]
-    },
-    "faq": {
-      "eyebrow": "FAQ",
-      "title": "Common Questions about Crypto CFDs",
-      "sub": "Industry-leading execution, dual top-tier regulation, and uncompromised fund security — built for traders who demand excellence.",
-      "items": [
-        {
-          "question": "Do I need a crypto wallet to trade?",
-          "answer": "No. Crypto CFDs let you speculate on price movements without owning or storing digital assets. All positions are settled in your account currency."
-        },
-        {
-          "question": "What is a CFD?",
-          "answer": "A Contract for Difference (CFD) is a derivative product that allows you to speculate on price movements of global financial markets without owning the underlying asset. Profit from both rising and falling prices with flexible terms."
-        },
-        {
-          "question": "What leverage do you offer?",
-          "answer": "Leverage up to 1:2000 may be available on selected crypto CFDs, subject to account type and regional regulations. Crypto markets are highly volatile — manage risk carefully."
-        }
-      ]
-    },
-    "finalCta": {
-      "eyebrow": "START NOW",
-      "title": "Ready to Trade BTCUSD?",
-      "sub": "Open a live account in minutes, or practise risk-free with our unlimited demo account. No deposit required to start."
-    },
-    "liveQuotes": {
-      "title": "Live Crypto CFD Quotes",
-      "sub": "Explore cryptocurrency CFD instruments available on GTCFX — trade major coins around the clock.",
-      "footerLink": "View all crypto symbols →"
-    }
-  },
+ 
   "futureCfdsMarketPage": {
     "hero": {
       "badge": "MARKET",
@@ -10873,7 +10626,7 @@
       ]
     },
     "promo": {
-      "text": "Trade leading cryptocurrency CFDs around the clock — speculate on price moves without a wallet. Go long or short with transparent pricing and flexible leverage.",
+      "text": "Trade leading CFDs around the clock — speculate on price moves without a wallet. Go long or short with transparent pricing and flexible leverage.",
       "highlights": [
         "BTC spread from 15.70",
         "Leverage up to 1:2000",
@@ -10886,8 +10639,8 @@
       "sub": "Industry-leading execution, dual top-tier regulation, and uncompromised fund security — built for traders who demand excellence.",
       "items": [
         {
-          "question": "Do I need a crypto wallet to trade?",
-          "answer": "No. Crypto CFDs let you speculate on price movements without owning or storing digital assets. All positions are settled in your account currency."
+          "question": "Do I need a wallet to trade?",
+          "answer": "No. CFDs let you speculate on price movements without owning or storing digital assets. All positions are settled in your account currency."
         },
         {
           "question": "What is a CFD?",
@@ -10895,7 +10648,7 @@
         },
         {
           "question": "What leverage do you offer?",
-          "answer": "Leverage up to 1:2000 may be available on selected crypto CFDs, subject to account type and regional regulations. Crypto markets are highly volatile — manage risk carefully."
+          "answer": "Leverage up to 1:2000 may be available on selected CFDs, subject to account type and regional regulations. CFDs markets are highly volatile — manage risk carefully."
         }
       ]
     },

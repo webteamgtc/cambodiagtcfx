@@ -48,7 +48,7 @@ export default function SwapUpdateSpreadsSection() {
           <p className="Text mx-auto mt-5 max-w-5xl font-normal leading-[1.7] text-[#69729F]">
             {t(
               "sub",
-              "Overnight swap rates for Forex, Metal, Crypto, and Indices. Searchable by symbol."
+              "Overnight swap rates for Forex, Metal, and Indices. Searchable by symbol."
             )}
           </p>
 

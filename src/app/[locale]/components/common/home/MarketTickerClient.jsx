@@ -17,7 +17,7 @@ const MARKET_TICKER_CATEGORY_KEYS = {
   indices: "indices",
   shares: "shares",
   commodities: "commodities",
-  "crypto-cfds": "crypto",
+  // "crypto-cfds": "crypto",
   "future-cfds": "futures",
 };
 
@@ -34,7 +34,7 @@ function getApiTypeTranslationKey(typeName = "") {
   if (name === "energy") return "energy";
   if (name.includes("metal")) return "metals";
   if (name.includes("index")) return "index";
-  if (name.includes("crypto")) return "crypto";
+  // if (name.includes("crypto")) return "crypto";
   return null;
 }
 

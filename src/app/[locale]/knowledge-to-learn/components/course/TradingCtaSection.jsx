@@ -51,7 +51,7 @@ export default function TradingCtaSection({ locale = "en" }) {
             <p className="Text mt-5 max-w-xl text-[#4B5563] md:mt-6">
               {t(
                 "sub",
-                "Open a live account and access 7+ trading markets including Forex, Metals, Indices, Shares, Crypto & more — from a broker trusted globally."
+                "Open a live account and access 7+ trading markets including Forex, Metals, Indices, Shares and more — from a broker trusted globally."
               )}
             </p>
 
