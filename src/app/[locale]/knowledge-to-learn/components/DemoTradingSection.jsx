@@ -39,7 +39,7 @@ const FEATURE_CARDS = [
     key: "tradingInstrument",
     title: "Trading Instrument",
     description:
-      "Access to 7+ trading markets including Forex, Metals, Indices, Shares, Crypto & more across",
+      "Access to 7+ trading markets including Forex, Metals, Indices, Shares and more across",
   },
   {
     key: "ultraFastExecution",

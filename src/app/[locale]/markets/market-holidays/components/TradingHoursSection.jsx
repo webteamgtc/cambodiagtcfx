@@ -5,7 +5,7 @@ import RevealOnScroll from "../../../components/RevealOnScroll";
 import { usePathTranslation } from "@/app/[locale]/LocaleProvider";
 import { getTradingHoursRows } from "./tradingHoursData";
 
-const TAB_KEYS = ["fx", "goldSilver", "crudeOil", "crypto", "cashIndices", "stocks"];
+const TAB_KEYS = ["fx", "goldSilver", "crudeOil", "cashIndices", "stocks"];
 const DAY_KEYS = ["mon", "tue", "wed", "thu", "fri"];
 const DAY_FALLBACKS = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"];
 

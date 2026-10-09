@@ -43,13 +43,13 @@ export const MARKET_CATEGORIES = {
     path: "markets/commodities",
     tags: ["Real Assets", "Diversified", "Global Demand"],
   },
-  "crypto-cfds": {
-    slug: "crypto-cfds",
-    label: "CRYPTO CFDs",
-    displayLabel: "Crypto CFDs",
-    path: "markets/crypto-cfds",
-    tags: ["24/7 Trading", "High Volatility", "Digital Assets"],
-  },
+  // "crypto-cfds": {
+  //   slug: "crypto-cfds",
+  //   label: "CRYPTO CFDs",
+  //   displayLabel: "Crypto CFDs",
+  //   path: "markets/crypto-cfds",
+  //   tags: ["24/7 Trading", "High Volatility", "Digital Assets"],
+  // },
   "future-cfds": {
     slug: "future-cfds",
     label: "FUTURE CFDs",
@@ -97,7 +97,7 @@ export function marketCategoryFromApiType(typeName = "") {
     return "shares";
   }
   if (name.includes("future")) return "future-cfds";
-  if (name.includes("crypto")) return "crypto-cfds";
+  // if (name.includes("crypto")) return "crypto-cfds";
   if (name.includes("commodit")) return "commodities";
   return "forex";
 }

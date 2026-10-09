@@ -19,7 +19,7 @@ export async function generateMetadata({ params }) {
     path: "company/dynamic-leverage",
     fallbackTitle: "Dynamic Leverage - GTC FX",
     fallbackDescription:
-      "Explore GTCFX dynamic leverage and margin conditions. Transparent trading requirements for Forex, Metals, Indices, Crypto, and Stocks.",
+      "Explore GTCFX dynamic leverage and margin conditions. Transparent trading requirements for Forex, Metals, Indices, and Stocks.",
   });
 }
 

@@ -30,12 +30,12 @@ export default async function LiquidityTechnologyPage({ params }) {
       imageUrl: "https://gtcfx-bucket.s3.ap-southeast-1.amazonaws.com/img/home/icon/icon1.webp",
       alt: "Forex",
     },
-    {
-      name: copy?.Chooseliquidity?.option2?.title,
-      description: copy?.Chooseliquidity?.option2?.desc,
-      imageUrl: "https://gtcfx-bucket.s3.ap-southeast-1.amazonaws.com/img/home/icon/icon8.webp",
-      alt: "Crypto CFDs",
-    },
+    // {
+    //   name: copy?.Chooseliquidity?.option2?.title,
+    //   description: copy?.Chooseliquidity?.option2?.desc,
+    //   imageUrl: "https://gtcfx-bucket.s3.ap-southeast-1.amazonaws.com/img/home/icon/icon8.webp",
+    //   alt: "Crypto CFDs",
+    // },
     {
       name: copy?.Chooseliquidity?.option3?.title,
       description: copy?.Chooseliquidity?.option3?.desc,

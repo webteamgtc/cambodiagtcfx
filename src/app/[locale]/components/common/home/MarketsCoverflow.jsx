@@ -37,11 +37,11 @@ const MARKET_CONFIG = [
     icon: "/home/products/icon10.webp",
     href: "/markets/shares",
   },
-  {
-    id: "crypto-cfds",
-    icon: "/home/products/icon13.webp",
-    href: "/markets/crypto-cfds",
-  },
+  // {
+  //   id: "crypto-cfds",
+  //   icon: "/home/products/icon13.webp",
+  //   href: "/markets/crypto-cfds",
+  // },
   {
     id: "future-cfds",
     icon: "/home/products/icon9.webp",

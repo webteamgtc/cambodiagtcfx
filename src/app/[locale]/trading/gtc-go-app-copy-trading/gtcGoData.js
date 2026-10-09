@@ -181,7 +181,7 @@ export const gtcGoData = {
             children: [{ key: "major", label: "Major / Minor / Exotic" }],
           },
           { key: "energy", label: "Energy & Metals" },
-          { key: "shares", label: "Shares / Crypto / Futures CFDs" },
+          { key: "shares", label: "Shares / Futures CFDs" },
         ],
       },
       {

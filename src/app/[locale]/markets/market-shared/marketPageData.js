@@ -7,7 +7,7 @@ export const MARKET_NAV_TABS = [
   { key: "indices", label: "Indices", href: "/markets/indices", icon: "/new-design/tab3.svg" },
   { key: "energy", label: "Energy", href: "/markets/energy", icon: "/new-design/tab2.svg" },
   { key: "metals", label: "Gold", href: "/markets/metals", icon: "/new-design/tab4.svg" },
-  { key: "crypto", label: "Crypto CFD", href: "/markets/crypto-cfds", icon: "/new-design/tab2.svg" },
+  // { key: "crypto", label: "Crypto CFD", href: "/markets/crypto-cfds", icon: "/new-design/tab2.svg" },
 ];
 
 const SHARED_DOWNLOADS = [

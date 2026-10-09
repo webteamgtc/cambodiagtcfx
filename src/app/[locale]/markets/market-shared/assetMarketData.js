@@ -551,20 +551,20 @@ export const CRYPTO = {
     title: "Common Questions about Crypto CFDs",
     sub: SHARED_FAQ_SUB,
     items: [
-      {
-        question: "Do I need a crypto wallet to trade?",
-        answer:
-          "No. Crypto CFDs let you speculate on price movements without owning or storing digital assets. All positions are settled in your account currency.",
-      },
+      // {
+      //   question: "Do I need a crypto wallet to trade?",
+      //   answer:
+      //     "No. Crypto CFDs let you speculate on price movements without owning or storing digital assets. All positions are settled in your account currency.",
+      // },
       {
         question: "What is a CFD?",
         answer: SHARED_CFD_ANSWER,
       },
-      {
-        question: "What leverage do you offer?",
-        answer:
-          "Leverage up to 1:2000 may be available on selected crypto CFDs, subject to account type and regional regulations. Crypto markets are highly volatile — manage risk carefully.",
-      },
+      // {
+      //   question: "What leverage do you offer?",
+      //   answer:
+      //     "Leverage up to 1:2000 may be available on selected crypto CFDs, subject to account type and regional regulations. Crypto markets are highly volatile — manage risk carefully.",
+      // },
     ],
   },
   finalCta: {

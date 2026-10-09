@@ -226,7 +226,7 @@ export const HOME_SCHEMA = {
           name: "Which markets can I trade with GTCFX?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "Depending on your account type and region, you may access Forex, Metals, Energy, Indices, Commodities, Shares, Crypto CFDs and Futures CFDs.",
+            text: "Depending on your account type and region, you may access Forex, Metals, Energy, Indices, Commodities, Shares and Futures CFDs.",
           },
         },
         {
@@ -337,17 +337,6 @@ export const SHARES_SCHEMA = marketPage({
   description:
     "Access more than 500 global share CFDs through GTCFX and take long or short positions on stock price movements without owning the underlying shares.",
   category: ["Share CFDs", "Stock CFDs", "Equity CFDs", "Global Stock CFDs"],
-});
-
-export const CRYPTO_CFDS_SCHEMA = marketPage({
-  path: "markets/crypto-cfds",
-  slug: "crypto",
-  breadcrumbName: "Crypto CFDs",
-  name: "GTCFX Crypto CFD Trading",
-  serviceType: "Online Crypto CFD Trading",
-  description:
-    "Access cryptocurrency CFD markets including Bitcoin and other major cryptocurrencies through GTCFX without owning the underlying digital assets.",
-  category: ["Crypto CFDs", "Cryptocurrency CFDs", "Bitcoin CFDs"],
 });
 
 export const FUTURE_CFDS_SCHEMA = marketPage({
@@ -652,13 +641,13 @@ export const SWAP_UPDATE_SCHEMA = (() => {
         name: "GTCFX Daily CFD Swap Rates",
         url,
         description:
-          "Daily overnight swap rates for CFD instruments across Forex, Metals, Crypto and Indices, including long and short swap values by trading symbol.",
+          "Daily overnight swap rates for CFD instruments across Forex, Metals, Commodities and Indices, including long and short swap values by trading symbol.",
         keywords: [
           "CFD Swap Rates",
           "Overnight CFD Swap Rates",
           "Forex CFD Swap Rates",
           "Metal CFD Swap Rates",
-          "Crypto CFD Swap Rates",
+          "Commodities CFD Swap Rates",
           "Indices CFD Swap Rates",
         ],
       }),

@@ -8,9 +8,9 @@ export async function generateMetadata({ params }) {
     locale,
     key: "cryptoCfds",
     path: CRYPTO.path,
-    fallbackTitle: "Trade Crypto CFDs | Bitcoin & Ethereum | GTCFX",
+    fallbackTitle: "Trade Crypto CFDs | GTCFX",
     fallbackDescription:
-      "Trade leading cryptocurrency CFDs including Bitcoin and Ethereum with competitive spreads at GTCFX.",
+      "Trade leading cryptocurrency CFDs with competitive spreads at GTCFX.",
   });
 }
 

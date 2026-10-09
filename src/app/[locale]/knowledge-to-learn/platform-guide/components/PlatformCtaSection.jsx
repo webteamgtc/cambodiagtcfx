@@ -21,7 +21,7 @@ export default function PlatformCtaSection({ locale = "en" }) {
           {/* Subtitle */}
           <p className="TextRegular mx-auto mt-5 max-w-2xl leading-relaxed md:mt-6">
             Open a live account and access 7+ trading markets including Forex,
-            Metals, Indices, Shares, Crypto & more — from a broker trusted globally.
+            Metals, Indices, Shares and more — from a broker trusted globally.
           </p>
   <div className="mt-6 flex flex-col items-center justify-center gap-3 sm:mt-8 sm:flex-row sm:flex-wrap sm:gap-4">
             <Button href={REGISTER_HREF} external variant="brand" size="md" showArrow arrowPosition="right">

@@ -15,7 +15,7 @@ export async function generateMetadata({ params }) {
     path: "gtc-news/market-news",
     fallbackTitle: "Market News | GTCFX Trading",
     fallbackDescription:
-      "Stay ahead with GTCFX market news — breaking headlines, economic calendar updates, analysis videos, and trading insights across forex, indices, commodities, and crypto.",
+      "Stay ahead with GTCFX market news — breaking headlines, economic calendar updates, analysis videos, and trading insights across forex, indices, commodities.",
   });
 }
 

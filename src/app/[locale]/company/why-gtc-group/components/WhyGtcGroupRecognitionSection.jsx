@@ -18,7 +18,7 @@ const RECOGNITION_ITEMS = [
   },
   {
     key: "fintechSummit",
-    title: "Fintech & Crypto Summit",
+    title: "Fintech Summit",
     description:
       "Strategic sponsor at Dubai's flagship fintech summit — showcasing our commitment to emerging financial technologies and innovation.",
     footer: "2024",

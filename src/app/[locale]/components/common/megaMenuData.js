@@ -238,10 +238,10 @@ export function getMegaMenuData(navigation = {}, locale = "km-intl") {
               label: menuT("account.columns.tradeMarkets.sharesEquityCfds", "Shares/Equity CFDs", navigation),
               href: "/markets/shares",
             },
-            {
-              label: menuT("account.columns.tradeMarkets.cryptoCfds", "Crypto CFDs", navigation),
-              href: "/markets/crypto-cfds",
-            },
+            // {
+            //   label: menuT("account.columns.tradeMarkets.cryptoCfds", "Crypto CFDs", navigation),
+            //   href: "/markets/crypto-cfds",
+            // },
             {
               label: menuT("account.columns.tradeMarkets.futureCfds", "Future CFDs", navigation),
               href: "/markets/future-cfds",
@@ -343,10 +343,10 @@ export function getMegaMenuData(navigation = {}, locale = "km-intl") {
               label: menuT("trading.columns.metaTrader.mt5", "MetaTrader 5", navigation),
               href: "/trading/mt5-platform",
             },
-            {
-              label: menuT("trading.columns.metaTrader.mt4", "MetaTrader 4", navigation),
-              href: "/trading/mt4-platform",
-            },
+            // {
+            //   label: menuT("trading.columns.metaTrader.mt4", "MetaTrader 4", navigation),
+            //   href: "/trading/mt4-platform",
+            // },
           
           ],
         },

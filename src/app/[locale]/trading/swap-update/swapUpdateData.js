@@ -34,7 +34,7 @@ export const LIVE_COST_DASHBOARD = {
   ],
 };
 
-export const HERO_INSTRUMENT_TABS = ["FX", "Indices", "Metals", "Crypto"];
+export const HERO_INSTRUMENT_TABS = ["FX", "Indices", "Metals"];
 
 export const HERO_INSTRUMENTS = {
   FX: {
@@ -60,14 +60,6 @@ export const HERO_INSTRUMENTS = {
     buy: "2,334.50",
     sell: "2,334.70",
     totalCost: "0.20",
-  },
-  Crypto: {
-    symbol: "BTCUSD",
-    spread: "12.0",
-    commission: "$0",
-    buy: "67,842.00",
-    sell: "67,854.00",
-    totalCost: "12.0",
   },
 };
 
@@ -209,14 +201,14 @@ export const SPREADS_DATA = [
     avgSpread: "1.1",
     type: "Floating",
   },
-  {
-    symbol: "BTCUSD",
-    name: "Bitcoin / US Dollar",
-    category: "crypto",
-    minSpread: "12.0",
-    avgSpread: "18.0",
-    type: "Floating",
-  },
+  // {
+  //   symbol: "BTCUSD",
+  //   name: "Bitcoin / US Dollar",
+  //   category: "commodities",
+  //   minSpread: "12.0",
+  //   avgSpread: "18.0",
+  //   type: "Floating",
+  // },
 ];
 
 export const SWAP_TABS = [
@@ -346,22 +338,22 @@ export const SWAP_RATES_DATA = [
     shortSwap: "-$0.65",
     unit: "Per Lot",
   },
-  {
-    symbol: "BTCUSD",
-    name: "Bitcoin / US Dollar",
-    category: "crypto",
-    longSwap: "-$12.40",
-    shortSwap: "-$9.80",
-    unit: "Per Lot",
-  },
-  {
-    symbol: "ETHUSD",
-    name: "Ethereum / US Dollar",
-    category: "crypto",
-    longSwap: "-$6.20",
-    shortSwap: "-$4.90",
-    unit: "Per Lot",
-  },
+  // {
+  //   symbol: "BTCUSD",
+  //   name: "Bitcoin / US Dollar",
+  //   category: "crypto",
+  //   longSwap: "-$12.40",
+  //   shortSwap: "-$9.80",
+  //   unit: "Per Lot",
+  // },
+  // {
+  //   symbol: "ETHUSD",
+  //   name: "Ethereum / US Dollar",
+  //   category: "crypto",
+  //   longSwap: "-$6.20",
+  //   shortSwap: "-$4.90",
+  //   unit: "Per Lot",
+  // },
 ];
 
 export const FAQ_ITEMS = [

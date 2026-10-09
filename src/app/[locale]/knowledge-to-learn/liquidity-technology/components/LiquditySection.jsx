@@ -15,7 +15,7 @@ export default function LiquditySection({ copy }) {
   const title = banner.title || "Liquidity | Connectivity | Risk Solutions";
   const subTitle =
     banner.subTitle ||
-    "Direct access to 7+ trading markets including Forex, Metals, Indices, Shares, Crypto & more, delivered through a proprietary technology stack engineered for speed, depth and reliability.";
+    "Direct access to 7+ trading markets including Forex, Metals, Indices, Shares and more, delivered through a proprietary technology stack engineered for speed, depth and reliability.";
   const primaryCta = banner.primaryCta || banner.liveAccount || "Request Liquidity Access";
   const secondaryCta = banner.secondaryCta || "View API Docs";
   const primaryHref = banner.primaryHref || "/contact-us";

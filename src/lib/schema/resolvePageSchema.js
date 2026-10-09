@@ -34,7 +34,7 @@ const SCHEMA_BY_ROUTE = {
   "/markets/indices": INDICES_SCHEMA,
   "/markets/metals": METALS_SCHEMA,
   "/markets/shares": SHARES_SCHEMA,
-  "/markets/crypto-cfds": CRYPTO_CFDS_SCHEMA,
+  // "/markets/crypto-cfds": CRYPTO_CFDS_SCHEMA,
   "/markets/future-cfds": FUTURE_CFDS_SCHEMA,
   "/markets/commodities": COMMODITIES_SCHEMA,
   "/markets/economic-calendar": ECONOMIC_CALENDAR_SCHEMA,

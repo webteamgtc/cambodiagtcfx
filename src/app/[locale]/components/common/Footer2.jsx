@@ -23,7 +23,6 @@ const FOOTER_COLUMN_DEFS = [
             { key: "menu3", href: "/markets/indices", fallback: "Indices CFDs" },
             { key: "menu4", href: "/markets/metals", fallback: "Metals CFDs" },
             { key: "menu5", href: "/markets/shares", fallback: "Shares/Equity CFDs" },
-            { key: "menu6", href: "/markets/crypto-cfds", fallback: "Crypto CFDs" },
             { key: "menu7", href: "/markets/future-cfds", fallback: "Future CFDs" },
         ],
     },
@@ -41,7 +40,7 @@ const FOOTER_COLUMN_DEFS = [
         section: "platforms",
         titleFallback: "Platforms",
         links: [
-            { key: "menu2", href: "/trading/mt4-platform", fallback: "MT4" },
+            // { key: "menu2", href: "/trading/mt4-platform", fallback: "MT4" },
             { key: "menu3", href: "/trading/mt5-platform", fallback: "MT5" },
         ],
     },
