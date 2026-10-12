@@ -9,6 +9,10 @@ import {
   getSiteRobotsResponseHeader,
 } from "@/lib/seo/noindexPaths";
 import { getCanonicalRedirectPathname } from "@/lib/seo/canonicalRedirects";
+import {
+  buildMainWebsiteRedirectUrl,
+  shouldAllowCambodiaSiteAccess,
+} from "@/lib/geo/cambodiaAccessGate";
 
 const PUBLIC_FILE = /\.(.*)$/;
 
@@ -45,6 +49,12 @@ function rewriteToLocaleApp(request, publicPathname, countryCode, extraHeaders =
   return response;
 }
 
+function redirectNonCambodiaVisitor(request, pathname, countryCode) {
+  if (shouldAllowCambodiaSiteAccess(request, countryCode)) return null;
+  const redirectUrl = buildMainWebsiteRedirectUrl(pathname, request.nextUrl.search);
+  return NextResponse.redirect(redirectUrl, 307);
+}
+
 export async function middleware(request) {
   const { pathname } = request.nextUrl;
 
@@ -60,6 +70,8 @@ export async function middleware(request) {
 
   if (isNoindexLegacyPath(pathname)) {
     const countryCode = await resolveCountryFromRequest(request);
+    const geoRedirect = redirectNonCambodiaVisitor(request, pathname, countryCode);
+    if (geoRedirect) return geoRedirect;
     return rewriteToLocaleApp(request, pathname, countryCode, {
       "X-Robots-Tag": "noindex",
     });
@@ -76,6 +88,9 @@ export async function middleware(request) {
   }
 
   const countryCode = await resolveCountryFromRequest(request);
+  const geoRedirect = redirectNonCambodiaVisitor(request, pathname, countryCode);
+  if (geoRedirect) return geoRedirect;
+
   return rewriteToLocaleApp(request, pathname, countryCode);
 }
 

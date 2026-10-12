@@ -4,6 +4,11 @@ export const UAE_COUNTRY_CODE = "AE";
 export const ZA_COUNTRY_CODE = "ZA";
 export const VU_COUNTRY_CODE = "VU";
 export const MU_COUNTRY_CODE = "MU";
+export const CAMBODIA_COUNTRY_CODE = "KH";
+
+export function isCambodiaCountry(countryCode) {
+  return String(countryCode || "").toUpperCase() === CAMBODIA_COUNTRY_CODE;
+}
 
 export function isUaeCountry(countryCode) {
   return String(countryCode || "").toUpperCase() === UAE_COUNTRY_CODE;
