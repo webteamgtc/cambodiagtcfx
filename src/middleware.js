@@ -2,6 +2,7 @@ import { NextResponse } from "next/server";
 import { DEFAULT_SITE_LOCALE } from "@/i18n/regionalLocale";
 import {
   resolveCountryFromRequest,
+  resolveCountryForAccessGate,
   setGeoCountryCookie,
 } from "@/lib/geo/resolveCountryFromRequest";
 import {
@@ -69,10 +70,10 @@ export async function middleware(request) {
   }
 
   if (isNoindexLegacyPath(pathname)) {
-    const countryCode = await resolveCountryFromRequest(request);
-    const geoRedirect = redirectNonCambodiaVisitor(request, pathname, countryCode);
+    const accessCountry = await resolveCountryForAccessGate(request);
+    const geoRedirect = redirectNonCambodiaVisitor(request, pathname, accessCountry);
     if (geoRedirect) return geoRedirect;
-    return rewriteToLocaleApp(request, pathname, countryCode, {
+    return rewriteToLocaleApp(request, pathname, accessCountry, {
       "X-Robots-Tag": "noindex",
     });
   }
@@ -87,11 +88,11 @@ export async function middleware(request) {
     return response;
   }
 
-  const countryCode = await resolveCountryFromRequest(request);
-  const geoRedirect = redirectNonCambodiaVisitor(request, pathname, countryCode);
+  const accessCountry = await resolveCountryForAccessGate(request);
+  const geoRedirect = redirectNonCambodiaVisitor(request, pathname, accessCountry);
   if (geoRedirect) return geoRedirect;
 
-  return rewriteToLocaleApp(request, pathname, countryCode);
+  return rewriteToLocaleApp(request, pathname, accessCountry);
 }
 
 export const config = {

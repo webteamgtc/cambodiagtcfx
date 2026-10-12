@@ -61,6 +61,7 @@ export function shouldAllowCambodiaSiteAccess(request, countryCode) {
   ) {
     return true;
   }
-  if (!countryCode) return false;
+  // Allow Cambodia (KH). If geo is unknown, stay on .kh — only redirect known non-KH.
+  if (!countryCode) return true;
   return isCambodiaCountry(countryCode);
 }

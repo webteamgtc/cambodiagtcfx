@@ -46,17 +46,32 @@ export default function RegionalLocaleGuard() {
     ) {
       return;
     }
-    if (!locationReady || !countryCode) return;
     if (hasClientGeoBypass()) return;
-    if (isCambodiaCountry(countryCode)) return;
 
-    const search = searchParams?.toString();
-    const redirectUrl = buildMainWebsiteRedirectUrl(
-      pathname,
-      search ? `?${search}` : ""
-    );
-    window.location.replace(redirectUrl);
-  }, [countryCode, locationReady, pathname, searchParams]);
+    let cancelled = false;
+
+    fetch("https://ipinfo.io/json", { cache: "no-store" })
+      .then((response) => response.json())
+      .then((data) => {
+        if (cancelled) return;
+        const verified = data?.country ? String(data.country).toUpperCase() : null;
+        if (verified) setGeoCountryCookie(verified);
+        if (!verified) return;
+        if (isCambodiaCountry(verified)) return;
+
+        const search = searchParams?.toString();
+        const redirectUrl = buildMainWebsiteRedirectUrl(
+          pathname,
+          search ? `?${search}` : ""
+        );
+        window.location.replace(redirectUrl);
+      })
+      .catch(() => {});
+
+    return () => {
+      cancelled = true;
+    };
+  }, [pathname, searchParams]);
 
   return null;
 }

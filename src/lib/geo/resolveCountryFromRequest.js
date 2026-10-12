@@ -115,6 +115,24 @@ export async function resolveCountryFromRequest(request) {
   }
 }
 
+/**
+ * Country for allow/deny on the .kh site — never trust a stale geo cookie over
+ * current edge headers or a live IP lookup (e.g. after turning on a VPN).
+ */
+export async function resolveCountryForAccessGate(request) {
+  const fromHeaders = getCountryFromHeaders(request);
+  if (fromHeaders) return fromHeaders;
+
+  const ip = getClientIp(request);
+  if (isLocalIp(ip)) return null;
+
+  try {
+    return await fetchCountryFromIpinfo(ip);
+  } catch {
+    return null;
+  }
+}
+
 export function setGeoCountryCookie(response, countryCode) {
   if (!countryCode || !response?.cookies) return response;
   response.cookies.set(GEO_COUNTRY_COOKIE, countryCode, {
