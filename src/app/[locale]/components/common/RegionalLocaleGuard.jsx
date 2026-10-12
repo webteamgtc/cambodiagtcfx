@@ -1,13 +1,7 @@
 "use client";
 
 import { useEffect } from "react";
-import { usePathname, useSearchParams } from "next/navigation";
 import { useLocationDetail } from "@/context/useLocationDetail";
-import { CAMBODIA_SITE } from "@/config/cambodiaSite";
-import {
-  buildMainWebsiteRedirectUrl,
-  isCambodiaCountry,
-} from "@/lib/geo/cambodiaAccessGate";
 import {
   GEO_COUNTRY_COOKIE,
   GEO_COUNTRY_MAX_AGE,
@@ -20,58 +14,16 @@ function setGeoCountryCookie(countryCode) {
   )}; path=/; max-age=${GEO_COUNTRY_MAX_AGE}; SameSite=Lax`;
 }
 
-function hasClientGeoBypass() {
-  if (typeof document === "undefined") return false;
-  return document.cookie.split("; ").some((entry) => entry.startsWith("cambodia_geo_bypass="));
-}
-
 /**
- * Persists geo country and redirects non-Cambodia visitors to gtcfx.com when enabled.
+ * Persists geo country for footer/disclaimer logic only.
  */
 export default function RegionalLocaleGuard() {
   const { countryCode, locationReady } = useLocationDetail();
-  const pathname = usePathname();
-  const searchParams = useSearchParams();
 
   useEffect(() => {
     if (!locationReady || !countryCode) return;
     setGeoCountryCookie(countryCode);
   }, [countryCode, locationReady]);
-
-  useEffect(() => {
-    if (CAMBODIA_SITE.cambodiaOnlyAccess !== true) return;
-    if (
-      process.env.NODE_ENV === "development" &&
-      process.env.NEXT_PUBLIC_CAMBODIA_GEO_RESTRICT_IN_DEV !== "true"
-    ) {
-      return;
-    }
-    if (hasClientGeoBypass()) return;
-
-    let cancelled = false;
-
-    fetch("https://ipinfo.io/json", { cache: "no-store" })
-      .then((response) => response.json())
-      .then((data) => {
-        if (cancelled) return;
-        const verified = data?.country ? String(data.country).toUpperCase() : null;
-        if (verified) setGeoCountryCookie(verified);
-        if (!verified) return;
-        if (isCambodiaCountry(verified)) return;
-
-        const search = searchParams?.toString();
-        const redirectUrl = buildMainWebsiteRedirectUrl(
-          pathname,
-          search ? `?${search}` : ""
-        );
-        window.location.replace(redirectUrl);
-      })
-      .catch(() => {});
-
-    return () => {
-      cancelled = true;
-    };
-  }, [pathname, searchParams]);
 
   return null;
 }

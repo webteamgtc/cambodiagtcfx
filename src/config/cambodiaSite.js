@@ -11,18 +11,6 @@ export const CAMBODIA_SITE = {
   /** @deprecated English removed from Cambodia site; kept for legacy URL redirects. */
   englishLocale: "en-intl",
   globalFallbackUrl: "https://www.gtcfx.com/en-intl/",
-  /** When true, only visitors geolocated to Cambodia may use this host; others go to gtcfx.com. */
-  cambodiaOnlyAccess: true,
-  /** ISO 3166-1 alpha-2 country code for allowed visitors. */
-  allowedVisitorCountryCode: "KH",
-  /** Public URL of this Cambodia regional site (gtcfx.com.kh). */
-  cambodiaWebsiteOrigin: "https://www.gtcfx.com.kh",
-  /** Hostnames served by this deployment. */
-  siteHostnames: ["gtcfx.com.kh", "www.gtcfx.com.kh"],
-  /** Main global site origin (non-Cambodia visitors are redirected here). */
-  mainWebsiteOrigin: "https://www.gtcfx.com",
-  /** Locale path segment on the main site for equivalent pages. */
-  mainWebsiteLocalePath: "/en-intl",
   /** When false, URLs are locale-less; middleware rewrites to `defaultLocale`. */
   useLocaleUrlPrefix: false,
   showLanguageSwitcher: false,
