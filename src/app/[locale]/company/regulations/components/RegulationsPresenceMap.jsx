@@ -4,7 +4,7 @@ import { useEffect, useMemo, useState } from "react";
 import { renderToStaticMarkup } from "react-dom/server";
 import L from "leaflet";
 import { MapContainer, Marker, GeoJSON, useMap } from "react-leaflet";
-import { AU, GB, KM, MU, VU, ZA } from "country-flag-icons/react/3x2";
+import { AU, GB, KH, KM, MU, VU, ZA } from "country-flag-icons/react/3x2";
 import { feature } from "topojson-client";
 import worldTopo from "world-atlas/countries-110m.json";
 import "leaflet/dist/leaflet.css";
@@ -73,6 +73,14 @@ const LAND_STYLE = {
 /** Real geographic coordinates [lat, lng] for each regulated office. */
 const locations = withoutUkMapKey([
   {
+    key: "phnompenh",
+    code: "SERC",
+    flag: "kh",
+    position: [11.5564, 104.9282],
+    line: "M 0 0 L 40 -10 L 58 -22",
+    cardClass: "left-full bottom-full mb-2 ml-2",
+  },
+  {
     key: "london",
     code: "FCA",
     flag: "gb",
@@ -132,6 +140,7 @@ const WORLD_MAX_BOUNDS = L.latLngBounds(
 );
 
 const FLAG_ICONS = {
+  kh: KH,
   km: KM,
   za: ZA,
   vu: VU,

@@ -14,6 +14,7 @@ const steps = [
 ];
 
 const licenseFooter = withoutUkLicenseFooterLines([
+  "SERC · License 043",
   "FSCA · FSP 51545",
   "VFSC · 40354",
   "FCA UK · 744501",

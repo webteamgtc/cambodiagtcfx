@@ -5,9 +5,11 @@ import MobilePeekCarousel from "@/app/[locale]/components/common/MobilePeekCarou
 import { FiArrowUpRight, FiCheckCircle } from "react-icons/fi";
 import { usePathTranslation } from "@/app/[locale]/LocaleProvider";
 import { withoutUkEntityKey } from "@/lib/company/regulatoryUkFilter";
-import { AU, GB, KM, MU, VU, ZA } from "country-flag-icons/react/3x2";
+import { CAMBODIA_SERC_VERIFY_URL } from "@/lib/company/cambodiaSercLicense";
+import { AU, GB, KH, KM, MU, VU, ZA } from "country-flag-icons/react/3x2";
 
 const ENTITY_VERIFY_LINKS = {
+  cambodia: CAMBODIA_SERC_VERIFY_URL,
   southAfrica: "https://www.gtcfx.com/en-za",
   vanuatu: "https://www.gtcfx.com/en-vu",
   mauritius: "https://www.gtcfx.com/en-mu",
@@ -18,7 +20,19 @@ const ENTITY_VERIFY_LINKS = {
 };
 
 const entities = withoutUkEntityKey([
-
+  {
+    id: "KH-07",
+    entityKey: "cambodia",
+    flag: "kh",
+    verifyKey: "serc",
+    verifyLink: ENTITY_VERIFY_LINKS.cambodia,
+    details: [
+      { labelKey: "regulator", field: "regulator" },
+      { labelKey: "licenseType", field: "licenseType" },
+      { labelKey: "licenseNo", field: "licenseNo" },
+      { labelKey: "registeredAddress", field: "registeredAddress" },
+    ],
+  },
   {
     id: "ZA-01",
     entityKey: "southAfrica",
@@ -89,6 +103,7 @@ const entities = withoutUkEntityKey([
 ], (item) => item.entityKey);
 
 const FLAG_ICONS = {
+  kh: KH,
   km: KM,
   za: ZA,
   vu: VU,

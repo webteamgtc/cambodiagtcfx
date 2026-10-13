@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
-import { AU, GB, MU, VU, ZA } from "country-flag-icons/react/3x2";
+import { AU, GB, KH, MU, VU, ZA } from "country-flag-icons/react/3x2";
 import SectionEyebrow from "@/app/[locale]/components/common/SectionEyebrow";
 import Button from "@/app/[locale]/components/common/Button";
 import { useLocale, usePathTranslation } from "../../../LocaleProvider";
@@ -11,6 +11,7 @@ import { localizedHref } from "@/i18n/localizedHref";
 import { withoutUkEntityKey } from "@/lib/company/regulatoryUkFilter";
 
 const FLAG_ICONS = {
+  kh: KH,
   za: ZA,
   vu: VU,
   gb: GB,
@@ -19,6 +20,39 @@ const FLAG_ICONS = {
 };
 
 const ENTITIES = withoutUkEntityKey([
+  {
+    key: "cambodia",
+    flagCode: "kh",
+    nameKey: "entities.cambodia.name",
+    locationKey: "entities.cambodia.location",
+    footerKey: "entities.cambodia.footer",
+    details: [
+      {
+        key: "authority",
+        labelKey: "detailLabels.authority",
+        valueKey: "entities.cambodia.authority",
+        icon: BuildingIcon,
+      },
+      {
+        key: "licenseType",
+        labelKey: "detailLabels.licenseType",
+        valueKey: "entities.cambodia.licenseType",
+        icon: DocumentIcon,
+      },
+      {
+        key: "licence",
+        labelKey: "detailLabels.licence",
+        valueKey: "entities.cambodia.licence",
+        icon: DocumentIcon,
+      },
+      {
+        key: "address",
+        labelKey: "detailLabels.address",
+        valueKey: "entities.cambodia.address",
+        icon: PinIcon,
+      },
+    ],
+  },
   {
     key: "southAfrica",
     flagCode: "za",

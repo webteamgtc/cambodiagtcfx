@@ -3,9 +3,10 @@
 import FadeInSection from "./FadeInSection";
 import { usePathTranslation } from "@/app/[locale]/LocaleProvider";
 import { withoutUkEntityKey } from "@/lib/company/regulatoryUkFilter";
-import { AU, GB, KM, MU, VU, ZA } from "country-flag-icons/react/3x2";
+import { AU, GB, KH, KM, MU, VU, ZA } from "country-flag-icons/react/3x2";
 
 const footprint = withoutUkEntityKey([
+  { key: "cambodia", code: "SERC", flag: "kh" },
   { key: "comorosAnjouan", code: "AOFA", flag: "km" },
   { key: "southAfrica", code: "FSCA", flag: "za" },
   { key: "vanuatu", code: "VFSC", flag: "vu" },
@@ -15,6 +16,7 @@ const footprint = withoutUkEntityKey([
 ]);
 
 const FLAG_ICONS = {
+  kh: KH,
   km: KM,
   za: ZA,
   vu: VU,

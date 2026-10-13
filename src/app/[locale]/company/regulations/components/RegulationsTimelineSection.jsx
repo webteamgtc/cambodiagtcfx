@@ -9,7 +9,7 @@ import { usePathTranslation } from "@/app/[locale]/LocaleProvider";
 const milestones = [
   { year: "2017", yearKey: "y2017", phaseKey: "foundation", itemCount: 1 },
   { year: "2020", yearKey: "y2020", phaseKey: "foundation", itemCount: 1 },
-  { year: "2021", yearKey: "y2021", phaseKey: "expansion", itemCount: 1 },
+  { year: "2021", yearKey: "y2021", phaseKey: "expansion", itemCount: 2 },
   { year: "2022", yearKey: "y2022", phaseKey: "scale", itemCount: 2 },
   { year: "2023", yearKey: "y2023", phaseKey: "acceleration", itemCount: 2 },
   { year: "2024", yearKey: "y2024", phaseKey: "acceleration", itemCount: 1 },

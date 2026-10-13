@@ -1677,6 +1677,12 @@
     "websiteLabel": "Website:",
     "closing": "GTC Financial Group provides a wide range of financial services to clients. Different entities within the group have different licences and offerings as they are managed separately. If you are interested to know more about which entity you are dealing with, we encourage you to contact us.",
     "affiliates": {
+      "one": {
+        "country": "Cambodia",
+        "entity": "GTCFX Co., Ltd",
+        "description": "GTCFX Co., Ltd is licensed by the Securities and Exchange Regulator of Cambodia (SERC) as a Derivative Broker (License No. 043). Registered address: Building No. 40, 8th Floor, Street 289, Sangkat Boeung Kak 1, Khan Toul Kork, Phnom Penh, Cambodia.",
+        "website": "https://verify.gov.kh/verify/4QIXjP2CD2j9UBxUlzxxiudMstv0uodj?key=8671ecd84a204bfab621950bb53cf055c020130e3aaa3b459a3e3008a835ea21"
+      },
       "three": {
         "country": "United Kingdom",
         "entity": "Global Markets Group Limited*",
@@ -3210,6 +3216,10 @@
       "missionQuoteAfter": " —no matter where you are.",
       "missionFooter": "GTCFX · TRADING FOR EVERYONE",
       "regulators": {
+        "serc": {
+          "code": "SERC",
+          "region": "CAMBODIA"
+        },
         "fsca": {
           "code": "FSCA",
           "region": "S. AFRICA"
@@ -4120,6 +4130,15 @@
         "companyNo": "Company No."
       },
       "entities": {
+        "cambodia": {
+          "name": "GTCFX Co., Ltd",
+          "location": "Cambodia · Phnom Penh",
+          "authority": "Securities and Exchange Regulator of Cambodia (SERC)",
+          "licenseType": "Derivative Broker",
+          "licence": "043 (SERC/D/B/C)",
+          "address": "Building No. 40, 8th Floor, Street 289, Sangkat Boeung Kak 1, Khan Toul Kork, Phnom Penh, Cambodia",
+          "footer": "SERC-licensed entity serving clients in Cambodia"
+        },
         "southAfrica": {
           "name": "GTC Global SA (Pty) Ltd",
           "location": "South Africa · Cape Town",
@@ -5287,6 +5306,10 @@
         "track": "Compliance Track Record"
       },
       "footprint": {
+        "cambodia": {
+          "country": "Cambodia",
+          "entity": "GTCFX Co., Ltd · SERC License 043"
+        },
         "comorosAnjouan": {
           "country": "Comoros · Anjouan",
           "entity": "GTC Global Trading LTD · AOFA L16283/GTC"
@@ -5334,9 +5357,18 @@
         "fsc": "Verify on FSC register",
         "fsca": "Verify on FSCA register",
         "vfsc": "Verify on VFSC register",
-        "anjouan": "Verify on Anjouan register"
+        "anjouan": "Verify on Anjouan register",
+        "serc": "Verify on verify.gov.kh"
       },
       "entities": {
+        "cambodia": {
+          "location": "Cambodia · Phnom Penh",
+          "name": "GTCFX Co., Ltd",
+          "regulator": "Securities and Exchange Regulator of Cambodia (SERC)",
+          "licenseType": "Derivative Broker",
+          "licenseNo": "043 (SERC/D/B/C)",
+          "registeredAddress": "Building No. 40, 8th Floor, Street 289, Sangkat Boeung Kak 1, Khan Toul Kork, Phnom Penh, Cambodia"
+        },
         "comorosAnjouan": {
           "location": "Comoros · Anjouan",
           "name": "GTC Global Trading LTD",
@@ -5405,6 +5437,7 @@
       "description": "Our entities and affiliates operate within different legal and regulatory frameworks. Their respective roles, permitted services and geographic availability vary by jurisdiction. Each entity remains responsible for complying with the laws, licence conditions and regulatory requirements applicable to its own operations.",
       "mapAlt": "Global presence map",
       "locations": {
+        "phnompenh": "Phnom Penh",
         "london": "London",
         "anjouan": "Anjouan",
         "mauritius": "Mauritius",
@@ -5432,7 +5465,8 @@
           "item1": "GTC Global SA (Pty) Ltd obtains South Africa FSCA licence FSP 51545."
         },
         "y2021": {
-          "item1": "Group formally launches CFD trading services to clients globally."
+          "item1": "Group formally launches CFD trading services to clients globally.",
+          "item2": "GTCFX Co., Ltd licensed by SERC Cambodia as a Derivative Broker (License No. 043)."
         },
         "y2022": {
           "item1": "GTC Global Ltd licensed by FSC Mauritius GB22200292.",
