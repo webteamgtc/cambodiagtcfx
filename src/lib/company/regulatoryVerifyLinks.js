@@ -21,3 +21,7 @@ export const CAMBODIA_SERC_EXTRA_LINKS = [
     verifyLink: CAMBODIA_SERC_LISTING_URL,
   },
 ];
+
+export const REGULATORY_FOOTPRINT_EXTRA_LINKS = {
+  cambodia: CAMBODIA_SERC_EXTRA_LINKS,
+};
