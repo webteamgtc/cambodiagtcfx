@@ -3,6 +3,7 @@
 import FadeInSection from "./FadeInSection";
 import { usePathTranslation } from "@/app/[locale]/LocaleProvider";
 import { withoutUkEntityKey } from "@/lib/company/regulatoryUkFilter";
+import { REGULATORY_ENTITY_VERIFY_LINKS } from "@/lib/company/regulatoryVerifyLinks";
 import { AU, GB, KH, KM, MU, VU, ZA } from "country-flag-icons/react/3x2";
 
 const footprint = withoutUkEntityKey([
@@ -13,7 +14,10 @@ const footprint = withoutUkEntityKey([
   { key: "unitedKingdom", code: "FCA", flag: "gb" },
   { key: "australia", code: "ASIC", flag: "au" },
   { key: "mauritius", code: "FSC", flag: "mu" },
-]);
+]).map((item) => ({
+  ...item,
+  href: REGULATORY_ENTITY_VERIFY_LINKS[item.key],
+}));
 
 const FLAG_ICONS = {
   kh: KH,
@@ -118,9 +122,20 @@ export default function RegulationsHeroSection() {
                           </p>
                         </div>
                       </div>
-                      <span className="ml-3 shrink-0 rounded-full bg-[#f0f2f8] px-3 py-1 text-xs font-medium text-[#3347a8]">
-                        {item.code}
-                      </span>
+                      {item.href ? (
+                        <a
+                          href={item.href}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="ml-3 shrink-0 rounded-full bg-[#f0f2f8] px-3 py-1 text-xs font-medium text-[#3347a8] transition hover:bg-[#e0e6f5] hover:underline"
+                        >
+                          {item.code}
+                        </a>
+                      ) : (
+                        <span className="ml-3 shrink-0 rounded-full bg-[#f0f2f8] px-3 py-1 text-xs font-medium text-[#3347a8]">
+                          {item.code}
+                        </span>
+                      )}
                     </div>
                   ))}
                 </div>

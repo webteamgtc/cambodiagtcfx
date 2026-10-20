@@ -5358,7 +5358,8 @@
         "fsca": "Verify on FSCA register",
         "vfsc": "Verify on VFSC register",
         "anjouan": "Verify on Anjouan register",
-        "serc": "Verify on verify.gov.kh"
+        "serc": "Verify on verify.gov.kh",
+        "sercListed": "View Our Company Listed"
       },
       "entities": {
         "cambodia": {

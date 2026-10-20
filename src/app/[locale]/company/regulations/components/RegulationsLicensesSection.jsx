@@ -5,19 +5,11 @@ import MobilePeekCarousel from "@/app/[locale]/components/common/MobilePeekCarou
 import { FiArrowUpRight, FiCheckCircle } from "react-icons/fi";
 import { usePathTranslation } from "@/app/[locale]/LocaleProvider";
 import { withoutUkEntityKey } from "@/lib/company/regulatoryUkFilter";
-import { CAMBODIA_SERC_VERIFY_URL } from "@/lib/company/cambodiaSercLicense";
+import {
+  CAMBODIA_SERC_EXTRA_LINKS,
+  REGULATORY_ENTITY_VERIFY_LINKS,
+} from "@/lib/company/regulatoryVerifyLinks";
 import { AU, GB, KH, KM, MU, VU, ZA } from "country-flag-icons/react/3x2";
-
-const ENTITY_VERIFY_LINKS = {
-  cambodia: CAMBODIA_SERC_VERIFY_URL,
-  southAfrica: "https://www.gtcfx.com/en-za",
-  vanuatu: "https://www.gtcfx.com/en-vu",
-  mauritius: "https://www.gtcfx.com/en-mu",
-  australia: "https://gtcau.com.au/",
-  unitedKingdom: "https://gmgmarkets.co.uk/",
-  comorosAnjouan:
-    "https://anjouanoffshorefinanceauthority.org/register/gtc-global-trading-ltd/",
-};
 
 const entities = withoutUkEntityKey([
   {
@@ -25,7 +17,8 @@ const entities = withoutUkEntityKey([
     entityKey: "cambodia",
     flag: "kh",
     verifyKey: "serc",
-    verifyLink: ENTITY_VERIFY_LINKS.cambodia,
+    verifyLink: REGULATORY_ENTITY_VERIFY_LINKS.cambodia,
+    extraVerifyLinks: CAMBODIA_SERC_EXTRA_LINKS,
     details: [
       { labelKey: "regulator", field: "regulator" },
       { labelKey: "licenseType", field: "licenseType" },
@@ -38,7 +31,7 @@ const entities = withoutUkEntityKey([
     entityKey: "southAfrica",
     flag: "za",
     verifyKey: "fsca",
-    verifyLink: ENTITY_VERIFY_LINKS.southAfrica,
+    verifyLink: REGULATORY_ENTITY_VERIFY_LINKS.southAfrica,
     details: [
       { labelKey: "regulator", field: "regulator" },
       { labelKey: "licenseType", field: "licenseType" },
@@ -52,7 +45,7 @@ const entities = withoutUkEntityKey([
     entityKey: "vanuatu",
     flag: "vu",
     verifyKey: "vfsc",
-    verifyLink: ENTITY_VERIFY_LINKS.vanuatu,
+    verifyLink: REGULATORY_ENTITY_VERIFY_LINKS.vanuatu,
     details: [
       { labelKey: "regulator", field: "regulator" },
       { labelKey: "licenseType", field: "licenseType" },
@@ -65,7 +58,7 @@ const entities = withoutUkEntityKey([
     entityKey: "comorosAnjouan",
     flag: "km",
     verifyKey: "anjouan",
-    verifyLink: ENTITY_VERIFY_LINKS.comorosAnjouan,
+    verifyLink: REGULATORY_ENTITY_VERIFY_LINKS.comorosAnjouan,
     details: [
       { labelKey: "regulator", field: "regulator" },
       { labelKey: "licenseType", field: "licenseType" },
@@ -79,7 +72,7 @@ const entities = withoutUkEntityKey([
     entityKey: "australia",
     flag: "au",
     verifyKey: "asic",
-    verifyLink: ENTITY_VERIFY_LINKS.australia,
+    verifyLink: REGULATORY_ENTITY_VERIFY_LINKS.australia,
     tier: false,
     details: [
       { labelKey: "regulator", field: "regulator" },
@@ -92,7 +85,7 @@ const entities = withoutUkEntityKey([
     entityKey: "mauritius",
     flag: "mu",
     verifyKey: "fsc",
-    verifyLink: ENTITY_VERIFY_LINKS.mauritius,
+    verifyLink: REGULATORY_ENTITY_VERIFY_LINKS.mauritius,
     details: [
       { labelKey: "regulator", field: "regulator" },
       { labelKey: "licenseType", field: "licenseType" },
@@ -170,16 +163,29 @@ function EntityCard({ entity }) {
           />
         ))}
       </div>
-      {entity.verifyLink ? (
-        <div className="mt-6 flex items-center justify-between border-t border-dashed border-[#f0f1f6] pt-4">
-          <a
-            href={entity.verifyLink}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center gap-1 text-xs font-medium text-[#3347a8] hover:underline"
-          >
-            {t(`verify.${entity.verifyKey}`)} <FiArrowUpRight className="h-3 w-3" />
-          </a>
+      {entity.verifyLink || entity.extraVerifyLinks?.length ? (
+        <div className="mt-6 flex flex-wrap items-center gap-x-4 gap-y-2 border-t border-dashed border-[#f0f1f6] pt-4">
+          {entity.verifyLink ? (
+            <a
+              href={entity.verifyLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-1 text-xs font-medium text-[#3347a8] hover:underline"
+            >
+              {t(`verify.${entity.verifyKey}`)} <FiArrowUpRight className="h-3 w-3" />
+            </a>
+          ) : null}
+          {entity.extraVerifyLinks?.map((link) => (
+            <a
+              key={link.verifyKey}
+              href={link.verifyLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-1 text-xs font-medium text-[#3347a8] hover:underline"
+            >
+              {t(`verify.${link.verifyKey}`)} <FiArrowUpRight className="h-3 w-3" />
+            </a>
+          ))}
         </div>
       ) : null}
     </div>
@@ -218,7 +224,7 @@ function VerificationCard() {
 
       <div className="mt-6 border-t border-dashed border-[#f0f1f6] pt-4">
         <a
-          href={ENTITY_VERIFY_LINKS.comorosAnjouan}
+          href={REGULATORY_ENTITY_VERIFY_LINKS.comorosAnjouan}
           target="_blank"
           rel="noopener noreferrer"
           className="flex items-center gap-1 text-xs font-medium text-[#3347a8] hover:underline"

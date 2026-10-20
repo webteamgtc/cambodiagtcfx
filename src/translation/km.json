@@ -5520,7 +5520,8 @@
         "fsca": "ផ្ទៀងផ្ទាត់លើការចុះឈ្មោះ FSCA",
         "vfsc": "ផ្ទៀងផ្ទាត់លើការចុះឈ្មោះ VFSC",
         "anjouan": "ផ្ទៀងផ្ទាត់នៅលើការចុះឈ្មោះ Anjouan",
-        "serc": "ផ្ទៀងផ្ទាត់លើ verify.gov.kh"
+        "serc": "ផ្ទៀងផ្ទាត់លើ verify.gov.kh",
+        "sercListed": "View Our Company Listed"
       },
       "entities": {
         "cambodia": {
