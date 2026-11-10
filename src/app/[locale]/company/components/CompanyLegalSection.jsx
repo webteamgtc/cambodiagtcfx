@@ -1,15 +1,16 @@
 "use client";
 
 import { useMemo, useState } from "react";
-import { AU, GB, MU, VU, ZA } from "country-flag-icons/react/3x2";
+import { AU, GB, KH, MU, VU, ZA } from "country-flag-icons/react/3x2";
 import { useLocaleMessages, usePathTranslation } from "../../LocaleProvider";
 import { localizedHref } from "@/i18n/localizedHref";
 import Button from "@/app/[locale]/components/common/Button";
 import { withoutUkAffiliateEntries } from "@/lib/company/regulatoryUkFilter";
 
-const AFFILIATE_KEYS = ["two", "three", "four", "five", "six", "seven"];
+const AFFILIATE_KEYS = ["one", "two", "three", "four", "five", "six", "seven"];
 
 const FLAG_ICONS = {
+  kh: KH,
   za: ZA,
   vu: VU,
   gb: GB,
@@ -17,12 +18,14 @@ const FLAG_ICONS = {
   mu: MU,
 };
 
-const COUNTRY_FLAG_CODES = {
-  "United Kingdom": "gb",
-  Australia: "au",
-  Mauritius: "mu",
-  "South Africa": "za",
-  Vanuatu: "vu",
+/** Stable flag codes per affiliate entry (locale-independent). */
+const AFFILIATE_FLAG_BY_KEY = {
+  one: "kh",
+  three: "gb",
+  four: "au",
+  five: "mu",
+  six: "za",
+  seven: "vu",
 };
 
 function Flag({ code }) {
@@ -34,47 +37,6 @@ function Flag({ code }) {
       <FlagIcon title={code.toUpperCase()} className="h-full w-full" />
     </span>
   );
-}
-
-function normalizeWebsiteUrl(url) {
-  if (!url || typeof url !== "string") return "";
-  const trimmed = url.trim();
-  if (!trimmed) return "";
-  return /^https?:\/\//i.test(trimmed) ? trimmed : `https://${trimmed}`;
-}
-
-function formatWebsiteLabel(url) {
-  if (!url || typeof url !== "string") return "";
-  return url.replace(/^https?:\/\//, "").replace(/\/$/, "");
-}
-
-function parseWebsite(website) {
-  if (!website) return null;
-
-  if (typeof website === "string") {
-    const trimmed = website.trim();
-    if (!trimmed) return null;
-    return {
-      href: normalizeWebsiteUrl(trimmed),
-      label: formatWebsiteLabel(trimmed),
-    };
-  }
-
-  if (typeof website === "object") {
-    const hrefSource = website.hyperlink || website.href || website.url || website.text || "";
-    const labelSource = website.text || website.label || hrefSource;
-    const href = typeof hrefSource === "string" ? hrefSource.trim() : "";
-    const label = typeof labelSource === "string" ? labelSource.trim() : "";
-
-    if (!href && !label) return null;
-
-    return {
-      href: normalizeWebsiteUrl(href || label),
-      label: formatWebsiteLabel(label || href),
-    };
-  }
-
-  return null;
 }
 
 function ChevronIcon({ open }) {
@@ -95,8 +57,8 @@ function ChevronIcon({ open }) {
   );
 }
 
-function RegulationAccordionItem({ item, isOpen, onToggle, websiteLabel }) {
-  const flagCode = COUNTRY_FLAG_CODES[item.country];
+function RegulationAccordionItem({ item, isOpen, onToggle }) {
+  const flagCode = AFFILIATE_FLAG_BY_KEY[item.key];
 
   return (
     <div
@@ -130,19 +92,6 @@ function RegulationAccordionItem({ item, isOpen, onToggle, websiteLabel }) {
           <div className="px-5 pb-5 sm:px-6 sm:pb-6">
             <div className="ps-[52px] sm:ps-[56px]">
               <p className="TextSmall leading-[1.65] font-normal text-[#666666]">{item.description}</p>
-              {item.website && (
-                <p className="TextSmall mt-4 text-[#293B93]">
-                  <span>{websiteLabel} </span>
-                  <a
-                    href={item.website.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-[#2b3d8f] underline decoration-[#2b3d8f]/40 underline-offset-2 hover:decoration-[#2b3d8f]"
-                  >
-                    {item.website.label}
-                  </a>
-                </p>
-              )}
             </div>
           </div>
         </div>
@@ -166,7 +115,6 @@ export default function CompanyLegalSection({ locale = "en" }) {
         key,
         country: entry.country ?? "",
         description: entry.description ?? "",
-        website: parseWebsite(entry.website),
       };
     }).filter((item) => item.country && item.description);
 
@@ -207,7 +155,6 @@ export default function CompanyLegalSection({ locale = "en" }) {
                   item={item}
                   isOpen={openIndex === index}
                   onToggle={() => setOpenIndex(index)}
-                  websiteLabel={t("websiteLabel", "Website:")}
                 />
               ))}
             </div>

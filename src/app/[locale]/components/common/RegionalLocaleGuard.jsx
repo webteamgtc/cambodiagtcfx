@@ -16,7 +16,6 @@ function setGeoCountryCookie(countryCode) {
 
 /**
  * Persists geo country for footer/disclaimer logic only.
- * Never rewrites the URL — hardcoded locale paths are always kept as-is.
  */
 export default function RegionalLocaleGuard() {
   const { countryCode, locationReady } = useLocationDetail();

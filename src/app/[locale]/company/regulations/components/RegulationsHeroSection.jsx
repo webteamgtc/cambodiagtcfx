@@ -3,18 +3,29 @@
 import FadeInSection from "./FadeInSection";
 import { usePathTranslation } from "@/app/[locale]/LocaleProvider";
 import { withoutUkEntityKey } from "@/lib/company/regulatoryUkFilter";
-import { AU, GB, KM, MU, VU, ZA } from "country-flag-icons/react/3x2";
+import {
+  REGULATORY_ENTITY_VERIFY_LINKS,
+  REGULATORY_FOOTPRINT_EXTRA_LINKS,
+} from "@/lib/company/regulatoryVerifyLinks";
+import { FiArrowUpRight } from "react-icons/fi";
+import { AU, GB, KH, KM, MU, VU, ZA } from "country-flag-icons/react/3x2";
 
 const footprint = withoutUkEntityKey([
+  { key: "cambodia", code: "SERC", flag: "kh" },
   { key: "comorosAnjouan", code: "AOFA", flag: "km" },
   { key: "southAfrica", code: "FSCA", flag: "za" },
   { key: "vanuatu", code: "VFSC", flag: "vu" },
   { key: "unitedKingdom", code: "FCA", flag: "gb" },
   { key: "australia", code: "ASIC", flag: "au" },
   { key: "mauritius", code: "FSC", flag: "mu" },
-]);
+]).map((item) => ({
+  ...item,
+  href: REGULATORY_ENTITY_VERIFY_LINKS[item.key],
+  extraLinks: REGULATORY_FOOTPRINT_EXTRA_LINKS[item.key] ?? [],
+}));
 
 const FLAG_ICONS = {
+  kh: KH,
   km: KM,
   za: ZA,
   vu: VU,
@@ -42,6 +53,7 @@ function Flag({ code }) {
 
 export default function RegulationsHeroSection() {
   const t = usePathTranslation("regulationsPage.hero");
+  const tVerify = usePathTranslation("regulationsPage.licenses");
 
   return (
     <section className="relative overflow-hidden bg-[#f8f9fc] py-10 md:py-16">
@@ -114,11 +126,38 @@ export default function RegulationsHeroSection() {
                           <p className="mt-0.5 truncate text-xs text-[#8a8a9a]">
                             {t(`footprint.${item.key}.entity`)}
                           </p>
+                          {item.extraLinks?.length ? (
+                            <div className="mt-1.5 flex flex-col items-start gap-0.5">
+                              {item.extraLinks.map((link) => (
+                                <a
+                                  key={link.verifyKey}
+                                  href={link.verifyLink}
+                                  target="_blank"
+                                  rel="noopener noreferrer"
+                                  className="inline-flex items-center gap-0.5 text-[11px] font-medium text-[#3347a8] hover:underline"
+                                >
+                                  {tVerify(`verify.${link.verifyKey}`, "View Our Company Listed")}
+                                  <FiArrowUpRight className="h-3 w-3 shrink-0" aria-hidden />
+                                </a>
+                              ))}
+                            </div>
+                          ) : null}
                         </div>
                       </div>
-                      <span className="ml-3 shrink-0 rounded-full bg-[#f0f2f8] px-3 py-1 text-xs font-medium text-[#3347a8]">
-                        {item.code}
-                      </span>
+                      {item.href ? (
+                        <a
+                          href={item.href}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="ml-3 shrink-0 rounded-full bg-[#f0f2f8] px-3 py-1 text-xs font-medium text-[#3347a8] transition hover:bg-[#e0e6f5] hover:underline"
+                        >
+                          {item.code}
+                        </a>
+                      ) : (
+                        <span className="ml-3 shrink-0 rounded-full bg-[#f0f2f8] px-3 py-1 text-xs font-medium text-[#3347a8]">
+                          {item.code}
+                        </span>
+                      )}
                     </div>
                   ))}
                 </div>

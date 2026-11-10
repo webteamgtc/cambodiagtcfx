@@ -7,6 +7,7 @@ import { localizedHref } from "@/i18n/localizedHref";
 import { withoutUkRegulatorKey } from "@/lib/company/regulatoryUkFilter";
 
 const REGULATORS = withoutUkRegulatorKey([
+  { key: "serc", code: "SERC", region: "CAMBODIA", codeKey: "regulators.serc.code", regionKey: "regulators.serc.region" },
   { key: "fsca", code: "FSCA", region: "S. AFRICA", codeKey: "regulators.fsca.code", regionKey: "regulators.fsca.region" },
   { key: "vfsc", code: "VFSC", region: "VANUATU", codeKey: "regulators.vfsc.code", regionKey: "regulators.vfsc.region" },
   { key: "fca", code: "FCA", region: "UK", codeKey: "regulators.fca.code", regionKey: "regulators.fca.region" },
