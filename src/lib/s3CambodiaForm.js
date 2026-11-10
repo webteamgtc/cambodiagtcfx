@@ -125,8 +125,17 @@ export async function uploadCambodiaFormFile({ applicationReference, fieldKey, f
       );
     }
     if (isS3NetworkError(err)) {
+      const detail = err?.code || err?.errno || err?.name;
+      const attempts = err?.$metadata?.attempts;
+      console.error("[s3CambodiaForm] network error uploading", {
+        key,
+        fileSize,
+        code: detail,
+        attempts,
+        message: err?.message,
+      });
       throw new Error(
-        "Could not reach AWS S3 (connection reset). Check internet/VPN/firewall, then submit again."
+        `Could not reach AWS S3 (${detail}${attempts ? ` after ${attempts} attempts` : ""}, file ${(fileSize / 1024 / 1024).toFixed(1)}MB). Check internet/VPN/firewall, then submit again.`
       );
     }
     throw err;
